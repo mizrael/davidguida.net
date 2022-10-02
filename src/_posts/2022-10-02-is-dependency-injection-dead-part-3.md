@@ -79,9 +79,9 @@ public class Foo {
 You will have no idea of what dependencies `Foo` needs, neither Visual Studio will (probably). 
 Which also means that you'll never get build errors if the hidden dependencies change for any reason. It's a slippery road to 
 
-Last but not least, unit testing now is just way harder because you're relying on a static class, which means that it's internal state is shared between all the tests you're running. And that is <a href='/the-perils-of-sharing-state-when-writing-tests/'> very bad</a>.
+Last but not least, unit testing now is just way harder because you're relying on a static class, which means that it's internal state is shared between all the tests you're running. And that is <a href='/the-perils-of-sharing-state-when-writing-tests/' target='_blank'> very bad</a>.
 
-Let's see another anti-pattern now, the *Fat class*:
+Let's see another anti-pattern now, the *Fat Class*:
 ```csharp
 public class Foo {
   public Foo(IBar bar, IBaz baz, IDee dee, IGee gee, IMeh meh){
@@ -89,9 +89,9 @@ public class Foo {
   }
 }
 ```
+As you can see, this class is *fat*: has a lot of dependencies, and most likely, they are not used in every method. Which means that this class is definitely **doing too much** and therefore breaking the <a href='https://en.wikipedia.org/wiki/Single-responsibility_principle' target='_blank'>Single Responsibility Principle</a>. 
+*Fat Class* is much rather a code smell than an anti-pattern. But still, it's extremely common, especially in large, legacy codebases. So beware!
 
-
-
-That's all for today! Next time we will continue talking about <a href='/are-design-patterns-dead'>Design Patterns</a> and see more real-world scenarios.
+That's all for today! Next time we will continue talking about <a href='/are-design-patterns-dead' target='_blank'>Design Patterns</a> and see more real-world scenarios.
 
 Ciao!
