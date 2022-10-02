@@ -1,0 +1,24 @@
+---
+layout: main
+---
+<article class="article-page type-page">
+  <div class="page-content">
+    {% if page.image %}
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src="{{ "" | prepend: site.baseurl | append : page.image}}" alt="{{page.title}}">
+        {% if page.fig-caption %}
+        <figcaption>{{page.fig-caption}}</figcaption>
+        {% endif %}
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    {% endif %}
+    <div class="wrap-content">
+      <header class="header-page">
+        <h2 class="page-title">{{page.title}}</h2>
+      </header>
+      {{content | markdownify}}
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->

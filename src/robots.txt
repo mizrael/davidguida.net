@@ -1,0 +1,3 @@
+Sitemap: https://www.davidguida.net/sitemap.xml
+User-agent: *
+Disallow: assets/

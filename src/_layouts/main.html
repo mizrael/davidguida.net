@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+<aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="{{site.baseurl}}/">
+          <img class="primary" src="{{site.baseurl}}/assets/img/david-guida.jpg" alt="{{site.author}}"
+            title="{{site.author}}">
+          <img class="secondary" src="{{site.baseurl}}/assets/img/david-guida-2.jpg" alt="{{site.author}}"
+            title="{{site.author}}">
+        </a>
+      </div>
+      <h1 class="author-name">{{site.author}}</h1>
+      <p>{{site.about-author}}</p>
+    </div>
+
+    <section class="sidebar-menu">
+      <ul>
+        <li><a href="/about-me">About me</a></li>
+        <li><a href="/talks">Talks</a></li>
+      </ul>
+    </section>
+
+    <div class="widget contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        {% if site.social-github %}
+        <li class="github"><a href="http://github.com/{{site.social-github}}" target="_blank"><i
+              class="fa fa-github"></i></a></li>
+        {% endif %}
+
+        {% if site.social-twitter %}
+        <li><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><i class="fa fa-twitter"
+              aria-hidden="true"></i></a></li>
+        {% endif %}
+
+        {% if site.social-linkedin %}
+        <li class="linkedin"><a href="https://in.linkedin.com/in/{{site.social-linkedin}}" target="_blank"><i
+              class="fa fa-linkedin"></i></a></li>
+        {% endif %}
+
+        {% if site.social-youtube %}
+        <li class="youtube"><a href="https://www.youtube.com/channel/{{site.social-youtube}}" target="_blank"><i
+              class="fa fa-youtube"></i></a></li>
+        {% endif %}
+
+        {% if site.social-email %}
+        <li class="email"><a href="mailto:{{site.social-email}}"><i class="fa fa-envelope-o"></i></a></li>
+        {% endif %}
+      </ul>
+    </div> <!-- End Section Contact -->
+
+    {% if site.bookkme %}  
+    <div class="widget bookme">
+      Do you need coaching, advising or 1:1 consultations?
+      <a href="https://bookk.me/{{site.bookkme}}" target="_blank">
+        Book me!
+      </a>
+    </div>
+    {% endif %}
+    
+    <!--
+    <div class="widget mvp">
+      <a href="https://www.credly.com/badges/b68a3acf-c591-4671-91b2-5ed46e51155f" target="_blank">
+        <img src="/assets/uploads/2021/07/azure-fundamentals-600x600.png"
+          title="Microsoft Certified: Azure Fundamentals" alt="Microsoft Certified: Azure Fundamentals">
+      </a>
+    </div>
+    -->
+    <!--
+    <div class="widget mvp">
+      <a href="https://mvp.microsoft.com/it-it/PublicProfile/5003878" target="_blank">
+        <img src="/assets/uploads/2020/08/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_300ppi-300x121.png"
+          title="MVP Developer Technologies" alt="MVP Developer Technologies">
+      </a>
+    </div>
+    -->
+    
+    <div class="widget pluralsight">
+      <a href="https://app.pluralsight.com/profile/davide-guida-d2">
+        <img src="/assets/uploads/2020/05/pluralsight_iq_csharp.jpeg" title="Pluralsight IQ C# Expert"
+          alt="Pluralsight IQ C# Expert"></a>
+    </div>
+    <div class="widget pluralsight">
+      <a href="https://app.pluralsight.com/profile/davide-guida-d2">
+        <img src="/assets/uploads/2020/05/pluralsight-iq-aspnetcore.jpeg" title="Pluralsight IQ ASP.NET Core Expert"
+          alt="Pluralsight IQ ASP.NET Core Expert"></a>
+    </div>
+
+    <div class="widget">
+      <!-- Sidebar -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2371802329711833" data-ad-slot="1798994507"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>      
+    </div>
+
+    <div class="widget tagcloud">
+      {% assign tags = site.tags | sort %}
+      {% for tag in tags %}
+      <span class="site-tag">
+        <a href="/tags/#{{ tag | first | cgi_escape }}"
+          style="font-size: {{ tag | last | size  |  times: 4 | plus: 50  }}%">
+          {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+        </a>
+      </span>
+      {% endfor %}
+    </div>
+
+  </header> <!-- End Header -->
+
+  <footer>
+    <div class="copyright">
+      <p>{{site.time | date: '%Y'}} &copy; {{site.author}}</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+
+<div class="content-box">
+  <div class="content-ads-top">
+    <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2371802329711833"
+     data-ad-slot="3988340490"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+  </div>
+  {{ content }}
+</div>
+
+<aside class="sidebar fixed-ads-out">
+  <header>
+    <div class="widget">      
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2371802329711833"
+          data-ad-slot="3906804588"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>      
+    </div>
+  </header>
+</aside>

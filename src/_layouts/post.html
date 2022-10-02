@@ -1,0 +1,93 @@
+---
+layout: main
+---
+<article class="article-page type-post" data-clarity-region="article">
+  <div class="page-content">
+    {% if page.image %}
+    <div class="page-cover-image">
+      <figure>
+        <img class="page-image" src="{{ "" | prepend: site.baseurl | append : page.image}}" alt="{{page.title}}" title="{{page.title}}">
+        {% if page.fig-caption %}
+        <figcaption>{{page.fig-caption}}</figcaption>
+        {% else %}
+        <figcaption>{{page.title}}</figcaption>
+        {% endif %}
+      </figure>
+    </div> <!-- End Page Cover Image -->
+    {% endif %}
+
+    {% if page.video %}
+    <div class="post-video">
+      <div class="video-container">
+        <iframe width="560" height="315" src="{{ page.video }}" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="wrap-content">
+      <header class="header-page">
+        <h2 class="page-title">{{page.title}}</h2>
+        <div class="page-date"><span>{{page.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+
+        <div class="page-tag">
+          {% for tag in page.tags %}
+          <a href="{{site.baseurl}}/tags/#{{tag | cgi_escape}}" class="tag">&#35; {{ tag }}</a>
+          {% endfor %}
+        </div>
+
+      </header>
+      {{content | markdownify}}
+
+      <section class="post-after-content post-buy-me-a-coffee">
+        <h4>Did you like this post? Then</h4> 
+        <a href="https://www.buymeacoffee.com/davideguida">
+          <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a pizza!&emoji=🍕&slug=davideguida&button_colour=40DCA5&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" />
+        </a>
+      </section>
+
+      {% if site.bookkme %}  
+      <section class="post-after-content post-bookme">
+        <h4>Do you need coaching, advising or 1:1 consultations?</h4>
+        <a href="https://bookk.me/{{site.bookkme}}" target="_blank" class="dg-button">
+          🤙 Book me!
+        </a>
+      </section>
+      {% endif %}
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+
+  <section class="related-posts">
+    <h3>You may also like</h3>
+    <div class="related-posts-inner">
+      {% for post in site.related_posts limit: 4 %}
+      {% unless post.url == page.url %}
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        
+        <figure>
+          {% if post.image %}
+            <img class="related-post-image" src="{{ "" | prepend: site.baseurl | append : post.image }}" alt="{{post.title}}">              
+          {% else %}
+            <img class="related-post-image" src="{{site.baseurl}}/assets/img/david-guida.jpg" alt="{{post.title}}">
+           {% endif %}
+        </figure>
+        
+        <span>{{ post.title }}</span>
+      </a>
+      {% endunless %}
+      {% endfor %}
+    </div>
+  </section>      
+  
+  {% include comments.html %}      
+  
+  <section class="post-ads">
+    <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+         data-ad-client="ca-pub-2371802329711833" data-ad-slot="6522353159"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
+</article> <!-- End Article Page -->
