@@ -23,13 +23,14 @@ Being *Managed* however, means that Azure will completely take away all the burd
 
 ### There is no need at all to generate certificates or secrets/passwords.
 
-This basically means that we don't have to manually (or via scripts) go in AAD, create an Application, generate the credentials, store them in a safe place (aka a Key Vault in most cases), deal with rotations and so on...
+This basically means that we don't have to manually (or via scripts) go into AAD, create an Application, generate the credentials, store them in a safe place (aka a Key Vault in most cases), deal with rotations and so on...
 
 Now that we have cleared this, why should we use a User Assigned Identity over a System one? Let's see.
 
 System MSIs are somehow part of the same resource they belong to. Say that you're creating a new Azure Function App and you choose a System MSI. This identity will have the same lifetime of the Function App, which also means that if the App is deleted, the Identity will be deleted to.
 
-This might not be a problem for small applications or prototypes. But if for example you are deleting a recreating the App as part of your CI/CD pipeline, the Identity will change every time. In case you are assigning roles or granting access to other resources, this might be an issue if you're not automating everything.
+This might not be a problem for small applications or prototypes. But if for example you are deleting and recreating the App as part of your CI/CD pipeline, the Identity will change every time. 
+### In case you are assigning roles or granting access to other resources, this might be an issue if you're not carfeul and you've automated everything.
 
 Now, User-Assigned MSIs instead don't have this problem. They are a completely different Azure Resource, and they can even *be shared* across multiple Azure Services. To put it in another way, the Identity is managed separately from the resources that use it.
 
