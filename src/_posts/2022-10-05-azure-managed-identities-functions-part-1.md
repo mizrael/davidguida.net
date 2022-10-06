@@ -13,7 +13,7 @@ categories:
   - Azure
 ---
 
-Hi All! Today we'll steer away a bit from <a href='/is-dependency-injection-dead-part-1' target='_blank'>Design Patterns</a> and talk about **Managed System Identities**, or MSI, on Azure and how they can be leveraged in Azure Function Apps.
+Hi All! Today we'll steer away a bit from <a href='/is-dependency-injection-dead-part-1' target='_blank'>Design Patterns</a> and talk about Azure **Managed System Identities**, or MSI, and how they can be leveraged in Azure Function Apps.
 
 ### So what are exactly **Managed Identities**? 
 
