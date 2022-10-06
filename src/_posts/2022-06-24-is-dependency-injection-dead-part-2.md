@@ -63,6 +63,6 @@ At the very beginning, the application creates a DI Scope. At this point, if a *
 
 However, scopes are tied to the HTTP request that initiated it, which means that you'll get a new scope per request. And this means that `Baz` will be instantiated in every scope. Like a Transient.
 
-That's all for today! Next time we will see some more use cases and talk a bit about some DI anti-patterns.
+That's all for today! The <a href='/is-dependency-injection-dead-part-3-anti-patterns' target='_blank'>next time</a> we will see some more use cases and talk a bit about some DI anti-patterns.
 
 Ciao!

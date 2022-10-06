@@ -3,7 +3,7 @@ description: >
   Is Dependency Injection dead? It's not! But let's see what "Service Lifetime" means and how many options we have when setting up our Dependency Injection container.
 id: 8026
 title: 'Is Dependency Injection dead? - Part 3: Anti-Patterns'
-date: 2022-07-15T00:57:23-05:00
+date: 2022-10-02T00:57:23-05:00
 author: David Guida
 layout: post
 guid: https://www.davidguida.net/?p=8026
