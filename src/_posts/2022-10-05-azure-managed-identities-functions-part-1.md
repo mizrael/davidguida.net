@@ -1,6 +1,6 @@
 ---
 description: >
-  
+  In the first article of this Series, we will talk about **Managed System Identities**, or MSI, on Azure and how they can be leveraged in Azure Function Apps.
 id: 8027
 title: 'Azure Functions with Managed Identities - Part 1'
 date: 2022-07-15T00:57:23-05:00
