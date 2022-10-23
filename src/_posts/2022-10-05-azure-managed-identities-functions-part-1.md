@@ -158,6 +158,6 @@ At this point we proceed with the definition of the resources. The bare minimum 
 }
 ```      
 
-And that's it! The next time we will expand a bit this template and add access to a Key Vault.
+And that's it! <a href='/azure-managed-identities-functions-part-2' target='_blank'>The next time</a> we will expand a bit this template and add access to a Key Vault.
 
 Ciao!
