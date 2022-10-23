@@ -1,6 +1,6 @@
 ---
 description: >
-  In the second article of this Series, we will continue our discussion about **Managed System Identities** on Azure and how they can used to grant access to an Azure KeyVault.
+  In the second article of this Series, we will continue our discussion about Managed System Identities on Azure and how they can be used to grant access to an Azure KeyVault.
 id: 8028
 title: 'Azure Functions with Managed Identities - Part 2: access to KeyVaults'
 date: 2022-10-22T00:57:23-05:00
@@ -13,7 +13,7 @@ categories:
   - Azure
 ---
 
-Hi All! In this second article of this Series, we will continue our discussion about <a href='/azure-managed-identities-functions-part-1' target='_blank'>**Managed System Identities**</a> on Azure and see how they can used to grant access to an Azure KeyVault.
+Hi All! In this second article of this Series, we will continue our discussion about <a href='/azure-managed-identities-functions-part-1' target='_blank'>**Managed System Identities**</a> on Azure and see how they can be used to grant access to an Azure KeyVault.
 
 So without further ado, let's take a look at our ARM template:
 
