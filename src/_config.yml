@@ -25,7 +25,7 @@ analytics: UA-18080426-1 # Google Analytics
 # google ads
 google_ads: ca-pub-2371802329711833
 
-bookkme: 07063785
+# bookkme: 07063785
 
 # Build Settings
 markdown: kramdown
