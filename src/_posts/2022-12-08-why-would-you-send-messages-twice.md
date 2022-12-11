@@ -3,7 +3,7 @@ description: >
   One of the key challenges in distributed systems is ensuring data consistency across multiple services. How do you ensure integration events are delivered properly?
 id: 8030
 title: 'Why would you send your messages twice?'
-date: 2022-11-16T00:57:23-05:00
+date: 2022-12-08T00:57:23-05:00
 author: David Guida
 layout: post
 guid: https://www.davidguida.net/?p=8030
@@ -79,7 +79,7 @@ void Handle(PlaceOrder command)
 
 The code gets a bit more complicated, but this way we can ensure that there won't be any inconsistencies or errors from partially committed operations.
 
-The last tecnique for today is the Outbox Pattern. We discussed about it <a href='/improving-microservices-reliability-part-2-outbox-pattern/'>already</a>, so I won't spend much time on it. 
+The last tecnique for today is the Outbox Pattern. We discussed about it <a href='/improving-microservices-reliability-part-2-outbox-pattern/' target='_blank'>already</a>, so I won't spend much time on it. 
 
 ### In a nutshell, it involves storing the outgoing messages in a table, using the same transaction we use to update our system.
 
