@@ -2,22 +2,12 @@
 description: >
   Last time we started digging into the code and saw how we can model an initial version of our Domain. But what's primitive obsession?
 id: 6880
-title: 'Let&#8217;s do some DDD with Entity Framework Core 3 &#8211; part 3: better Value Objects'
+title: "Let's do some DDD with Entity Framework - part 3: better Value Objects"
 date: 2019-10-29T12:17:21-04:00
 author: David Guida
 layout: post
 guid: https://www.davidguida.net/?p=6880
 permalink: /lets-do-some-ddd-with-entity-framework-core-3-part-3-better-value-objects/
-zakra_layout:
-  - tg-site-layout--customizer
-zakra_remove_content_margin:
-  - "0"
-zakra_transparent_header:
-  - customizer
-zakra_page_header:
-  - "1"
-zakra_logo:
-  - "0"
 image: /assets/uploads/2018/01/Entity-Framework-Logo_2colors_Square_RGB-591x360.png
 categories:
   - .NET
@@ -58,6 +48,3 @@ An option is to define the logic in a Currency Converter service and inject it w
 Also, note that when an Order gets created from a Quote, the prices on the OrderLines are not converted, but left untouched instead.
 
 The conversion is instead handled at query time, before returning the data to the user. If we were using CQRS, an option would be to persist the Order in the queries db with the amounts converted already to a common currency (eg. the Customer&#8217;s one) and potentially handle the conversion on-demand directly on the UI.
-
-<div class="post-details-footer-widgets">
-</div>

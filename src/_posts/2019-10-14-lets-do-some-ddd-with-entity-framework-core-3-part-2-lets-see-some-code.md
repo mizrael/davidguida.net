@@ -2,7 +2,7 @@
 description: >
   In this article we're going to take a look at how we can start modeling our classes and express our Domain and store our data using Entity Framework.
 id: 6823
-title: 'Let&#8217;s do some DDD with Entity Framework Core 3 &#8211; part 2: let&#8217;s see some code!'
+title: "Let's do some DDD with Entity Framework - part 2: let's see some code!"
 date: 2019-10-14T09:30:06-04:00
 author: David Guida
 layout: post
@@ -19,7 +19,7 @@ tags:
   - DDD
   - programming
 ---
-<a rel="noreferrer noopener" aria-label="Last time (opens in a new tab)" href="https://www.davidguida.net/lets-do-some-ddd-with-entity-framework-core-3/" target="_blank">Last time</a> I talked a bit about the new release of **Entity Framework Core 3** and introduced the small demo I wrote to test the new features. Now let&#8217;s see some code!
+<a rel="noreferrer noopener" aria-label="Last time (opens in a new tab)" href="/lets-do-some-ddd-with-entity-framework-core-3/" target="_blank">Last time</a> I talked a bit about **Entity Framework** and introduced the small demo I wrote to test the new features. Now let&#8217;s see some code!
 
 I took the liberty to update the <a rel="noreferrer noopener" aria-label="repository on GitHub (opens in a new tab)" href="https://github.com/mizrael/EFCoreCommerceDemo" target="_blank">repository on GitHub</a> and split it into two projects. **Example 1** is just a simple console app, while **Example 2** shows more or less the same code but in a Web API envelope.
 
@@ -53,7 +53,4 @@ For example, imagine you&#8217;ve ordered multiple items on Amazon and your orde
 
 Now, as you might have noticed the QuoteItem class is very small, just two properties. I might have used a struct instead. However, this would allow our consumers to call the default parameterless constructor directly, avoiding the other one. This is a really big problem as we are checking the invariants in that cTor and ensuring the instance is always in a good state.
 
-That&#8217;s enough for now. Next time we&#8217;re going to take a look at Example 2. See you!
-
-<div class="post-details-footer-widgets">
-</div>
+That's enough for now. <a href='/lets-do-some-ddd-with-entity-framework-core-3-part-3-better-value-objects/'>Next time</a> we're going to take a look at Example 2. See you!

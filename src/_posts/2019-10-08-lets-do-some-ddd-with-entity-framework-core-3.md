@@ -2,7 +2,7 @@
 description: >
   let's explore some of the new features of Entity Famework Core 3 and see how we can apply DDD with Persistence Ignorance
 id: 6743
-title: 'Let&#8217;s do some DDD with Entity Framework Core 3!'
+title: "Let's do some DDD with Entity Framework!"
 date: 2019-10-08T10:01:34-04:00
 author: David Guida
 layout: post
