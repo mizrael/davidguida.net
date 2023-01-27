@@ -1,6 +1,6 @@
 ---
 description: >
-  Let's see what a Compensating Transaction is, how it can help us recovering from errors and how important it is to have deep knowledge of our domain before running them.
+  Let's see what a Compensating Transaction is, how it can help us recover from errors and how important it is to have deep knowledge of our domain before running them.
 id: 8031
 title: 'What does a Compensating Transaction do?'
 date: 2022-12-11T00:57:23-05:00
