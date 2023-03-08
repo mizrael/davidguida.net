@@ -6,6 +6,14 @@ author: David Guida
 layout: page
 guid: https://www.davidguida.net/?page_id=6528
 ---
+* (english) Event sourcing - a primer @ ConFoo Montreal, 22/02/2023
+
+    * <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/assets/uploads/2023/03/event-sourcing-primer.pptx" target="_blank">slides</a>
+
+* (english) Patterns for Distributed Transactions @ ConFoo Montreal, 23/02/2023
+
+    * <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/assets/uploads/2023/03/patterns-distributed-transactions.pptx" target="_blank">slides</a>
+
 * (english) Event sourcing @ No Dogma Podcast with Bryan Hogan, 29/06/2021
 
     * <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://nodogmapodcast.bryanhogan.net/155-david-guida-event-sourcing/" target="_blank">details</a>
