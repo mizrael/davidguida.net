@@ -116,6 +116,4 @@ public class EventProducer<TA, TKey> : IEventProducer<TA, TKey> where TA : IAggr
 }
 ```
 
-That's all for today. The <a href="/event-sourcing-on-azure-part-5-consuming-events/" target='_blank'>next time</a> we'll see how to subscribe to those events and react to them.
-
 Ciao!
