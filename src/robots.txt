@@ -1,3 +1,6 @@
 Sitemap: https://www.davidguida.net/sitemap.xml
 User-agent: *
 Disallow: assets/
+
+User-agent: GPTBot
+Disallow: /
