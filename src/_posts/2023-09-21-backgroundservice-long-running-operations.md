@@ -52,3 +52,13 @@ public class MyWorker : BackgroundService
     }
 }
 ```
+
+As usual, I created a <a href='https://github.com/mizrael/BlockingBackgroundService' target='_blank'>small repository on GitHub</a> to help you better understand what's going on here.
+
+In the repo we have a simple Minimal Api with a GET endpoint `/counter`. A <a href='https://github.com/mizrael/BlockingBackgroundService/blob/main/BlockingBackgroundService/MyBackgroundService.cs' target='_blank'>background service</a> is used to increase a counter variable. Calling the endpoint will return its current value. It's a very simple scenario, but basically shows how a background service can perform a long running operation (in a loop) and how we can query its state from an API.
+
+Now, in <a href='https://github.com/mizrael/BlockingBackgroundService/blob/193f7b3f98906ac1b1ded52e75b671438b3364d0/BlockingBackgroundService/appsettings.json#L9' target='_blank'>the appsetting</a> you can configure whether you want the background service to be blocking or not.
+
+You'll see that when the value is true, the `/counter` endpoint cannot be reached.
+
+Cheers!
