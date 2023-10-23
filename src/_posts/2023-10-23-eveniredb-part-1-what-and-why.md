@@ -1,6 +1,6 @@
 ---
 description: >
-  EvenireDB is yet another database engine, but specifically for Event Sourcing. 
+  EvenireDB is yet another database engine written in .NET, specifically for Event Sourcing. 
 id: 8035
 title: 'EvenireDB part 1: what and why?'
 date: 2023-10-23T00:57:23-05:00
