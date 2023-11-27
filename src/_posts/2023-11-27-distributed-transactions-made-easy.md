@@ -17,7 +17,7 @@ categories:
 ---
 
 ### Disclaimer
-> This article contains a snippet from my last booklet: <a href='https://payhip.com/b/tezgU' target='_blank'>Distributed Transactions Made Easy</a>
+> This article contains a snippet from my last booklet: <a href='https://store.davidguida.net/b/tezgU' target='_blank'>Distributed Transactions Made Easy</a>
 
 In the world of microservices and globally distributed applications, we can find ourselves quite often in charge of juggling complex operations that span multiple services. 
 
@@ -43,4 +43,4 @@ So now transactions span multiple microservices and multiple databases. Our goal
 
 Basically, each service has to remain in a consistent state, even if one of them fails during the transaction. 
 
-> Don't miss the rest of the chapter! <a href='https://payhip.com/b/tezgU' target='_blank'>Distributed Transactions Made Easy</a> is available now!
+> Don't miss the rest of the chapter! <a href='https://store.davidguida.net/b/tezgU' target='_blank'>Distributed Transactions Made Easy</a> is available now!
