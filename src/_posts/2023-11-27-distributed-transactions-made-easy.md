@@ -1,6 +1,6 @@
 ---
 description: >
-  EvenireDB is yet another database engine written in .NET, specifically for Event Sourcing. 
+  Distributed Transactions Made Easy is my attempt at demistifying the issues that may arise when working with complex, distributed systems. Go check it out now!
 id: 8037
 title: 'Distributed Transactions Made Easy'
 date: 2023-11-27T00:57:23-05:00
