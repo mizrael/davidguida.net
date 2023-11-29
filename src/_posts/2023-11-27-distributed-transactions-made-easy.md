@@ -17,7 +17,7 @@ categories:
 ---
 
 ### Disclaimer
-> This article contains a snippet from my last booklet: <a href='https://store.davidguida.net/b/tezgU' target='_blank'>Distributed Transactions Made Easy</a>
+> This article contains a snippet from my booklet: <a href='https://store.davidguida.net/b/tezgU' target='_blank'>Distributed Transactions Made Easy</a>
 
 In the world of microservices and globally distributed applications, we can find ourselves quite often in charge of juggling complex operations that span multiple services. 
 
