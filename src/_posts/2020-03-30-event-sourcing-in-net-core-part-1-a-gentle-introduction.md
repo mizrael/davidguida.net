@@ -30,7 +30,7 @@ tags:
 ---
 **Event sourcing**, aka "the great myth". I've been thinking about writing a series of articles about this for a while, and now it's time to put my hands back on the keyboard. 
 
-I thought that with all this bull**it pandemic at least I could have had more time to write on this blog but it turns out the reality has been **slightly** different so far.
+I thought that with all this bull$@#it pandemic at least I could have had more time to write on this blog but it turns out the reality has been **slightly** different so far.
 
 Anyways let's get back in track! **Event sourcing**. It's probably one of the hardest things to code, immediately after <a rel="noreferrer noopener" aria-label="two other things (opens in a new tab)" href="https://martinfowler.com/bliki/TwoHardThings.html" target="_blank">two other things</a>.
 
