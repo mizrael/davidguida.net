@@ -33,11 +33,11 @@ tags:
   - Azure Functions
   - message queues
 ---
-Hi All! Today we&#8217;re going to see how to dynamically set the blob name and write to it in an **Azure Function**. This is probably my first Azure article ever, and probably the first one of a long list 🙂
+Hi All! Today we're going to see how to dynamically set the blob name and write to it in an **Azure Function**. This is probably my first Azure article ever, and probably the first one of a long list 🙂
 
-I&#8217;ll probably end up writing something about **Azure** and **Event Sourcing** at some point, so if you&#8217;re interested don&#8217;t forget to take a look at my <a href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">other articles</a>.
+I'll probably end up writing something about **Azure** and **Event Sourcing** at some point, so if you're interested don't forget to take a look at my <a href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">other articles</a>.
 
-So, let&#8217;s suppose we have a nice Azure Function with a <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob?WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener">BlobTrigger</a>, meaning that the function will be triggered every time a file is uploaded to a specific Blob Container.
+So, let's suppose we have a nice Azure Function with a <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob?WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener">BlobTrigger</a>, meaning that the function will be triggered every time a file is uploaded to a specific Blob Container.
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">[FunctionName("MyFancyFunction")]
 public static async Task Run([BlobTrigger("inbound/{name}", Connection = "AzureWebJobsStorage")] Stream inboundBlob, string name)
@@ -70,7 +70,7 @@ string blobExtension){
 
 We can leverage this pattern for example if we want our Function to execute only for specific extensions (eg _{blobName}.jpg_ ).
 
-In some cases, however, we might want to generate the output filename at runtime. We could leverage the** _{rand-guid}_** expression or even **_{Datetime}_**, but in that case, we won&#8217;t have real control over it. We can&#8217;t even store it in a temporary variable for later reuse.
+In some cases, however, we might want to generate the output filename at runtime. We could leverage the** _{rand-guid}_** expression or even **_{Datetime}_**, but in that case, we won't have real control over it. We can't even store it in a temporary variable for later reuse.
 
 This is the situation where <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-dotnet-class-library?WT.mc_id=DOP-MVP-5003878#binding-at-runtime" target="_blank" rel="noreferrer noopener">imperative binding</a> comes to the rescue: by adding an instance of _<a aria-label="undefined (opens in a new tab)" rel="noreferrer noopener" href="https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IBinder.cs" target="_blank">IBinder </a>_as input parameter, we can generate the name of the destination Blob with our own rules and directly get a reference to it:
 
@@ -81,7 +81,7 @@ This is the situation where <a href="https://docs.microsoft.com/en-us/azure/azur
     // process the stream
 }</pre>
 
-In this snippet, we&#8217;re creating a new GUID and using it as Blob name. We can, later on, use it to create a message and send it to a Queue to be picked up by another process.
+In this snippet, we're creating a new GUID and using it as Blob name. We can, later on, use it to create a message and send it to a Queue to be picked up by another process.
 
 <div class="post-details-footer-widgets">
 </div>

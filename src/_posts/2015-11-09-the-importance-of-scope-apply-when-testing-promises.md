@@ -14,11 +14,11 @@ categories:
   - Javascript
   - Programming
 ---
-&#8220;remember kids, Jasmine likes to apply&#8221;
+"remember kids, Jasmine likes to apply"
 
 &#8230;sorry, what?
 
-Well, basically, it&#8217;s simple: when writing unit tests on promises with <a href="http://jasmine.github.io/" target="_blank">Jasmine</a>, remember to call <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" target="_blank">$scope.apply()</a>, it will save you some headaches!
+Well, basically, it's simple: when writing unit tests on promises with <a href="http://jasmine.github.io/" target="_blank">Jasmine</a>, remember to call <a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply" target="_blank">$scope.apply()</a>, it will save you some headaches!
 
 take a look at this AngularJs controller. Look at it.
 
@@ -233,9 +233,9 @@ take a look at this AngularJs controller. Look at it.
   </div>
 </div>
 
-as you can see, on line 18 there&#8217;s a call to fooService.bar() and two callbacks are used to handle the success and error cases.
+as you can see, on line 18 there's a call to fooService.bar() and two callbacks are used to handle the success and error cases.
 
-Here instead, there&#8217;s an example of how you could test the error case:
+Here instead, there's an example of how you could test the error case:
 
 <div style="tab-size: 8" id="gist27868213" class="gist">
   <div class="gist-file">
@@ -492,7 +492,7 @@ Here instead, there&#8217;s an example of how you could test the error case:
 
 in the beforeEach() block a mock service is created with a rejected promise (line 9) and on line 15 the controller is instantiated with the mocked dependencies.
 
-On line 23 there&#8217;s the core of the test: a call to $scope.apply().  
+On line 23 there's the core of the test: a call to $scope.apply().  
 Without it the promise will not be resolved and any method chain will not be executed.  
 The reason is simple: the promises implementation is tied to the digest cycle, which is not handled by Jasmine. Calling $scope.apply() will update the internal status and take care of digest for you.
 

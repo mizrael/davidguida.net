@@ -2,7 +2,7 @@
 description: >
   Welcome back to part 12 of our Blazor 2d Gamedev series. Today we're going to see how we can handle collision detection in an efficient way.
 id: 7981
-title: 'Blazor Gamedev  &#8211; part 12: collision detection'
+title: 'Blazor Gamedev  - part 12: collision detection'
 date: 2021-02-07T19:17:07-05:00
 author: David Guida
 layout: post
@@ -22,13 +22,13 @@ tags:
   - design patterns
   - Gamedev
 ---
-Hi All! Welcome back to part 12 of our **Blazor 2d Gamedev** series. Today we&#8217;re going to see how we can handle **collision detection** in an efficient way.
+Hi All! Welcome back to part 12 of our **Blazor 2d Gamedev** series. Today we're going to see how we can handle **collision detection** in an efficient way.
 
 <a href="https://www.davidguida.net/blazor-gamedev-part-11-improved-assets-loading/" target="_blank" rel="noreferrer noopener">Last time</a> we improved our assets loading code, adding a JSON structure holding the list of each asset in our game.
 
-I&#8217;ve made a lot of changes to the codebase, and I&#8217;ll probably write more about them in the next posts, but today we&#8217;ll focus on **collision detection**.
+I've made a lot of changes to the codebase, and I'll probably write more about them in the next posts, but today we'll focus on **collision detection**.
 
-Today&#8217;s example is already <a href="https://mizrael.github.io/BlazorCanvas/BlazorCanvas.Example11/" target="_blank" rel="noreferrer noopener">available here</a>, take your time to check it. You should see something like this:
+Today's example is already <a href="https://mizrael.github.io/BlazorCanvas/BlazorCanvas.Example11/" target="_blank" rel="noreferrer noopener">available here</a>, take your time to check it. You should see something like this:
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large"><a href="/assets/uploads/2021/02/blazorcanvas-example-11-collision-detection.gif?ssl=1"><img loading="lazy" width="394" height="216" src="/assets/uploads/2021/02/blazorcanvas-example-11-collision-detection.gif?resize=394%2C216&#038;ssl=1" alt="" class="wp-image-7984" data-recalc-dims="1" /></a></figure>
@@ -42,11 +42,11 @@ When we have just a few entities in our game this is fairly easy, we could simpl
 
 <img src="https://i2.wp.com/i.stack.imgur.com/ZEmZ6.png?w=788&#038;ssl=1" alt="" data-recalc-dims="1" /> </figure> 
 
-Unfortunately, this approach doesn&#8217;t scale very well when the number of entities increases drastically. 
+Unfortunately, this approach doesn't scale very well when the number of entities increases drastically. 
 
 ##### Imagine what would happen if we have more asteroids or we start shooting and we have to deal with each bullet.
 
-So what we can do? Well, one alternative (and there are many) is to use a <a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm" target="_blank" rel="noreferrer noopener">divide-et-impera </a>approach. We&#8217;ll have two main steps, B_uild_ and _Check_.
+So what we can do? Well, one alternative (and there are many) is to use a <a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm" target="_blank" rel="noreferrer noopener">divide-et-impera </a>approach. We'll have two main steps, B_uild_ and _Check_.
 
 When _building_ we start by dividing the screen into a regular grid. 
 
@@ -76,7 +76,7 @@ void BuildBuckets()
 }
 ```
 
-Each cell represents a &#8220;bucket&#8221;, containing the bounding boxes of our entities:
+Each cell represents a "bucket", containing the bounding boxes of our entities:
 
 ```csharp
 class CollisionBucket
@@ -126,7 +126,7 @@ We start by clearing the list of buckets for the entity. Then we compute the ind
 
 At this point we can loop over the cells, check if they actually contain the bounding box and if so, we assign the entity to it.
 
-Now, every time an entity moves we update the entity&#8217;s buckets list by calling _RefreshColliderBuckets_() on it. Then we can check for collisions **only** with the active entities in the same bucket:
+Now, every time an entity moves we update the entity's buckets list by calling _RefreshColliderBuckets_() on it. Then we can check for collisions **only** with the active entities in the same bucket:
 
 ```csharp
 void CheckCollisions(BoundingBoxComponent bbox)
@@ -156,7 +156,7 @@ class CollisionBucket
 }
 ```
 
-That&#8217;s it! The sources are in the <a href="https://github.com/mizrael/BlazorCanvas" target="_blank" rel="noreferrer noopener">same repository </a>as usual. 
+That's it! The sources are in the <a href="https://github.com/mizrael/BlazorCanvas" target="_blank" rel="noreferrer noopener">same repository </a>as usual. 
 
 In <a href="/blazor-gamedev-part-13-handling-collisions/" target="_blank">the next article</a> we'll see how we can respond when a collision happens between two GameObjects.
 

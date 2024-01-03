@@ -2,7 +2,7 @@
 description: >
   Welcome back to part 8 of our Blazor 2d gamedev series. Today we'll see how to detect keyboard input to control character animations.
 id: 7522
-title: 'Blazor GameDev &#8211; part 8: keyboard input'
+title: 'Blazor GameDev - part 8: keyboard input'
 date: 2020-08-09T18:02:57-04:00
 author: David Guida
 layout: post
@@ -28,9 +28,9 @@ tags:
   - Blazor
   - Gamedev
 ---
-Hi everyone! Welcome back to part 8 of our **Blazor 2d Gamedev** series. Today we&#8217;re going to refactor our last example, detecting keyboard input to control character animations.
+Hi everyone! Welcome back to part 8 of our **Blazor 2d Gamedev** series. Today we're going to refactor our last example, detecting keyboard input to control character animations.
 
-<a href="https://www.davidguida.net/blazor-gamedev-part-7-animations/" target="_blank" rel="noreferrer noopener">Last time</a> we saw how to load spritesheets and introduced the **<a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example6/Core/Components/AnimatedSpriteRenderComponent.cs" target="_blank" rel="noreferrer noopener">AnimatedSpriteRenderComponent </a>**component. Let&#8217;s now see how we can use the keyboard to switch between animations. The results will look more or less like this:
+<a href="https://www.davidguida.net/blazor-gamedev-part-7-animations/" target="_blank" rel="noreferrer noopener">Last time</a> we saw how to load spritesheets and introduced the **<a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example6/Core/Components/AnimatedSpriteRenderComponent.cs" target="_blank" rel="noreferrer noopener">AnimatedSpriteRenderComponent </a>**component. Let's now see how we can use the keyboard to switch between animations. The results will look more or less like this:
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large"><img loading="lazy" width="212" height="164" src="/assets/uploads/2020/08/blazor-canvas-example7-keyboard-animation-control.gif?resize=212%2C164&#038;ssl=1" alt="" class="wp-image-7617" data-recalc-dims="1" /></figure>
@@ -38,7 +38,7 @@ Hi everyone! Welcome back to part 8 of our **Blazor 2d Gamedev** series. Today w
 
 You can check it out <a href="https://mizrael.github.io/BlazorCanvas/BlazorCanvas.Example7/" target="_blank" rel="noreferrer noopener">in your browser here</a>. Use left/right arrows to control the player.
 
-So let&#8217;s start. The first step, as we did in <a href="https://www.davidguida.net/blazor-gamedev-part-6-mouse-input/" target="_blank" rel="noreferrer noopener">Example 6</a>, is to update our <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example7/wwwroot/index.html" target="_blank" rel="noreferrer noopener">index.html </a>and add the listeners for keyboard events down/up:
+So let's start. The first step, as we did in <a href="https://www.davidguida.net/blazor-gamedev-part-6-mouse-input/" target="_blank" rel="noreferrer noopener">Example 6</a>, is to update our <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example7/wwwroot/index.html" target="_blank" rel="noreferrer noopener">index.html </a>and add the listeners for keyboard events down/up:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="js" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">window.game.canvas.onkeydown = (e) => {
     game.instance.invokeMethodAsync('OnKeyDown', e.keyCode);
@@ -68,7 +68,7 @@ Then we have to update the <a href="https://github.com/mizrael/BlazorCanvas/blob
     public ButtonState GetKeyState(Keys key) => _keyboardStates[key];
 }</pre>
 
-We&#8217;re almost done. This time we&#8217;re going to give our character a <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example7/CharacterBrain.cs" target="_blank" rel="noreferrer noopener">&#8220;bigger&#8221; brain:</a>
+We're almost done. This time we're going to give our character a <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example7/CharacterBrain.cs" target="_blank" rel="noreferrer noopener">"bigger" brain:</a>
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public class CharacterBrain : BaseComponent
 {
@@ -98,7 +98,7 @@ We&#8217;re almost done. This time we&#8217;re going to give our character a <a 
     }
 }</pre>
 
-Let&#8217;s see what&#8217;s happening here. At every update we get the current input state and if the button is pressed, we switch to the &#8220;Run&#8221; animation. Otherwise we go back to &#8220;Idle&#8221;. If we&#8217;re going left, we also reverse the direction.
+Let's see what's happening here. At every update we get the current input state and if the button is pressed, we switch to the "Run" animation. Otherwise we go back to "Idle". If we're going left, we also reverse the direction.
 
 The last step is to update our <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example7/Core/Components/AnimatedSpriteRenderComponent.cs" target="_blank" rel="noreferrer noopener">AnimatedSpriteRenderComponent </a>to be able to switch between animations:
 
@@ -147,7 +147,7 @@ The last step is to update our <a href="https://github.com/mizrael/BlazorCanvas/
 
 Not very different from the last time, just a few things to note. The call to <a href="https://www.w3schools.com/tags/canvas_settransform.asp" target="_blank" rel="noreferrer noopener">SetTransformAsync()</a> will create and set a <a href="https://en.wikipedia.org/wiki/Transformation_matrix" target="_blank" rel="noreferrer noopener">transformation matrix</a>. We will use it for now to handle the character flip left/right. Also, we also have to make sure the current frame index is brought back to 0 when we set a new Animation.
 
-That&#8217;s it for now! <a href="https://www.davidguida.net/blazor-gamedev-part-9-finite-state-machine/" target="_blank" rel="noreferrer noopener">Next time</a> we&#8217;ll see how to refactor this code to a more clean structure. Bye!
+That's it for now! <a href="https://www.davidguida.net/blazor-gamedev-part-9-finite-state-machine/" target="_blank" rel="noreferrer noopener">Next time</a> we'll see how to refactor this code to a more clean structure. Bye!
 
 <div class="post-details-footer-widgets">
 </div>

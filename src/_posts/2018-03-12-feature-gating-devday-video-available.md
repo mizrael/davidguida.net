@@ -12,11 +12,11 @@ categories:
   - Ramblings
   - Software Architecture
 ---
-Just a quick update: the folks from DevDay Salerno just uploaded the video from my <a href="https://www.davidguida.net/devday-salerno-lets-talk-about-feature-gating/" target="_blank" rel="noopener">Feature gating talk</a> on Youtube! Unfortunately it&#8217;s in Italian but there are subtitles available 🙂
+Just a quick update: the folks from DevDay Salerno just uploaded the video from my <a href="https://www.davidguida.net/devday-salerno-lets-talk-about-feature-gating/" target="_blank" rel="noopener">Feature gating talk</a> on Youtube! Unfortunately it's in Italian but there are subtitles available 🙂
 
 <span class="embed-youtube" style="text-align:center; display: block;"></span>
 
-In case you still don&#8217;t know I&#8217;m <a href="https://www.davidguida.net/feature-gating-part-1-what-is-it/" target="_blank" rel="noopener">writing a series</a> about Feature Gating, the next episode will be online soon!
+In case you still don't know I'm <a href="https://www.davidguida.net/feature-gating-part-1-what-is-it/" target="_blank" rel="noopener">writing a series</a> about Feature Gating, the next episode will be online soon!
 
 <div class="post-details-footer-widgets">
 </div>

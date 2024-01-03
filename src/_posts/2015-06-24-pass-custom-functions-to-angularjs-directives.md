@@ -28,9 +28,9 @@ categories:
   - Javascript
   - Programming
 ---
-In case you need to pass a callback to your AngularJS directives, looks like one way is to create an <a href="https://docs.angularjs.org/guide/directive#isolating-the-scope-of-a-directive" target="_blank" rel="noopener noreferrer">isolated scope</a> and create a member with the &#8216;&&#8217; attr. Here&#8217;s a quick&dirty example:
+In case you need to pass a callback to your AngularJS directives, looks like one way is to create an <a href="https://docs.angularjs.org/guide/directive#isolating-the-scope-of-a-directive" target="_blank" rel="noopener noreferrer">isolated scope</a> and create a member with the &#8216;&' attr. Here's a quick&dirty example:
 
-In case you have to pass some arguments to the callback, here&#8217;s how:
+In case you have to pass some arguments to the callback, here's how:
 
 Notice that the argument is transformed in a javascript object and passed to the callback. This one is actually a wrapped function around the one you passed.
 

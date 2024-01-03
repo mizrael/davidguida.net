@@ -2,7 +2,7 @@
 description: >
   Hi All! Welcome to the fourth part of the series about Event Sourcing. This time we'll see how we can leverage the events to refresh our Query Models.
 id: 7252
-title: 'Event Sourcing in .NET Core &#8211; part 4: query models'
+title: 'Event Sourcing in .NET Core - part 4: query models'
 date: 2020-05-24T14:43:17-04:00
 author: David Guida
 layout: post
@@ -32,7 +32,7 @@ tags:
   - MongoDB
   - Polly
 ---
-Hi All! Welcome to the fourth part of the series about **Event Sourcing**. This time we&#8217;ll see how we can leverage the events to refresh our **Query Models.**
+Hi All! Welcome to the fourth part of the series about **Event Sourcing**. This time we'll see how we can leverage the events to refresh our **Query Models.**
 
 The <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-3-broadcasting-events/" target="_blank">last time</a> we saw how we can make use of a **message queue** to publish domain events to other interested parties.
 
@@ -42,7 +42,7 @@ As I mentioned last time, one of the prerequisites of Event Sourcing is CQRS. Th
 
 For example, we could have a Query Model representing the archive of Customers, exposing only name and email, and another collection holding instead the full details ( number of orders, quotes, comments, whatever).
 
-In the sample code I wrote for this series, I&#8217;m using MongoDB as persistence storage to hold the Query Models. A NoSQL DB is often a good choice for this kind of operation: data is denormalized and stored in the exact form we need and there&#8217;s no need for expensive joins of any sort. All the necessary logic to handle the relationship is executed once during the (re-)generation of the document.
+In the sample code I wrote for this series, I'm using MongoDB as persistence storage to hold the Query Models. A NoSQL DB is often a good choice for this kind of operation: data is denormalized and stored in the exact form we need and there's no need for expensive joins of any sort. All the necessary logic to handle the relationship is executed once during the (re-)generation of the document.
 
 As I mentioned last time, a Background Worker is listening for events on a Kafka topic. Once an event is received, will be deserialized and passed to an instance of <a rel="noreferrer noopener" href="https://github.com/jbogard/MediatR" target="_blank">MediatR</a>, which will take care of finding the right handler.
 
@@ -78,15 +78,15 @@ For example, this is the code for rebuilding the Customer Details:
                 options: new UpdateOptions() { IsUpsert = true });
         }</pre>
 
-As you can see I&#8217;m using _<a rel="noreferrer noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.update/#update-upsert" target="_blank">UpdateOneAsync</a>_() on the _CustomersDetails ****_collection. It&#8217;s an <a href="https://en.wiktionary.org/wiki/upsert" target="_blank" rel="noreferrer noopener">upsert operation</a>: this way the DB will atomically create the document or replace its values.
+As you can see I'm using _<a rel="noreferrer noopener" href="https://docs.mongodb.com/manual/reference/method/db.collection.update/#update-upsert" target="_blank">UpdateOneAsync</a>_() on the _CustomersDetails ****_collection. It's an <a href="https://en.wiktionary.org/wiki/upsert" target="_blank" rel="noreferrer noopener">upsert operation</a>: this way the DB will atomically create the document or replace its values.
 
 Event Sourcing is an extremely interesting architectural pattern, and can lead to excellent results when implemented properly. 
 
 #### It comes with a huge cost in terms of code complexity and it also requires a lot of discipline from the dev team.
 
-Just to give an example, since the system becomes &#8220;<a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Eventual_consistency" target="_blank">eventually consistent</a>&#8220;, we might incur in situations where the event for creating an Account is picked up **before** the Customer&#8217;s creation.
+Just to give an example, since the system becomes "<a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Eventual_consistency" target="_blank">eventually consistent</a>", we might incur in situations where the event for creating an Account is picked up **before** the Customer's creation.
 
-Let&#8217;s take a look at the AccountCreated event handler:
+Let's take a look at the AccountCreated event handler:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public async Task Handle(EventReceived&lt;AccountCreated> @event, CancellationToken cancellationToken)
         {
@@ -145,7 +145,7 @@ An approach to handle this kind of situation is instead to use a retry mechanism
         }
     }</pre>
 
-<del>This was the last article of the series</del>. <a href="https://www.davidguida.net/event-sourcing-in-net-core-part-5-offline-consumers/" target="_blank" rel="noreferrer noopener">Next time</a> we&#8217;ll see what is an offline consumer and why we all need one. Make sure you&#8217;re not missing <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">part 1</a>, <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-2-storing-events/" target="_blank">part 2</a>, and <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-3-broadcasting-events/" target="_blank">part 3</a> !. 
+<del>This was the last article of the series</del>. <a href="https://www.davidguida.net/event-sourcing-in-net-core-part-5-offline-consumers/" target="_blank" rel="noreferrer noopener">Next time</a> we'll see what is an offline consumer and why we all need one. Make sure you're not missing <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">part 1</a>, <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-2-storing-events/" target="_blank">part 2</a>, and <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-3-broadcasting-events/" target="_blank">part 3</a> !. 
 
 <div class="post-details-footer-widgets">
 </div>

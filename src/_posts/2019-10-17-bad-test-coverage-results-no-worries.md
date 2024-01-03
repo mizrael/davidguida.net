@@ -32,7 +32,7 @@ Yesterday I stumbled upon an “interesting” bug in the code coverage tool. In
 
 At work by policy we have to ensure at least 70% of test coverage. However in one of my projects I was getting way worse results, in some cases even 0%.
 
-I&#8217;m pretty paranoid about testing, and when possible I tend to follow TDD along with the <a href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noreferrer noopener" aria-label="Test Pyramid (opens in a new tab)">Test Pyramid</a>.
+I'm pretty paranoid about testing, and when possible I tend to follow TDD along with the <a href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noreferrer noopener" aria-label="Test Pyramid (opens in a new tab)">Test Pyramid</a>.
 
 Long story short, I found out that if you have long running tests (eg. single tests taking more than 10 seconds to complete) **AND** you’re using .NET Core, the **dotnet test** command might terminate its execution **before** the report files get written. This will lead to bad results, in some cases even 0% ( which happened to me).
 
@@ -48,7 +48,7 @@ For more details you can take a look here:
   * <a rel="noreferrer noopener" aria-label="https://github.com/tonerdo/coverlet#vstest-integration (opens in a new tab)" href="https://github.com/tonerdo/coverlet#vstest-integration" target="_blank">https://github.com/tonerdo/coverlet#vstest-integration</a>
   * <https://github.com/tonerdo/coverlet/blob/master/Documentation/Troubleshooting.md#collectors-integration> 
 
-Oh and don&#8217;t forget that if you have NDepend, you can import the coverage results and have a very pretty report. <figure class="wp-block-image">
+Oh and don't forget that if you have NDepend, you can import the coverage results and have a very pretty report. <figure class="wp-block-image">
 
 <img src="https://i2.wp.com/www.ndepend.com/Doc/Treemap/TreemapColor.png?w=788&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>courtesy of NDepend</figcaption></figure> 
 

@@ -25,13 +25,13 @@ In this **series of articles** we will
   * how Feature Gating can help us and why should we be using it
   * how to fight the infamous tech debt
 
-So let&#8217;s start!
+So let's start!
 
 As I wrote already in <a href="https://www.davidguida.net/devday-salerno-lets-talk-about-feature-gating/" target="_blank" rel="noopener">my last post</a>,&nbsp;Feature Gating is an interesting and easy tool to leverage when you want more flexibility during production deployment. It helps&nbsp;controlling and shipping new features faster allowing practices like&nbsp;<a href="https://martinfowler.com/bliki/CanaryRelease.html" target="_blank" rel="noopener">canary releases</a> and&nbsp;<a href="https://en.wikipedia.org/wiki/A/B_testing" target="_blank" rel="noopener">A/B testing</a>.
 
-But what&#8217;s the heart of it? An **IF block**. Nothing else.&nbsp;
+But what's the heart of it? An **IF block**. Nothing else.&nbsp;
 
-Suppose you&#8217;re asked to rewrite a functionality, the first thing you would probably do is commenting the old code and replace it with a new function. Something like this:
+Suppose you're asked to rewrite a functionality, the first thing you would probably do is commenting the old code and replace it with a new function. Something like this:
 
 <div style="tab-size: 8" id="gist87451611" class="gist">
   <div class="gist-file">
@@ -168,12 +168,12 @@ Suppose you&#8217;re asked to rewrite a functionality, the first thing you would
 
 Then (probably, **hopefully**) you update your tests and deploy to production. And right after you discover that maybe
 
-  * the code is not exactly doing what it&#8217;s supposed to do
+  * the code is not exactly doing what it's supposed to do
   * performances are lower than expected
   * a bug slipped through
   * whatever
 
-So how can you control this without updating the code and deploying again? Let&#8217;s see a very simple solution:
+So how can you control this without updating the code and deploying again? Let's see a very simple solution:
 
 <div style="tab-size: 8" id="gist87452168" class="gist">
   <div class="gist-file">
@@ -282,7 +282,7 @@ So how can you control this without updating the code and deploying again? Let&#
   </div>
 </div>
 
-We introduced another actor, this &#8220;checkFeatureIsOn&#8221; function. It will take the name of the feature and return a **boolean** **flag** indicating whether or not use the new codepath.
+We introduced another actor, this "checkFeatureIsOn" function. It will take the name of the feature and return a **boolean** **flag** indicating whether or not use the new codepath.
 
 <a href="https://www.davidguida.net/feature-gating-part-2-how-can-we-store-the-flags/" target="_blank" rel="noopener">In the next article</a> we will explore how would you store all the flags. Stay tuned!
 

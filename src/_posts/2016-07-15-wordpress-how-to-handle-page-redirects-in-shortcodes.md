@@ -13,7 +13,7 @@ categories:
   - Programming
   - Wordpress
 ---
-This is just a quick tip, something that I faced a while ago while working on a client&#8217;s website.  
+This is just a quick tip, something that I faced a while ago while working on a client's website.  
 I had to develop a shortcode responsible to render a form and obviously after the submission I wanted to redirect the user to another url (following the <a href="https://en.wikipedia.org/wiki/Post/Redirect/Get" target="_blank">POST/redirect/GET pattern</a>).
 
 It may seem easy but using something like wp_redirect directly in the shortcode rendering block may cause errors like this:
@@ -225,7 +225,7 @@ One possible (and very easy) solution is to register a function for the <a href=
   </div>
 </div>
 
-of course don&#8217;t forget to create an instance of the class!
+of course don't forget to create an instance of the class!
 
 <div class="post-details-footer-widgets">
 </div>

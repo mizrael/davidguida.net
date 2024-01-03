@@ -1,6 +1,6 @@
 ---
 id: 6136
-title: 'CQRS: on Commands and Validation &#8211; part 1: introduction'
+title: 'CQRS: on Commands and Validation - part 1: introduction'
 date: 2016-02-25T18:47:03-05:00
 author: David Guida
 layout: post

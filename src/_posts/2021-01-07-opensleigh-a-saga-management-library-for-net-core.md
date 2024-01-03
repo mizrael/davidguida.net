@@ -29,9 +29,9 @@ tags:
   - rabbitmq
   - software architecture
 ---
-Hi All! Today I want to talk a bit about a pet project of mine I&#8217;ve been working on in the last few weeks. I called it _**<a href="https://github.com/mizrael/OpenSleigh" target="_blank" rel="noreferrer noopener">OpenSleigh</a>**_, it&#8217;s a Saga management library for .NET Core.
+Hi All! Today I want to talk a bit about a pet project of mine I've been working on in the last few weeks. I called it _**<a href="https://github.com/mizrael/OpenSleigh" target="_blank" rel="noreferrer noopener">OpenSleigh</a>**_, it's a Saga management library for .NET Core.
 
-For those who don&#8217;t know what the Saga Pattern is, Chris Richardson has a very good introduction <a href="https://microservices.io/patterns/data/saga.html" target="_blank" rel="noreferrer noopener">on his website</a>.
+For those who don't know what the Saga Pattern is, Chris Richardson has a very good introduction <a href="https://microservices.io/patterns/data/saga.html" target="_blank" rel="noreferrer noopener">on his website</a>.
 
 The basic idea is quite interesting: in a micro-service architecture, it often happens that we need to handle several long-running operations that span multiple services. <a href="https://www.davidguida.net/improving-microservices-reliability-part-1-two-phase-commit/" target="_blank" rel="noreferrer noopener">Distributed transactions</a> are a nasty little beast and we also need a way to keep track of the global status and manage the whole flow.
 
@@ -53,11 +53,11 @@ These are the packages available at the moment:
 
 Now, there are already several valuable alternatives on the market, like <a href="https://masstransit-project.com/" target="_blank" rel="noreferrer noopener">MassTransit</a> and <a href="https://particular.net/nservicebus" target="_blank" rel="noreferrer noopener">NServiceBus</a>. So why did I started this project?
 
-#### Because I was **curious**. And I&#8217;m pretty damn sure many of you can relate.
+#### Because I was **curious**. And I'm pretty damn sure many of you can relate.
 
 I wanted to see how a Saga system works from the inside. Also, I wondered if I could build one myself from scratch. I wanted to create an open-source project and create a community around it.
 
-So don&#8217;t hesitate! Take a look at <a href="https://github.com/mizrael/OpenSleigh" target="_blank" rel="noreferrer noopener">the repository</a> on GitHub, download the packages, play with them, and send me your feedback! 
+So don't hesitate! Take a look at <a href="https://github.com/mizrael/OpenSleigh" target="_blank" rel="noreferrer noopener">the repository</a> on GitHub, download the packages, play with them, and send me your feedback! 
 
 <div class="post-details-footer-widgets">
 </div>

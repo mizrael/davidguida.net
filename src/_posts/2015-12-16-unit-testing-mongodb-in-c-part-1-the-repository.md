@@ -16,7 +16,7 @@ categories:
   - Software Architecture
   - Testing
 ---
-Ok folks, this time I&#8217;ll talk/brag a little bit about the fabulous C# MongoDB driver and how you can write some testable code with it.
+Ok folks, this time I'll talk/brag a little bit about the fabulous C# MongoDB driver and how you can write some testable code with it.
 
 If you have come across this post, probably you already know what unit tests and TDD are so you can go directly to the code.
 
@@ -30,13 +30,13 @@ Take your time, I will be here.
 
 &nbsp;
 
-Interesting concept, isn&#8217;t it?
+Interesting concept, isn't it?
 
-Just because I like adding links to my posts, the amazing uncle Bob <a href="http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd" target="_blank">has a nice list of</a> the &#8220;three rules&#8221; of TDD.
+Just because I like adding links to my posts, the amazing uncle Bob <a href="http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd" target="_blank">has a nice list of</a> the "three rules" of TDD.
 
-Although there might be cases where TDD <a href="http://chrismdp.com/2015/03/why-games-coders-dont-use-tdd-and-why-it-matters/" target="_blank">is not advisable</a>, or where is <a href="https://blog.8thlight.com/uncle-bob/2014/04/30/When-tdd-does-not-work.html" target="_blank">basically useless</a>, it&#8217;s an essential tool that every developer needs to have at his disposal&#8230; so let&#8217;s get started!
+Although there might be cases where TDD <a href="http://chrismdp.com/2015/03/why-games-coders-dont-use-tdd-and-why-it-matters/" target="_blank">is not advisable</a>, or where is <a href="https://blog.8thlight.com/uncle-bob/2014/04/30/When-tdd-does-not-work.html" target="_blank">basically useless</a>, it's an essential tool that every developer needs to have at his disposal&#8230; so let's get started!
 
-The basic idea is to have an interface for everything. Yes, simple as that. [DI](http://www.martinfowler.com/articles/injection.html) at it&#8217;s finest, kids! Always remember to separate your concerns, avoiding  huge monolithic classes that do too much. Divide et impera.
+The basic idea is to have an interface for everything. Yes, simple as that. [DI](http://www.martinfowler.com/articles/injection.html) at it's finest, kids! Always remember to separate your concerns, avoiding  huge monolithic classes that do too much. Divide et impera.
 
 We can start with this:
 
@@ -147,11 +147,11 @@ We can start with this:
   </div>
 </div>
 
-Small and easy. Just basic read and update operations, nothing else. You can find a [sample implementation here](https://gist.github.com/mizrael/47b601b0a09d4b6f03f6), as you can see it&#8217;s a simple wrapper over the MongoDB driver, nothing else, but having the interface allows you to hide all the implementation details AND to eventually mock everything in your tests.
+Small and easy. Just basic read and update operations, nothing else. You can find a [sample implementation here](https://gist.github.com/mizrael/47b601b0a09d4b6f03f6), as you can see it's a simple wrapper over the MongoDB driver, nothing else, but having the interface allows you to hide all the implementation details AND to eventually mock everything in your tests.
 
 Enough for now, the new Star Wars movie is waiting for me !
 
-<a href="http://www.davidguida.net/unit-testing-mongodb-in-c-part-2-the-database-context/" target="_blank">Next time </a>we&#8217;ll talk about factories and how to create a simple database context.
+<a href="http://www.davidguida.net/unit-testing-mongodb-in-c-part-2-the-database-context/" target="_blank">Next time </a>we'll talk about factories and how to create a simple database context.
 
 <div class="post-details-footer-widgets">
 </div>

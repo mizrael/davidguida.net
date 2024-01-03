@@ -19,7 +19,7 @@ categories:
 ---
 <div>
   <p>
-    Finally! This is a real milestone, the API changes were enormous (I was forced to change a lot of code in my crappy engine), but it&#8217;s definitely worth it <img src="https://i1.wp.com/davideguida.netne.net/libs/fckeditor/editor/images/smiley/msn/thumbs_up.gif?w=788" alt="" data-recalc-dims="1" />
+    Finally! This is a real milestone, the API changes were enormous (I was forced to change a lot of code in my crappy engine), but it's definitely worth it <img src="https://i1.wp.com/davideguida.netne.net/libs/fckeditor/editor/images/smiley/msn/thumbs_up.gif?w=788" alt="" data-recalc-dims="1" />
   </p>
   
   <p>

@@ -18,7 +18,7 @@ categories:
 ---
 I started recently to work on a REST WebAPI project and soon realized I needed a way to pass complex parameters to my GET actions.
 
-For example, in some cases I have &#8220;searcher&#8221; classes that expose properties like pagination data, text fields, identificators and so on, something like this:
+For example, in some cases I have "searcher" classes that expose properties like pagination data, text fields, identificators and so on, something like this:
 
 [csharp]  
 public class Identificator{  
@@ -34,11 +34,11 @@ public Identificator Key {get;set;}
 [/csharp]
 
 and I use classes like this to filter my data and perform queries.  
-I could have used the <a title="FromUriAttribute" href="http://msdn.microsoft.com/en-us/library/system.web.http.fromuriattribute(v=vs.118).aspx" target="_blank">[FromUri]</a> attribute, but seems that it doesn&#8217;t correctly deserialize inner classes.
+I could have used the <a title="FromUriAttribute" href="http://msdn.microsoft.com/en-us/library/system.web.http.fromuriattribute(v=vs.118).aspx" target="_blank">[FromUri]</a> attribute, but seems that it doesn't correctly deserialize inner classes.
 
-Since it&#8217;s perfectly legal to create (on client-side) a JSON string from the &#8220;searcher&#8221; and pass it on the querystring, I spent an hour or so to create a custom attribute that works like [FromUri], but is able to deserialize the JSON data to the correct model type.
+Since it's perfectly legal to create (on client-side) a JSON string from the "searcher" and pass it on the querystring, I spent an hour or so to create a custom attribute that works like [FromUri], but is able to deserialize the JSON data to the correct model type.
 
-I have created a repo on Git, here&#8217;s the link: <a title="MVC-Json-Model-From-Uri" href="https://github.com/mizrael/MVC-Json-Model-From-Uri" target="_blank">https://github.com/mizrael/MVC-Json-Model-From-Uri</a>
+I have created a repo on Git, here's the link: <a title="MVC-Json-Model-From-Uri" href="https://github.com/mizrael/MVC-Json-Model-From-Uri" target="_blank">https://github.com/mizrael/MVC-Json-Model-From-Uri</a>
 
 PS: this is the first post I write using my new MacbookPro 😀
 

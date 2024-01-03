@@ -19,9 +19,9 @@ categories:
 ---
 This is my first post on Docker so please be gentle. I am going to start with something easy: how to create a Docker container to host a WordPress website.
 
-One word before we start: **don&#8217;t** do this on a production server! There are more rules and checks you have to do, this is just an introduction, good for a dev/demo environment.
+One word before we start: **don't** do this on a production server! There are more rules and checks you have to do, this is just an introduction, good for a dev/demo environment.
 
-So, I assume you already have **docker** and **docker-compose** installed on your system, but in case you don&#8217;t, there&#8217;s an excellent documentation on the <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">Docker&#8217;s website</a>.
+So, I assume you already have **docker** and **docker-compose** installed on your system, but in case you don't, there's an excellent documentation on the <a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener noreferrer">Docker's website</a>.
 
 The first step is to fire up the terminal, create a folder and save the contents of <a href="https://gist.github.com/mizrael/7b3f56033748ad6fa1c6a2ad63e957ef" target="_blank" rel="noopener noreferrer">this gist</a> to a file named&nbsp;**docker-compose.yml** .
 
@@ -29,7 +29,7 @@ Next step is to fire up&nbsp;the containers with this command:
 
 > docker-compose up -d
 
-the **-d** is the &#8220;detached mode&#8221;, allows you to run the containers in background and keep using the terminal.
+the **-d** is the "detached mode", allows you to run the containers in background and keep using the terminal.
 
 Now, if you take a look at our Compose configuration, on line 22 we have specified an host address for the mysql instance. It might be already correct, but better check.&nbsp;  
 From the command line, first run
@@ -62,7 +62,7 @@ You will get a big JSON object exposing the status and all the available propert
 
 there you go, our IPAddress. Copy it into the docker-compose file and run again&nbsp;docker-compose up -d .
 
-Now we need to create a db user. Open your browser and go to&nbsp;**http://localhost:8181/** , you will see the phpMyAdmin interface. Create the user, the db and set the allowed hosts to **%** . This way we will allow connections from every address. Again: **don&#8217;t do this on production!**
+Now we need to create a db user. Open your browser and go to&nbsp;**http://localhost:8181/** , you will see the phpMyAdmin interface. Create the user, the db and set the allowed hosts to **%** . This way we will allow connections from every address. Again: **don't do this on production!**
 
 Now all you have to do is to load&nbsp;**http://localhost:8080/** and setup your WordPress instance 🙂
 

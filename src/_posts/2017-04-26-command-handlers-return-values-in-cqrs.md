@@ -28,17 +28,17 @@ categories:
   - Software Architecture
   - WebAPI
 ---
-I have recently come across this <a href="https://jimmybogard.com/domain-command-patterns-validation/" target="_blank" rel="noopener noreferrer">very interesting blog post</a> by Jimmy Bogard ( the guy behind <a href="https://github.com/jbogard/MediatR" target="_blank" rel="noopener noreferrer">Mediatr</a>, just FYI). He&#8217;s talking about CQRS, and makes a good point about how the user should be informed of the result of a Command execution.
+I have recently come across this <a href="https://jimmybogard.com/domain-command-patterns-validation/" target="_blank" rel="noopener noreferrer">very interesting blog post</a> by Jimmy Bogard ( the guy behind <a href="https://github.com/jbogard/MediatR" target="_blank" rel="noopener noreferrer">Mediatr</a>, just FYI). He's talking about CQRS, and makes a good point about how the user should be informed of the result of a Command execution.
 
 Should the Command Handler return a value?  
 Should the Command Handler throw an exception?
 
 #### These are just some of the strategies we may take. Another option could be to just log the operation and forget that anything happened. Whatever.
 
-<a href="/cqrs-on-commands-and-validation/" target="_blank" rel="noreferrer noopener">A while ago</a> I blogged about how to validate the Commands and ensure the data passed to the Command Handler is valid. This is the strategy I&#8217;ve been adopting in my projects lately. Why? Well, several reasons: first of all I want to keep Command execution separated from the validation. 
+<a href="/cqrs-on-commands-and-validation/" target="_blank" rel="noreferrer noopener">A while ago</a> I blogged about how to validate the Commands and ensure the data passed to the Command Handler is valid. This is the strategy I've been adopting in my projects lately. Why? Well, several reasons: first of all I want to keep Command execution separated from the validation. 
 
-Moreover, Commands should be some sort of &#8220;fire and forget&#8221; operations. Let me clarify this a little bit.  
-In my opinion Command execution should be a boolean operation: the system can either execute it or not. Stop. I should be able to know ahead if a Command can be executed and that&#8217;s the validation phase. If I finally manage to get to the Handler, I know that the data I have is valid and I can run Command. No need to return a &#8220;true&#8221;.
+Moreover, Commands should be some sort of "fire and forget" operations. Let me clarify this a little bit.  
+In my opinion Command execution should be a boolean operation: the system can either execute it or not. Stop. I should be able to know ahead if a Command can be executed and that's the validation phase. If I finally manage to get to the Handler, I know that the data I have is valid and I can run Command. No need to return a "true".
 
 #### So what should I do to make all the pieces fit?
 
@@ -67,7 +67,7 @@ Since most of the projects I am working on lately is composed of some sort of We
 }</pre>
 
 **Bonus  
-** You may have noticed that some of the links in this post point to <a href="https://github.com/mizrael/LibCore" target="_blank" rel="noopener noreferrer">this Github repository</a>, LibCore. It&#8217;s a small set of utilities I am writing, maintaining and using in my projects. I thought it would be useful to share the sources, maybe just to hear comments from the community. Food for thought.
+** You may have noticed that some of the links in this post point to <a href="https://github.com/mizrael/LibCore" target="_blank" rel="noopener noreferrer">this Github repository</a>, LibCore. It's a small set of utilities I am writing, maintaining and using in my projects. I thought it would be useful to share the sources, maybe just to hear comments from the community. Food for thought.
 
 <div class="post-details-footer-widgets">
 </div>

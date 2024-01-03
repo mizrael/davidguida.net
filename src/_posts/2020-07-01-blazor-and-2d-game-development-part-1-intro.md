@@ -2,7 +2,7 @@
 description: >
   In this series of articles we will explore how to do 2d game development with Blazor using an HTML Canvas. All the code will be available on GitHub.
 id: 7394
-title: 'Blazor and 2D game development &#8211; part 1: intro'
+title: 'Blazor and 2D game development - part 1: intro'
 date: 2020-07-01T23:23:24-04:00
 author: David Guida
 layout: post
@@ -22,13 +22,13 @@ tags:
   - Blazor
   - Gamedev
 ---
-Every now and then I go back to **game development**. It&#8217;s literally what brought me into this world of coding, something like 32 years ago. This time I decided to do some experiments with **Blazor** and **2D graphics**.
+Every now and then I go back to **game development**. It's literally what brought me into this world of coding, something like 32 years ago. This time I decided to do some experiments with **Blazor** and **2D graphics**.
 
-I don&#8217;t have a precise goal in mind right now, just playing around. 
+I don't have a precise goal in mind right now, just playing around. 
 
 Probably this late-night fever started when I wrote about <a href="https://www.davidguida.net/how-to-consume-dd-rest-api-over-grpc-web-blazor-part-1-the-client/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">D&D, Blazor and gRPC services</a>. 
 
-#### For those interested, <a href="https://github.com/mizrael/BlazorCanvas" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">on GitHub</a> you can find a repository with all the examples I&#8217;ll be able to come up with.
+#### For those interested, <a href="https://github.com/mizrael/BlazorCanvas" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">on GitHub</a> you can find a repository with all the examples I'll be able to come up with.
 
 For now, I decided to proceed at incremental steps and write small features, one on top of the other. As of today, this is the current list:
 
@@ -41,9 +41,9 @@ For now, I decided to proceed at incremental steps and write small features, one
 
 I will try to write an article for every example, it will also serve as reminder of my train of thought and how I managed to get the code in that shape.
 
-As I wrote previously, I don&#8217;t have a precise goal at the moment. I _might_ end up with something playable, although I tend to change idea quite often on this matter. As many of us, I can get distracted quite easily by new shiny toys. Or simply by life 🙂
+As I wrote previously, I don't have a precise goal at the moment. I _might_ end up with something playable, although I tend to change idea quite often on this matter. As many of us, I can get distracted quite easily by new shiny toys. Or simply by life 🙂
 
-The <a href="https://www.davidguida.net/blazor-gamedev-part-2-canvas-initialization/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">next time</a> we&#8217;ll start by initializing the Canvas and rendering some text.
+The <a href="https://www.davidguida.net/blazor-gamedev-part-2-canvas-initialization/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">next time</a> we'll start by initializing the Canvas and rendering some text.
 
 
 

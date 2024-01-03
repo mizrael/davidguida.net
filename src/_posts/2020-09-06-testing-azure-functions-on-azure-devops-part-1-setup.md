@@ -2,7 +2,7 @@
 description: >
   In this first article of the Series, we'll see how to build and setup the testing framework for our Azure Functions.
 id: 7649
-title: 'Testing Azure Functions on Azure DevOps &#8211; part 1: setup'
+title: 'Testing Azure Functions on Azure DevOps - part 1: setup'
 date: 2020-09-06T20:27:00-04:00
 author: David Guida
 layout: post
@@ -32,21 +32,21 @@ tags:
   - Azure Functions
   - testing
 ---
-Hi All! Today we&#8217;re going to talk a bit about testing strategies for Azure Functions. We&#8217;ll see how setup our test framework and in another article, we&#8217;ll see how to create a build pipeline on **<a href="https://azure.microsoft.com/en-us/services/devops/?WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener">Azure DevOps</a>.**
+Hi All! Today we're going to talk a bit about testing strategies for Azure Functions. We'll see how setup our test framework and in another article, we'll see how to create a build pipeline on **<a href="https://azure.microsoft.com/en-us/services/devops/?WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener">Azure DevOps</a>.**
 
-As part of my daily job, I&#8217;m spending a lot of time working with Azure and Azure Functions. These days I&#8217;m also working a lot with <a href="https://www.davidguida.net/how-to-use-azure-durable-entities-to-see-whos-the-strongest-avenger/" target="_blank" rel="noreferrer noopener">Durable Entities</a>, which open the door to even more scenarios. Anyways, no matter what&#8217;s the technology behind, one of the best ways to ensure that our software is reliable is to add automatic tests. And these tests **have to be part of the build pipeline**.
+As part of my daily job, I'm spending a lot of time working with Azure and Azure Functions. These days I'm also working a lot with <a href="https://www.davidguida.net/how-to-use-azure-durable-entities-to-see-whos-the-strongest-avenger/" target="_blank" rel="noreferrer noopener">Durable Entities</a>, which open the door to even more scenarios. Anyways, no matter what's the technology behind, one of the best ways to ensure that our software is reliable is to add automatic tests. And these tests **have to be part of the build pipeline**.
 
-Now, based on my researches so far, we can&#8217;t create a Functions Host directly as <a rel="noreferrer noopener" href="https://www.davidguida.net/testing-boundaries-web-api/" target="_blank">we could do</a> for a &#8220;regular&#8221; WebAPI. What we can do instead is make use of the <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?WT.mc_id=DOP-MVP-5003878" target="_blank">Azure Function Core Tools</a> and manually (aka via code) spin up the host in an XUnit Fixture.
+Now, based on my researches so far, we can't create a Functions Host directly as <a rel="noreferrer noopener" href="https://www.davidguida.net/testing-boundaries-web-api/" target="_blank">we could do</a> for a "regular" WebAPI. What we can do instead is make use of the <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?WT.mc_id=DOP-MVP-5003878" target="_blank">Azure Function Core Tools</a> and manually (aka via code) spin up the host in an XUnit Fixture.
 
-This has the only drawback that when running the tests locally we won&#8217;t be able to debug the Function code. However, keep in mind the goal here: we want to test the boundaries of our services by probing the various <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener">Function Triggers</a>. 
+This has the only drawback that when running the tests locally we won't be able to debug the Function code. However, keep in mind the goal here: we want to test the boundaries of our services by probing the various <a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener">Function Triggers</a>. 
 
-#### And this is a form of _<a href="https://academic.microsoft.com/topic/24169984/publication/search?q=Black-box%20testing&qe=And(Composite(F.FId%253D24169984)%252CTy%253D%270%27)&f=&orderBy=0" target="_blank" rel="noreferrer noopener">Black Box Testing</a>_**:** we&#8217;re not supposed to know what&#8217;s inside the box, only how to operate it.
+#### And this is a form of _<a href="https://academic.microsoft.com/topic/24169984/publication/search?q=Black-box%20testing&qe=And(Composite(F.FId%253D24169984)%252CTy%253D%270%27)&f=&orderBy=0" target="_blank" rel="noreferrer noopener">Black Box Testing</a>_**:** we're not supposed to know what's inside the box, only how to operate it.
 
-If we need to debug, we can always run the Function project directly from VS and check the behaviour via Postman (if it&#8217;s a REST endpoint). Just sayin&#8217;.
+If we need to debug, we can always run the Function project directly from VS and check the behaviour via Postman (if it's a REST endpoint). Just sayin'.
 
 Moreover, as stated before, we will be executing those tests in our build pipeline, so debugging is not our primary interest.
 
-Anyways, let&#8217;s just into the code! The first thing to do, assuming we already have an **Azure Functions** project, is to create the Test project, add a reference to XUnit and create a <a href="https://xunit.net/docs/shared-context" target="_blank" rel="noreferrer noopener">Fixture</a>:
+Anyways, let's just into the code! The first thing to do, assuming we already have an **Azure Functions** project, is to create the Test project, add a reference to XUnit and create a <a href="https://xunit.net/docs/shared-context" target="_blank" rel="noreferrer noopener">Fixture</a>:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public class AzureFunctionsFixture : IDisposable
 {
@@ -79,7 +79,7 @@ Anyways, let&#8217;s just into the code! The first thing to do, assuming we alre
 	}
 }</pre>
 
-As you can see, in the cTor we&#8217;re reading few values from the configuration:
+As you can see, in the cTor we're reading few values from the configuration:
 
   * the path to _dotnet.exe_
   * the path to _func.dll_ from the **Azure Functions Core Tools**
@@ -92,7 +92,7 @@ The _Process_ class will be basically running something like:
 
 from the _bin\Debug_ (or _Release_) directory of our Azure Functions project.
 
-We&#8217;re also creating and publicly exposing an _HttpClient_: our tests will be using it to &#8220;talk&#8221; with the Functions Host. To keep things simple, I&#8217;m assuming that we&#8217;re using only HTTP Triggers. 
+We're also creating and publicly exposing an _HttpClient_: our tests will be using it to "talk" with the Functions Host. To keep things simple, I'm assuming that we're using only HTTP Triggers. 
 
 As some of you might have noticed, the Fixture class is also implementing _IDisposable_, to properly dispose of the _Process_ and of the _HttpClient_:
 
@@ -109,7 +109,7 @@ As some of you might have noticed, the Fixture class is also implementing _IDisp
 	}
 }</pre>
 
-The next thing to do is to create our test class as usual. Now, it&#8217;s quite likely that we might want to split our tests into multiple classes. 
+The next thing to do is to create our test class as usual. Now, it's quite likely that we might want to split our tests into multiple classes. 
 
 #### In this case, we have to make sure to not spin up more than one Functions Host. 
 
@@ -140,7 +140,7 @@ public class TriggerWorkflowTests
 	}
 }</pre>
 
-That&#8217;s all for today! <a href="https://www.davidguida.net/testing-azure-functions-on-azure-devops-part-2-the-pipeline/" target="_blank" rel="noreferrer noopener">Next time </a>we&#8217;ll push our Azure Functions to the repository and make sure the build pipeline runs fine. Ciao!
+That's all for today! <a href="https://www.davidguida.net/testing-azure-functions-on-azure-devops-part-2-the-pipeline/" target="_blank" rel="noreferrer noopener">Next time </a>we'll push our Azure Functions to the repository and make sure the build pipeline runs fine. Ciao!
 
 <div class="post-details-footer-widgets">
 </div>

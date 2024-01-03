@@ -12,7 +12,7 @@ categories:
 ---
 <div>
   <p>
-    &#8220;Long time no see, just wanted to touch base&#8230;&#8221;
+    "Long time no see, just wanted to touch base&#8230;"
   </p>
   
   <p>
@@ -20,7 +20,7 @@ categories:
   </p>
   
   <p>
-    Anyway, I don&#8217;t want to find excuses for not updating this website enough, so I&#8217;ll quickly go to the point: a friend of mine asked a little help to set up an online contest for a client. All I had to do was to setup the gallery, the rating system and link all the contents to Facebook.
+    Anyway, I don't want to find excuses for not updating this website enough, so I'll quickly go to the point: a friend of mine asked a little help to set up an online contest for a client. All I had to do was to setup the gallery, the rating system and link all the contents to Facebook.
   </p>
   
   <p>

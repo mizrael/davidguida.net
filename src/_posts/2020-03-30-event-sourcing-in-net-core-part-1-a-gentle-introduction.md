@@ -2,7 +2,7 @@
 description: >
   Everything that happens around us is an event of some sort. Let's find out what Event Sourcing is and how we can implement it in .NET Core.
 id: 7079
-title: 'Event Sourcing in .NET Core &#8211; part 1: a gentle introduction'
+title: 'Event Sourcing in .NET Core - part 1: a gentle introduction'
 date: 2020-03-30T05:30:00-04:00
 author: David Guida
 layout: post
@@ -28,23 +28,23 @@ tags:
   - programming
   - software architecture
 ---
-**Event sourcing**, aka &#8220;the great myth&#8221;. I&#8217;ve been thinking about writing a series of articles about this for a while, and now it&#8217;s time to put my hands back on the keyboard. 
+**Event sourcing**, aka "the great myth". I've been thinking about writing a series of articles about this for a while, and now it's time to put my hands back on the keyboard. 
 
 I thought that with all this bull**it pandemic at least I could have had more time to write on this blog but it turns out the reality has been **slightly** different so far.
 
-Anyways let&#8217;s get back in track! **Event sourcing**. It&#8217;s probably one of the hardest things to code, immediately after <a rel="noreferrer noopener" aria-label="two other things (opens in a new tab)" href="https://martinfowler.com/bliki/TwoHardThings.html" target="_blank">two other things</a>.
+Anyways let's get back in track! **Event sourcing**. It's probably one of the hardest things to code, immediately after <a rel="noreferrer noopener" aria-label="two other things (opens in a new tab)" href="https://martinfowler.com/bliki/TwoHardThings.html" target="_blank">two other things</a>.
 
-Everything that happens around us is an event of some sort. The cake is ready in the oven. The bus has arrived at the stop. Your cellphone&#8217;s battery runs out. And for every event, there might be zero or more actors reacting to it. Cause and effect, we could say.
+Everything that happens around us is an event of some sort. The cake is ready in the oven. The bus has arrived at the stop. Your cellphone's battery runs out. And for every event, there might be zero or more actors reacting to it. Cause and effect, we could say.
 
-So how does it translate for us? **Event sourcing**, at its heart, basically means storing all the events occurring on our system in a timely-ordered fashion. All of our write operations are basically appending to a log-like persistence storage and that&#8217;s it. Events can **only** be appended. Not updated or deleted.
+So how does it translate for us? **Event sourcing**, at its heart, basically means storing all the events occurring on our system in a timely-ordered fashion. All of our write operations are basically appending to a log-like persistence storage and that's it. Events can **only** be appended. Not updated or deleted.
 
 #### Then what? How do we **query** our data? Here we get the **reaction** part. 
 
 **Event sourcing** has a very important pre-requisite: CQRS. All the read operations have to be performed on a different datastore, which is in turn populated by the appropriate event handlers.
 
-I know it might sound a bit complex (and actually it is), so let&#8217;s try with an example. 
+I know it might sound a bit complex (and actually it is), so let's try with an example. 
 
-Imagine you&#8217;re writing the software for a bank. The system can:
+Imagine you're writing the software for a bank. The system can:
 
   1. create customers
   2. create accounts for the customers
@@ -58,9 +58,9 @@ Armed with these infos, we can start modeling our **commands**:
   3. withdraw money from an account
   4. deposit money on an account
 
-We&#8217;ll keep it simple and won&#8217;t be dwelling much into **domain-specific** details like currency conversion and the like. Although DDD is another aspect that is essential to our success (and we <a rel="noreferrer noopener" aria-label="discussed it already (opens in a new tab)" href="https://www.davidguida.net/lets-do-some-ddd-with-entity-framework-core-3/" target="_blank">discussed it already</a>).
+We'll keep it simple and won't be dwelling much into **domain-specific** details like currency conversion and the like. Although DDD is another aspect that is essential to our success (and we <a rel="noreferrer noopener" aria-label="discussed it already (opens in a new tab)" href="https://www.davidguida.net/lets-do-some-ddd-with-entity-framework-core-3/" target="_blank">discussed it already</a>).
 
-Let&#8217;s see our **queries** now:
+Let's see our **queries** now:
 
   1. archive of customers, each with the number of open accounts
   2. customer details with the list of accounts, each with its balance
@@ -85,9 +85,6 @@ Performance and scalability. The Query Models can be built with whatever technol
 
 Moreover, the Query DBs can be wiped out and repopulated from scratch by simply replaying all the events. This gives the possibility to avoid potentially problematic things like migrations or even backups since all you have to do is just run the events again and you get the models back.
 
-So where&#8217;s the catch? Well, the drawbacks are a few as well. We&#8217;ll talk about them in another post of this series. <a aria-label="undefined (opens in a new tab)" rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-2-storing-events/" target="_blank">Next time</a> instead we&#8217;ll take a look at a possible implementation of our bank example and we&#8217;ll start talking about how to get events into the system.
+So where's the catch? Well, the drawbacks are a few as well. We'll talk about them in another post of this series. <a aria-label="undefined (opens in a new tab)" rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-2-storing-events/" target="_blank">Next time</a> instead we'll take a look at a possible implementation of our bank example and we'll start talking about how to get events into the system.
 
-If you&#8217;re working on Azure, don&#8217;t miss [my other Articles](https://www.davidguida.net/event-sourcing-on-azure-part-1-architecture-plan/)!
-
-<div class="post-details-footer-widgets">
-</div>
+If you're working on Azure, don't miss [my other Articles](https://www.davidguida.net/event-sourcing-on-azure-part-1-architecture-plan/)!

@@ -19,7 +19,7 @@ categories:
   - Programming
 ---
 Another quick reminder for my sloppy memory:  
-in case you want to use a custom date format and you need validation (of course, why wouldn&#8217;t you?), sometimes may happen that the format you&#8217;re using is not recognised during the client validation phase.
+in case you want to use a custom date format and you need validation (of course, why wouldn't you?), sometimes may happen that the format you're using is not recognised during the client validation phase.
 
 In one of my side projects for example I am using the standard jquery unobtrusive validation along with <a title="jquery/globalize" href="https://github.com/jquery/globalize" target="_blank">globalize.js</a>. Obviously I have a specific bundle configured for this:
 
@@ -34,7 +34,7 @@ var scriptBundle = new ScriptBundle("~/bundles/validation").Include(
 );  
 [/csharp]
 
-In case you have not noticed, I have imported the Italian globalization script. Again, in case you don&#8217;t know, in Italy the date format is usually &#8220;day/month/year&#8221;, or specifically dd/MM/yyyy .
+In case you have not noticed, I have imported the Italian globalization script. Again, in case you don't know, in Italy the date format is usually "day/month/year", or specifically dd/MM/yyyy .
 
 In order to make client validation work, all you have to do is include somewhere in your project this script:
 
@@ -46,7 +46,7 @@ return this.optional(element) || Globalize.parseDate(value, "dd/MM/yyyy", "it-IT
 </script>  
 [/csharp]
 
-that&#8217;s it!
+that's it!
 
 Next time: server-side pagination and AngularJs!
 

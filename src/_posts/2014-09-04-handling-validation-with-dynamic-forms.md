@@ -16,7 +16,7 @@ categories:
   - Javascript
   - Programming
 ---
-Quick tip, more of a reminder for me. In case you have to add/remove fields from a form dynamically and want to apply validation rules on client-side here&#8217;s how you should do:
+Quick tip, more of a reminder for me. In case you have to add/remove fields from a form dynamically and want to apply validation rules on client-side here's how you should do:
 
 [csharp]
 

@@ -14,7 +14,7 @@ categories:
   - Programming
   - Unity
 ---
-Just a quick and dirty tip (actually, more of a reminder for myself), probably there&#8217;s a better way but for now it worked for me&#8230; Basically in Unity I needed a quick way to reference a list of scripts from another script. The idea is to have a &#8220;main&#8221; script holding a list of sub-scripts used to create instances of different game objects (some kind of dynamic factory). The first step is to create a base class for the sub scripts:
+Just a quick and dirty tip (actually, more of a reminder for myself), probably there's a better way but for now it worked for me&#8230; Basically in Unity I needed a quick way to reference a list of scripts from another script. The idea is to have a "main" script holding a list of sub-scripts used to create instances of different game objects (some kind of dynamic factory). The first step is to create a base class for the sub scripts:
 
 [csharp]
 
@@ -40,7 +40,7 @@ public override GameObject CreateHazard(){ &#8230;.. }
 
 [/csharp]
 
-then in the game hierarchy I created a GameObject used as &#8220;controller&#8221; and a child GameObject that contains all the factory scripts. As last step I assigned a script to the &#8220;controller&#8221; GameObject:
+then in the game hierarchy I created a GameObject used as "controller" and a child GameObject that contains all the factory scripts. As last step I assigned a script to the "controller" GameObject:
 
 [csharp]
 

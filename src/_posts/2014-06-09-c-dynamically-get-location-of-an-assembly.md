@@ -13,7 +13,7 @@ categories:
   - .NET
   - Programming
 ---
-This time I&#8217;m posting just a simple tip (because my memory is sloppy, yeah):
+This time I'm posting just a simple tip (because my memory is sloppy, yeah):
 
 I was playing a little bit with T4 templates and dynamic assembly generation and I needed to reference a couple of assembly included in my project. Unfortunately the adding a reference to the <a title="ReferencedAssemblies" href="http://msdn.microsoft.com/it-it/library/system.codedom.compiler.compilerparameters.referencedassemblies(v=vs.110).aspx" target="_blank">ReferencedAssemblies </a>collection on a <a title="CompilerParameters" href="http://msdn.microsoft.com/en-us/library/system.codedom.compiler.compilerparameters.aspx" target="_blank">CompilerParameters </a>instance requires the referenced assembly to be in the GAC or in the same output folder of the executing assembly.
 

@@ -24,7 +24,7 @@ Welcome to the third article of the series!
 
 Injecting just the factory instead allows us to create internally all the repositories we need, add new ones easily and of course makes our life easier when it comes to testing.
 
-Let&#8217;s take a look at our Repository Factory interface:
+Let's take a look at our Repository Factory interface:
 
 <div style="tab-size: 8" id="gist29436836" class="gist">
   <div class="gist-file">
@@ -80,7 +80,7 @@ Let&#8217;s take a look at our Repository Factory interface:
   </div>
 </div>
 
-as you can see, that&#8217;s very standard and easy. The implementation also is pretty straightforward:
+as you can see, that's very standard and easy. The implementation also is pretty straightforward:
 
 <div style="tab-size: 8" id="gist29437022" class="gist">
   <div class="gist-file">
@@ -331,7 +331,7 @@ As you can see, this injected Factory also is very easy:
 
 you can find the <a href="https://gist.github.com/mizrael/d9c9f061b3934a037b21" target="_blank">implementation here</a>.
 
-Next time: [let&#8217;s write some tests](https://www.davidguida.net/unit-testing-mongodb-in-c-part-4-the-tests-finally/)!
+Next time: [let's write some tests](https://www.davidguida.net/unit-testing-mongodb-in-c-part-4-the-tests-finally/)!
 
 <div class="post-details-footer-widgets">
 </div>

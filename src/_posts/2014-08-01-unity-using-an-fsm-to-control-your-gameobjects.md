@@ -17,15 +17,15 @@ categories:
   - Programming
   - Unity
 ---
-Thanks to my good friend <a href="http://www.oldschoolpixels.com/" target="_blank">Maurizio</a>, who&#8217;s been helping me removing the dust from my memory, today I&#8217;ll show you how to use a simple FSM to control your GameObjects 🙂
+Thanks to my good friend <a href="http://www.oldschoolpixels.com/" target="_blank">Maurizio</a>, who's been helping me removing the dust from my memory, today I'll show you how to use a simple FSM to control your GameObjects 🙂
 
-First, if you don&#8217;t know what an FSM is, please read <a title="Finite-state machine" href="http://en.wikipedia.org/wiki/Finite-state_machine" target="_blank">this</a>, and maybe <a title="State" href="http://gameprogrammingpatterns.com/state.html" target="_blank">this too</a>.
+First, if you don't know what an FSM is, please read <a title="Finite-state machine" href="http://en.wikipedia.org/wiki/Finite-state_machine" target="_blank">this</a>, and maybe <a title="State" href="http://gameprogrammingpatterns.com/state.html" target="_blank">this too</a>.
 
 Done? Good. Now take a look at this (use arrows and spacebar for jumping).
 
-[unity src=&#8221;513&#8243;]
+[unity src="513&#8243;]
 
-See? It&#8217;s just Mario walking on a small platform. He can jump (obviously, he&#8217;s Mario) and can fall from the borders.
+See? It's just Mario walking on a small platform. He can jump (obviously, he's Mario) and can fall from the borders.
 
 There are tons of ways to implement this and one of them is using an FSM.
 
@@ -37,7 +37,7 @@ For this demo I have implemented three States: <a href="https://github.com/mizra
 
 [<img loading="lazy" class="alignnone size-large wp-image-511" src="/assets/uploads/2014/08/FSM-Transitions-1024x574.jpg?resize=474%2C265" alt="FSM Transitions" width="474" height="265" srcset="/assets/uploads/2014/08/FSM-Transitions.jpg?resize=1024%2C574&ssl=1 1024w, /assets/uploads/2014/08/FSM-Transitions.jpg?resize=300%2C168&ssl=1 300w, /assets/uploads/2014/08/FSM-Transitions.jpg?w=1454&ssl=1 1454w" sizes="(max-width: 474px) 100vw, 474px" data-recalc-dims="1" />](/assets/uploads/2014/08/FSM-Transitions.jpg)
 
-  * Default -> Jump: on &#8220;spacebar&#8221; pressed
+  * Default -> Jump: on "spacebar" pressed
   * Default -> Falling: if no collision occurs on -Y
   * Jump -> Falling: after 0.5 seconds
   * Falling -> Default: if a collision occurs on -Y

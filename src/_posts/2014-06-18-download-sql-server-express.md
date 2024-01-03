@@ -1,6 +1,6 @@
 ---
 id: 495
-title: 'Download SQL Server Express and say &#8220;Thank you Scott&#8221;'
+title: 'Download SQL Server Express and say "Thank you Scott"'
 date: 2014-06-18T08:52:16-04:00
 author: David Guida
 layout: post
@@ -17,9 +17,9 @@ Thank you <a title="Scott" href="http://www.hanselman.com/" target="_blank">Scot
 
 Really, this is going to be awkward, but somebody had to do something.
 
-Akamai NetSession? Come on Microsoft, you&#8217;re better than that!
+Akamai NetSession? Come on Microsoft, you're better than that!
 
-So, well, thanks Scott.  Here&#8217;s the link: <a title="Download SQL Server Express" href="http://www.hanselman.com/blog/DownloadSqlServerExpress.aspx" target="_blank">http://www.hanselman.com/blog/DownloadSqlServerExpress.aspx</a>
+So, well, thanks Scott.  Here's the link: <a title="Download SQL Server Express" href="http://www.hanselman.com/blog/DownloadSqlServerExpress.aspx" target="_blank">http://www.hanselman.com/blog/DownloadSqlServerExpress.aspx</a>
 
 &nbsp;
 

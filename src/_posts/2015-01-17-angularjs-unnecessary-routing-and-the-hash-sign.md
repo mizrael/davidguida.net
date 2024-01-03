@@ -17,7 +17,7 @@ categories:
   - Programming
   - Ramblings
 ---
-If you are using AngularJS for something different from a Single Page Application, probably you are not using the built-in routing functionality. In this case, don&#8217;t add the ngRoute dependency to your app , or it will always try to handle your #hashes (and most probably your web app won&#8217;t work).
+If you are using AngularJS for something different from a Single Page Application, probably you are not using the built-in routing functionality. In this case, don't add the ngRoute dependency to your app , or it will always try to handle your #hashes (and most probably your web app won't work).
 
 Cheers!
 

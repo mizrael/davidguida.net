@@ -18,15 +18,15 @@ categories:
   - Programming
 ---
 Suppose you have to login your users using an external provider. Maybe LinkedIn. Suppose you have to read the user profile data and do some stuff. Maybe you have to register the guy on your website.  
-Maybe you know a bit of OAuth and you want to give it a try but maybe you don&#8217;t want to bother writing a library from scratch.
+Maybe you know a bit of OAuth and you want to give it a try but maybe you don't want to bother writing a library from scratch.
 
 What do you do? Search on NuGet of course! I have found a nice library that helps with this, named <a title="Sparkle.LinkedInNET" href="https://github.com/SparkleNetworks/LinkedInNET" target="_blank">Sparkle.LinkedInNET</a> 🙂
 
-Here&#8217;s a quick&#8217;N&#8217;dirty gist showing the bare minimum necessary to get the oauth token and reading  the profile data. Then use it wisely!
+Here's a quick'N'dirty gist showing the bare minimum necessary to get the oauth token and reading  the profile data. Then use it wisely!
 
-As you may imagine, the flow begins with the Profile action ( something like &#8220;http://mydomain/linkedin/profile&#8221; ). The user will be redirected to LinkedIn and from there back to your website, this time with a token that you can use to interact with the LinkedIn APIs.
+As you may imagine, the flow begins with the Profile action ( something like "http://mydomain/linkedin/profile" ). The user will be redirected to LinkedIn and from there back to your website, this time with a token that you can use to interact with the LinkedIn APIs.
 
-Here&#8217;s the full code, enjoy 🙂
+Here's the full code, enjoy 🙂
 
 <div style="tab-size: 8" id="gist18619379" class="gist">
   <div class="gist-file">

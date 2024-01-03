@@ -12,7 +12,7 @@ categories:
   - Programming
 ---
 <div>
-  Just an extract from <a href="http://dotnet.dzone.com/articles/implementing?mz=57923-dotnet" target="_blank">this article</a>. It&#8217;s something I always find VERY useful (in situations where speed is not one of our concerns, of course)
+  Just an extract from <a href="http://dotnet.dzone.com/articles/implementing?mz=57923-dotnet" target="_blank">this article</a>. It's something I always find VERY useful (in situations where speed is not one of our concerns, of course)
 </div>
 
 <div>

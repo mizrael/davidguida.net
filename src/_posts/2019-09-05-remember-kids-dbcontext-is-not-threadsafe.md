@@ -20,9 +20,9 @@ tags:
 ---
 Let me say that again: **DbContext is NOT threadsafe.**
 
-Not clear enough? Well, let&#8217;s make an example. Actually, I&#8217;ll show something that happened to me at work.
+Not clear enough? Well, let's make an example. Actually, I'll show something that happened to me at work.
 
-Let me give you some context just for the sake of it, even though it&#8217;s not extremely relevant to the issue.
+Let me give you some context just for the sake of it, even though it's not extremely relevant to the issue.
 
 In this project I have a CQRS-like architecture with a pub/sub mechanism that I use to regenerate the Query models. All nice and clean, works like a charm. On a single machine. Mine.
 
@@ -30,7 +30,7 @@ Actually it worked pretty well also when deployed to the Dev server. Still a sin
 
 Things started getting messy when I moved to Staging: for some reason that will remain unknown, the deploy script decided to create multiple instances of the subscriber.
 
-I don&#8217;t mind as I&#8217;m always striving for immutability and statelessness so IDEALLY, I should be able to deploy as many instances of my services as I want. And that was true except for a single event handler in that subscriber.
+I don't mind as I'm always striving for immutability and statelessness so IDEALLY, I should be able to deploy as many instances of my services as I want. And that was true except for a single event handler in that subscriber.
 
 Code was somewhat like this:<figure class="wp-block-embed">
 
@@ -251,7 +251,7 @@ Code was somewhat like this:<figure class="wp-block-embed">
 
 It is removing the old models and replacing them with new data. Plain and simple. Everything is also wrapped in a transaction.
 
-So where&#8217;s the problem? Apparently, combining the two operations may lead to unexpected results, like bad data being persisted. Or not persisted at all.
+So where's the problem? Apparently, combining the two operations may lead to unexpected results, like bad data being persisted. Or not persisted at all.
 
 This fixed the issue:<figure class="wp-block-embed">
 
@@ -525,7 +525,7 @@ This fixed the issue:<figure class="wp-block-embed">
 
 Calling <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.1" target="_blank" rel="noreferrer noopener" aria-label="SaveChangesAsync (opens in a new tab)">SaveChangesAsync</a>() for every operation did the trick.
 
-I&#8217;m not 100% sure why this is working, but I suspect the reason lies here:
+I'm not 100% sure why this is working, but I suspect the reason lies here:
 
 <blockquote class="wp-block-quote">
   <p>
@@ -535,7 +535,7 @@ I&#8217;m not 100% sure why this is working, but I suspect the reason lies here:
   <cite> <a href="https://docs.microsoft.com/en-us/ef/core/saving/async" target="_blank" rel="noreferrer noopener" aria-label="Asynchronous Saving  (opens in a new tab)">Asynchronous Saving </a></cite>
 </blockquote>
 
-This basically means that it&#8217;s a very bad idea to share instances of DbContext between classes. Or between instances of the same classes in different threads. 
+This basically means that it's a very bad idea to share instances of DbContext between classes. Or between instances of the same classes in different threads. 
 
 Using a proper DI container, the solution would be to setup the DbContext with a <a href="https://dotnetcoretutorials.com/2017/03/25/net-core-dependency-injection-lifetimes-explained/" target="_blank" rel="noreferrer noopener" aria-label="Transient lifetime (opens in a new tab)">Transient lifetime</a>:
 

@@ -15,11 +15,11 @@ categories:
   - WebAPI
 ---
 This is going to be easy. As many of the other posts of this blog, even this entry is due to an issue I was forced to face, this time with the marvelous IE8 😀  
-In a nutshell, I have a WebAPI project returning some nice json data. Everything works fine, except when you try to access the api via Ajax + IE8&#8230;the browser is somehow refusing to perform the ajax call due to the fact that the content type &#8220;application/json&#8221; in the response header is not recognised. Damn.
+In a nutshell, I have a WebAPI project returning some nice json data. Everything works fine, except when you try to access the api via Ajax + IE8&#8230;the browser is somehow refusing to perform the ajax call due to the fact that the content type "application/json" in the response header is not recognised. Damn.
 
-What I had to do is adding a custom MediaTypeFormatter that returns the json data using &#8220;text/plain&#8221;, and then on client side parse the resulting string using some library like <a title="JSON2" href="https://github.com/douglascrockford/JSON-js" target="_blank">this one</a>.
+What I had to do is adding a custom MediaTypeFormatter that returns the json data using "text/plain", and then on client side parse the resulting string using some library like <a title="JSON2" href="https://github.com/douglascrockford/JSON-js" target="_blank">this one</a>.
 
-Here&#8217;s the code of the formatter:
+Here's the code of the formatter:
 
 [csharp]  
 public class PlainTextMediaTypeFormatter : MediaTypeFormatter  
@@ -69,7 +69,7 @@ The code is pretty easy, we can split it into 2 main parts:
 2) in the WriteToStreamAsync method just serialize the input value to json and write it to the output stream as string (I am using the terrific <a title="Json.NET" href="http://james.newtonking.com/json" target="_blank">Newtonsoft Json library</a> for this)
 
 BONUS:  
-if you don&#8217;t like adding more querystring parameters,  the <a title="MediaTypeFormatterExtensions" href="http://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatterextensions(v=vs.118).aspx" target="_blank">MediaTypeFormatterExtensions </a>class exposes other two methods, AddRequestHeaderMapping and AddUriPathExtensionMapping.
+if you don't like adding more querystring parameters,  the <a title="MediaTypeFormatterExtensions" href="http://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatterextensions(v=vs.118).aspx" target="_blank">MediaTypeFormatterExtensions </a>class exposes other two methods, AddRequestHeaderMapping and AddUriPathExtensionMapping.
 
 Enjoy!
 

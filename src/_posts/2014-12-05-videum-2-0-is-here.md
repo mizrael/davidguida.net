@@ -14,11 +14,11 @@ image: /assets/uploads/2014/12/videum_logo_TM.png
 categories:
   - Senza categoria
 ---
-After almost one year, yesterday we pushed to production the new version of <a title="Videum" href="http://www.videum.com" target="_blank">Videum</a> ! It&#8217;s a major milestone, this time we started the entire application from scratch, writing a brand new ad-hoc CMS and moving from MSSQL to <a title="MongoDB" href="http://www.mongodb.org/" target="_blank">MongoDB</a>. The search engine instead is based entirely on <a title="Elasticsearch" href="http://www.elasticsearch.org/" target="_blank">Elasticsearch</a>, with some minor customizations in order to allow fast multilanguage queries.
+After almost one year, yesterday we pushed to production the new version of <a title="Videum" href="http://www.videum.com" target="_blank">Videum</a> ! It's a major milestone, this time we started the entire application from scratch, writing a brand new ad-hoc CMS and moving from MSSQL to <a title="MongoDB" href="http://www.mongodb.org/" target="_blank">MongoDB</a>. The search engine instead is based entirely on <a title="Elasticsearch" href="http://www.elasticsearch.org/" target="_blank">Elasticsearch</a>, with some minor customizations in order to allow fast multilanguage queries.
 
-The road is still long and there&#8217;s a lot to do, but I&#8217;m very proud of this &#8220;creature&#8221; and very happy of all the teamwork.
+The road is still long and there's a lot to do, but I'm very proud of this "creature" and very happy of all the teamwork.
 
-The project itself is very interesting and open to a lot of nice features that we are planning to add in the next releases (and there will be tons!), but for now I&#8217;ll just take a deep breath&#8230;
+The project itself is very interesting and open to a lot of nice features that we are planning to add in the next releases (and there will be tons!), but for now I'll just take a deep breath&#8230;
 
 <div class="post-details-footer-widgets">
 </div>

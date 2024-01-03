@@ -2,7 +2,7 @@
 description: >
   Hi All! Today we're going to focus on the backend and see how we can write a gRPC server that can be called from a Blazor webassembly application.
 id: 7369
-title: 'Blazor&#038;Dragons! How to consume gRPC-web from Blazor &#8211; part 2: the server'
+title: 'Blazor&#038;Dragons! How to consume gRPC-web from Blazor - part 2: the server'
 date: 2020-06-26T14:56:54-04:00
 author: David Guida
 layout: post
@@ -21,9 +21,9 @@ tags:
   - Blazor
   - 'D&amp;D'
 ---
-Hi All! <a aria-label="undefined (opens in a new tab)" href="https://www.davidguida.net/how-to-consume-dd-rest-api-over-grpc-web-blazor-part-1-the-client/" target="_blank" rel="noreferrer noopener">Last time</a> we gave a look at the client, today we&#8217;re going to focus on the backend and see how we can write a **gRPC server** that can be called from a **Blazor webassembly** application.
+Hi All! <a aria-label="undefined (opens in a new tab)" href="https://www.davidguida.net/how-to-consume-dd-rest-api-over-grpc-web-blazor-part-1-the-client/" target="_blank" rel="noreferrer noopener">Last time</a> we gave a look at the client, today we're going to focus on the backend and see how we can write a **gRPC server** that can be called from a **Blazor webassembly** application.
 
-Did I mention how nerd I was? Yeah, probably I did. Just have a look at what I&#8217;m listening right now while writing this article:<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
+Did I mention how nerd I was? Yeah, probably I did. Just have a look at what I'm listening right now while writing this article:<figure class="wp-block-embed-youtube aligncenter wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio">
 
 <div class="wp-block-embed__wrapper">
   <span class="embed-youtube" style="text-align:center; display: block;"></span>
@@ -68,7 +68,7 @@ message GetDetailsResponse{
 	}
 }</pre>
 
-This is basically the same thing as the <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorAndDragons/blob/master/BlazorAndDragons.Client/Protos/classes.proto" target="_blank" rel="noreferrer noopener">one on the client</a>. The only difference is the namespace: _option csharp_namespace = &#8220;BlazorAndDragons.Server&#8221;;_
+This is basically the same thing as the <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorAndDragons/blob/master/BlazorAndDragons.Client/Protos/classes.proto" target="_blank" rel="noreferrer noopener">one on the client</a>. The only difference is the namespace: _option csharp_namespace = "BlazorAndDragons.Server";_
 
 The next step is to create the Typed HTTP Client that will fetch the data from the D&D API:
 
@@ -90,7 +90,7 @@ The next step is to create the Typed HTTP Client that will fetch the data from t
 
 #### Defining an interface is useful for a humongous number of reasons. TDD anyone?
 
-All the nice cross-cutting concerns can be defined elsewhere, for example at <a href="https://github.com/mizrael/BlazorAndDragons/blob/master/BlazorAndDragons.Server/Startup.cs#L27" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">IoC registration</a>. We could decide to add improved logging, caching, circuit breaker and so on. I didn&#8217;t because I&#8217;m lazy as&#8230;well, you know. 
+All the nice cross-cutting concerns can be defined elsewhere, for example at <a href="https://github.com/mizrael/BlazorAndDragons/blob/master/BlazorAndDragons.Server/Startup.cs#L27" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">IoC registration</a>. We could decide to add improved logging, caching, circuit breaker and so on. I didn't because I'm lazy as&#8230;well, you know. 
 
 Now that we have an HTTP Client, all we have to do is inject it into our <a href="https://github.com/mizrael/BlazorAndDragons/blob/master/BlazorAndDragons.Server/Services/ClassesService.cs" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">gRPC service</a> and use it:
 
@@ -118,9 +118,9 @@ Now that we have an HTTP Client, all we have to do is inject it into our <a href
         }
 }</pre>
 
-#### Technically speaking, we&#8217;re done. That&#8217;s it. Finito.
+#### Technically speaking, we're done. That's it. Finito.
 
-However, since we&#8217;ll be calling this service from a browser, we have to deal with <a aria-label="undefined (opens in a new tab)" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noreferrer noopener">CORS</a>. It&#8217;s not that complex, it just has to do in the right way.
+However, since we'll be calling this service from a browser, we have to deal with <a aria-label="undefined (opens in a new tab)" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noreferrer noopener">CORS</a>. It's not that complex, it just has to do in the right way.
 
 The first step is to update the _ConfigureServices()_ method in Startup.cs and define the policy:
 
@@ -135,7 +135,7 @@ The first step is to update the _ConfigureServices()_ method in Startup.cs and d
             }));
 }</pre>
 
-In our small example we&#8217;re allowing **everybody and their dog** to call our gRPC service. In a real world scenario you&#8217;ll want to restrict to just a bunch of known clients.
+In our small example we're allowing **everybody and their dog** to call our gRPC service. In a real world scenario you'll want to restrict to just a bunch of known clients.
 
 The final step is, still in Startup.cs, to update the _Configure() ****_method and register the necessary middlewares:
 
@@ -153,7 +153,7 @@ The final step is, still in Startup.cs, to update the _Configure() ****_method a
             });
 }</pre>
 
-Don&#8217;t forget that the order of the middlewares matters. A lot.
+Don't forget that the order of the middlewares matters. A lot.
 
 Have fun!
 

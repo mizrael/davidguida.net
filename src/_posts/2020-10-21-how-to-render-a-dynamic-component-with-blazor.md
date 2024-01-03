@@ -30,7 +30,7 @@ categories:
 tags:
   - Blazor
 ---
-Hi All! Today we&#8217;re going to see a simple technique to render a **dynamic Component** with **Blazor**.
+Hi All! Today we're going to see a simple technique to render a **dynamic Component** with **Blazor**.
 
 Suppose you want to create a generic Component to handle lists. Something very easy like this:
 
@@ -49,7 +49,7 @@ Suppose you want to create a generic Component to handle lists. Something very e
 
 The first thing to notice is that we used the <a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-3.1&WT.mc_id=DOP-MVP-5003878#typeparam" target="_blank" rel="noreferrer noopener"><strong><em>@typeparam </em>directive</strong></a> to specify the Generic type.
 
-But if you look carefully, you can see that we haven&#8217;t defined a way to render the items. We want this _**ListComponent**_ to be as generic as possible, so we need a way to provide the layout definition and logic somewhere else.
+But if you look carefully, you can see that we haven't defined a way to render the items. We want this _**ListComponent**_ to be as generic as possible, so we need a way to provide the layout definition and logic somewhere else.
 
 #### The easiest way to achieve this is to make use of the <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.renderfragment?view=aspnetcore-3.1&WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener"><strong><em>RenderFragment </em></strong></a>delegate. With it, we can define the rendering logic in our parent Component and pass it over to the List Component.
 
@@ -81,7 +81,7 @@ And this will be our new _**ListComponent**_:
 
 In the example we used the generic version of <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.components.renderfragment-1?view=aspnetcore-3.1&WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener"><strong><em>RenderFragment</em></strong></a>, super handy in contexts like this.
 
-If you like Blazor and game programming, don&#8217;t miss my series on <a href="https://www.davidguida.net/blazor-and-2d-game-development-part-1-intro/" target="_blank" rel="noreferrer noopener">2D Gamedev</a>!
+If you like Blazor and game programming, don't miss my series on <a href="https://www.davidguida.net/blazor-and-2d-game-development-part-1-intro/" target="_blank" rel="noreferrer noopener">2D Gamedev</a>!
 
 <div class="post-details-footer-widgets">
 </div>

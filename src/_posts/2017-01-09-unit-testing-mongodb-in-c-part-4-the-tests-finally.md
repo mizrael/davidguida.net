@@ -18,13 +18,13 @@ categories:
   - Software Architecture
   - Testing
 ---
-More than a year. Wow, that&#8217;s a lot, even for me! In the [last episode of this series](https://www.davidguida.net/unit-testing-mongodb-in-c-part-3-the-database-factories/), we discussed about how to create the Factories for our Repositories. I guess now it&#8217;s time to put a use to all those interfaces and finally see how to unit test our MongoDB repositories 🙂
+More than a year. Wow, that's a lot, even for me! In the [last episode of this series](https://www.davidguida.net/unit-testing-mongodb-in-c-part-3-the-database-factories/), we discussed about how to create the Factories for our Repositories. I guess now it's time to put a use to all those interfaces and finally see how to unit test our MongoDB repositories 🙂
 
 Remember: we are **not testing the driver** here. The MongoDB team is responsible for that. Not us.&nbsp;
 
 What we have to do instead is to make sure all our classes follow the <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" target="_blank" rel="noopener noreferrer">SOLID principles</a> and are testable. This way we can create a fake implementation of the low-level data access layer and inject it in the classes we have to test. Stop.
 
-Let&#8217;s have a look at the code:
+Let's have a look at the code:
 
 <div style="tab-size: 8" id="gist43648319" class="gist">
   <div class="gist-file">
@@ -234,7 +234,7 @@ Also, we have to instruct the&nbsp;mockDbContext instance to return a mock User 
 
 At this point, all we have to do is to create <a href="https://en.wikipedia.org/wiki/System_under_test" target="_blank" rel="noopener noreferrer">the sut</a>, execute the method we want to test, and Verify() our expectations.&nbsp;
 
-Let&#8217;s make a more interesting example now:
+Let's make a more interesting example now:
 
 <div style="tab-size: 8" id="gist43648598" class="gist">
   <div class="gist-file">
@@ -494,15 +494,15 @@ Let&#8217;s make a more interesting example now:
 
 Now that we have created the user, we may want also to update some of his details. The idea here is to instruct the mockRepo instance to return a specific user every time the FinstOneAsync method is executed.
 
-Again, now we just need to verify the expectations and we&#8217;re done!
+Again, now we just need to verify the expectations and we're done!
 
-Note that in this case, we are making an assumption about the inner mechanism of the Handle() method of the UpdateUserHandler class. Personally I tend to stick with Black Box Testing, but sometimes (eg. now) you might be forced to use White Box Testing instead. If you don&#8217;t know what I am talking about, there&#8217;s a <a href="http://reqtest.com/testing-blog/test-design-techniques-explained-1-black-box-vs-white-box-testing/" target="_blank" rel="noopener noreferrer">nice article here </a>you may want to read.
+Note that in this case, we are making an assumption about the inner mechanism of the Handle() method of the UpdateUserHandler class. Personally I tend to stick with Black Box Testing, but sometimes (eg. now) you might be forced to use White Box Testing instead. If you don't know what I am talking about, there's a <a href="http://reqtest.com/testing-blog/test-design-techniques-explained-1-black-box-vs-white-box-testing/" target="_blank" rel="noopener noreferrer">nice article here </a>you may want to read.
 
 &nbsp;
 
 Update 13/05/2020:
 
-I&#8217;ve added <a href="https://www.davidguida.net/write-integration-tests-on-mongodb-with-net-core-and-docker/" target="_blank" rel="noreferrer noopener">another article</a>, which can be considered as the final missing piece to this Series. Unit tests are fine, but when it comes to connecting the parts, we&#8217;re talking of &#8220;Integration tests&#8221; instead.
+I've added <a href="https://www.davidguida.net/write-integration-tests-on-mongodb-with-net-core-and-docker/" target="_blank" rel="noreferrer noopener">another article</a>, which can be considered as the final missing piece to this Series. Unit tests are fine, but when it comes to connecting the parts, we're talking of "Integration tests" instead.
 
 <div class="post-details-footer-widgets">
 </div>

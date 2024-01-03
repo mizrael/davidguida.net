@@ -15,7 +15,7 @@ categories:
   - Javascript
   - Programming
 ---
-Detecting the current culture in javascript can be really useful in many cases, an example might be a dropdown with a list of languages and the user&#8217;s one as default selection.
+Detecting the current culture in javascript can be really useful in many cases, an example might be a dropdown with a list of languages and the user's one as default selection.
 
 I am getting a little lazy these days, I would like to write more articles about software architecture, design patterns or fancy techs like MongoDb and so on&#8230;. but I am moving to another country and packing an entire house is taking away all my time and energies.
 
@@ -25,18 +25,18 @@ Based on the <a href="https://developer.mozilla.org/it/docs/Web/API/NavigatorLan
 
 The compatibility is quite good except as usual for IE Mobile, however there are two valid alternatives, <a href="https://msdn.microsoft.com/library/ms534713.aspx" target="_blank" rel="noopener">userLanguage</a> and <a href="https://msdn.microsoft.com/library/ms533542.aspx" target="_blank" rel="noopener">browserLanguage</a>.
 
-In case you want the list of all the preferred languages for the user, there&#8217;s an experimental property you can exploit, <a href="https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages" target="_blank" rel="noopener">navigator.languages</a>. That&#8217;s an &#8220;experimental technology&#8221;, so the compatibility list is still short (eg. Chrome and Firefox, as usual). It&#8217;s a string array containing the list of the user&#8217;s preferred languages, with the most preferred language first.&nbsp;
+In case you want the list of all the preferred languages for the user, there's an experimental property you can exploit, <a href="https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages" target="_blank" rel="noopener">navigator.languages</a>. That's an "experimental technology", so the compatibility list is still short (eg. Chrome and Firefox, as usual). It's a string array containing the list of the user's preferred languages, with the most preferred language first.&nbsp;
 
 Based on the docs, _navigator.language_ should&nbsp;be the first element of the returned array but if I check the values in Chrome I get this:
 
-_navigator.languages_ ->_ **[&#8220;it-IT&#8221;, &#8220;it&#8221;, &#8220;en-US&#8221;, &#8220;en&#8221;]**_  
-_navigator.language_&nbsp;->&nbsp;_**&#8220;en-GB&#8221;**_
+_navigator.languages_ ->_ **["it-IT", "it", "en-US", "en"]**_  
+_navigator.language_&nbsp;->&nbsp;_**"en-GB"**_
 
-Weird, isn&#8217;t it?
+Weird, isn't it?
 
-My guess is that&nbsp;_navigator.languages_&nbsp;returns the list of the user&nbsp;**system** preferred languages, while&nbsp;_navigator.language_ gives instead the current browser&#8217;s language.&nbsp;
+My guess is that&nbsp;_navigator.languages_&nbsp;returns the list of the user&nbsp;**system** preferred languages, while&nbsp;_navigator.language_ gives instead the current browser's language.&nbsp;
 
-Searching on StackOverflow there&#8217;s a good answer to the question, I have extracted the code in this gist (link in the code):
+Searching on StackOverflow there's a good answer to the question, I have extracted the code in this gist (link in the code):
 
 <div style="tab-size: 8" id="gist73710065" class="gist">
   <div class="gist-file">

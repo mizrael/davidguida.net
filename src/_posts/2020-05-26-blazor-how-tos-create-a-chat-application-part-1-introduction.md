@@ -2,7 +2,7 @@
 description: >
   Here we are for another episode of Blazor how-to's! This time we'll see how we can easily create a chat application with Blazor and .NET Core.
 id: 7265
-title: 'Blazor how-to&#8217;s: create a chat application &#8211; part 1: introduction'
+title: 'Blazor how-to's: create a chat application - part 1: introduction'
 date: 2020-05-26T15:56:50-04:00
 author: David Guida
 layout: post
@@ -25,11 +25,11 @@ tags:
   - message queues
   - rabbitmq
 ---
-Here we are for another episode of **Blazor** how-to&#8217;s! This time we&#8217;ll see how we can easily create a chat application with Blazor and .NET Core.
+Here we are for another episode of **Blazor** how-to's! This time we'll see how we can easily create a chat application with Blazor and .NET Core.
 
 As usual, all the code is <a rel="noreferrer noopener" href="https://github.com/mizrael/BlazorChat" target="_blank">available on GitHub</a>.
 
-**Disclaimer**: don&#8217;t expect anything fancy like Whatsapp or Slack 🙂 Our application will showcase just a bunch of features:
+**Disclaimer**: don't expect anything fancy like Whatsapp or Slack 🙂 Our application will showcase just a bunch of features:
 
   * single chat room
   * (extremely) simple authentication
@@ -43,11 +43,11 @@ Nothing fancy, I told you 🙂
 
 As you can see, the users can log in using a custom username (no password needed) and talk to each other in a single chat room. A red/green icon is displaying the online status.
 
-**Disclaimer 2**: the code of the repo is far away from being production ready. We&#8217;ll talk more about this later on, but again, don&#8217;t expect to plug the cord and have a 100% working messaging system. There&#8217;s no DDD, models are quite anemic and everything is in memory.
+**Disclaimer 2**: the code of the repo is far away from being production ready. We'll talk more about this later on, but again, don't expect to plug the cord and have a 100% working messaging system. There's no DDD, models are quite anemic and everything is in memory.
 
-My main focus was to see how easy it could be to have a simple chat up and running with **Blazor** only. With that said, it won&#8217;t be very complex to refactor the code and make it more robust. But as I wrote before, we&#8217;ll talk more about this, eventually.
+My main focus was to see how easy it could be to have a simple chat up and running with **Blazor** only. With that said, it won't be very complex to refactor the code and make it more robust. But as I wrote before, we'll talk more about this, eventually.
 
-So, let&#8217;s go through the features now!
+So, let's go through the features now!
 
 #### Single chat room
 
@@ -73,7 +73,7 @@ public async Task BeginConsumeAsync()
 
 public event EventHandler&lt;Message> MessageReceived;</pre>
 
-That&#8217;s all for now! <a href="https://www.davidguida.net/blazor-how-tos-create-a-chat-application-part-2-authentication/" target="_blank" rel="noreferrer noopener">Next time </a>we&#8217;ll see how we can &#8220;authenticate&#8221; our users. Cheers!
+That's all for now! <a href="https://www.davidguida.net/blazor-how-tos-create-a-chat-application-part-2-authentication/" target="_blank" rel="noreferrer noopener">Next time </a>we'll see how we can "authenticate" our users. Cheers!
 
 <div class="post-details-footer-widgets">
 </div>

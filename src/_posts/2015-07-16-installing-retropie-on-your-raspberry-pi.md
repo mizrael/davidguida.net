@@ -18,15 +18,15 @@ categories:
   - Raspberry Pi
   - Technology
 ---
-I have an &#8220;old&#8221; Raspberry Pi model A collecting dust on my desk.
+I have an "old" Raspberry Pi model A collecting dust on my desk.
 
-&#8220;What can I do with you?&#8221;, I asked him one day.  
-&#8220;I want to be beautiful&#8221;, he answered.  
-&#8220;You will be my precious&#8230;&#8221;
+"What can I do with you?", I asked him one day.  
+"I want to be beautiful", he answered.  
+"You will be my precious&#8230;"
 
 And this is how I started working on what will (one day, eventually) became a wonderful home-made arcade cabinet 😀
 
-First thing I have done is installing the software, so after some googling I found this nice linux distro called &#8220;<a href="http://blog.petrockblock.com/retropie/" target="_blank">RetroPie</a>&#8221; . In order to have it up and running, as it&#8217;s usual in the linux world, there are some steps that need to be followed&#8230;..
+First thing I have done is installing the software, so after some googling I found this nice linux distro called "<a href="http://blog.petrockblock.com/retropie/" target="_blank">RetroPie</a>" . In order to have it up and running, as it's usual in the linux world, there are some steps that need to be followed&#8230;..
 
 Assuming you have <a href="http://blog.petrockblock.com/retropie/retropie-downloads/" target="_blank">downloaded the RetroPie img</a> and copied it on a SD, the first step is expanding the filesystem to the entire SD:
 
@@ -49,7 +49,7 @@ next step is to run the Retropie setup, so go to the _/home/pi/RetroPie-Setup/_ 
 
 at this point you may choose to install the binaries or the sources. I guess it all depends on how much time you have at disposal 😀
 
-now you&#8217;re almost done, all you have to do is copying the rom files to the SD and start playing! There&#8217;s a <a href="https://github.com/RetroPie/RetroPie-Setup/wiki/How-to-get-ROMs-on-the-SD-card" target="_blank">nice guide</a> about it, just pick the method you like most 🙂
+now you're almost done, all you have to do is copying the rom files to the SD and start playing! There's a <a href="https://github.com/RetroPie/RetroPie-Setup/wiki/How-to-get-ROMs-on-the-SD-card" target="_blank">nice guide</a> about it, just pick the method you like most 🙂
 
 <div class="post-details-footer-widgets">
 </div>

@@ -26,9 +26,9 @@ tags:
   - microservices
   - programming
 ---
-**Health checks** are a fundamental part of our APIs. I guess they fall in that category of &#8220;non-functional-but-**heavily**-required&#8221; things. More or less like a good part of the infrastructure code.
+**Health checks** are a fundamental part of our APIs. I guess they fall in that category of "non-functional-but-**heavily**-required" things. More or less like a good part of the infrastructure code.
 
-They don&#8217;t add business value per se but have an enormous impact for IT people. More or less like <a href="https://www.davidguida.net/lets-do-some-ddd-with-entity-framework-core-3/" target="_blank" rel="noreferrer noopener">DDD</a> and Design Patterns. You can normally see them in conjunction with container orchestration or monitoring tools to ensure that the system is alive and kicking.
+They don't add business value per se but have an enormous impact for IT people. More or less like <a href="https://www.davidguida.net/lets-do-some-ddd-with-entity-framework-core-3/" target="_blank" rel="noreferrer noopener">DDD</a> and Design Patterns. You can normally see them in conjunction with container orchestration or monitoring tools to ensure that the system is alive and kicking.
 
 There are mainly two categories of **health checks**: readiness and liveness.
 
@@ -44,7 +44,7 @@ Setting up checks in an ASP.NET Core project is fairly easy. Just add a call to 
 
 On GitHub there are few interesting repositories that add some nice extension methods. [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) is one of the most famous, exposing checks for a wide range of systems like SQL Server, MySql, Oracle, Kafka, Redis, and many others.
 
-Once you&#8217;ve registered the checks on the DI Container, the next step is to expose the endpoint:
+Once you've registered the checks on the DI Container, the next step is to expose the endpoint:
 
 <pre class="wp-block-code"><code>public void Configure(IApplicationBuilder app)
 {
@@ -56,7 +56,7 @@ Once you&#8217;ve registered the checks on the DI Container, the next step is to
 
 This is the simplest example possible, however, the MapHealthChecks() methods give us also the possibility to customize the output by specifying a Response Writer:
 
-Based on the checks you&#8217;ve added, this should return something like this:
+Based on the checks you've added, this should return something like this:
 
 <pre class="wp-block-code"><code>{
   "status": "Healthy",
@@ -69,7 +69,7 @@ Based on the checks you&#8217;ve added, this should return something like this:
   }
 }</code></pre>
 
-Now, I mentioned &#8220;container orchestration&#8221; at the beginning of this article. Nowadays this tends to rhyme with **Kubernetes**, which has its own configuration for health checks. In your `configuration.yml` file you can specify both liveness and readiness:
+Now, I mentioned "container orchestration" at the beginning of this article. Nowadays this tends to rhyme with **Kubernetes**, which has its own configuration for health checks. In your `configuration.yml` file you can specify both liveness and readiness:
 
 <pre class="wp-block-code"><code>readinessProbe:
     httpGet:
@@ -104,7 +104,7 @@ That `Predicate` allows filtering the checks based on various conditions like na
 
 Going back to our k8s config, another thing worth mentioning is the different settings used for the checks. For example, `timeoutSeconds` is higher when probing for readiness as we are making sure that all our dependencies are alive. Same thing for `periodSeconds` : we want liveness checks to be executed more often.
 
-Moreover, don&#8217;t forget that if the `failureThreshold` is surpassed for liveness, the Pod will be killed. Failing readiness will cause the pod to be marked as **Unhealthy** instead, and not receive traffic anymore.
+Moreover, don't forget that if the `failureThreshold` is surpassed for liveness, the Pod will be killed. Failing readiness will cause the pod to be marked as **Unhealthy** instead, and not receive traffic anymore.
 
 <div class="post-details-footer-widgets">
 </div>
