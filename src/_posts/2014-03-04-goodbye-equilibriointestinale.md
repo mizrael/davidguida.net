@@ -12,7 +12,7 @@ categories:
   - ASP.NET
   - Programming
 ---
-The client decided to shut down the project so <a href="http://www.equilibriointestinale.it" target="_blank">www.equilibriointestinale.it</a> is now offline. It was a very interesting project (at least technically) and one of the few that didn't raised my stress levels 😀
+The client decided to shut down the project so <a href="http://www.equilibriointestinale.it" target="_blank">www.equilibriointestinale.it</a> is now offline. It was a very interesting project (at least technically) and one of the few that didn&#8217;t raised my stress levels 😀
 
 <div class="post-details-footer-widgets">
 </div>

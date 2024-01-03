@@ -20,9 +20,9 @@ Option 1: refactor the calls to the legacy code with <a title="Proxy Pattern" hr
 
 Option 2: create a fake HttpContext and set it.<!--more-->
 
-If for some reason you're forced to choose Option 2, here's an example of how to create a fake HttpContext:
+If for some reason you&#8217;re forced to choose Option 2, here&#8217;s an example of how to create a fake HttpContext:
 
-[code lang="csharp" light="false"]  
+[code lang=&#8221;csharp&#8221; light=&#8221;false&#8221;]  
 var httpRequest = new HttpRequest(filename, domainUrl, null);  
 var stringWriter = new StringWriter();
 

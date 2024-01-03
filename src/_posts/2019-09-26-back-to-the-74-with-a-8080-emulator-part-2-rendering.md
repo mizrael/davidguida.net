@@ -2,7 +2,7 @@
 description: >
   I leveraged MonoGame and some nasty old-style tricks to finally render some pixels on the screen with my 8080 Space Invaders emulator.
 id: 6788
-title: 'Back to the '74 with a 8080 emulator - part 2: rendering'
+title: 'Back to the &#8217;74 with a 8080 emulator &#8211; part 2: rendering'
 date: 2019-09-26T09:30:01-04:00
 author: David Guida
 layout: post
@@ -36,13 +36,13 @@ As I previously wrote, there are 2 video interrupts, each one handling half of t
 
 #### As you can imagine, updating the entire framebuffer and rendering it at the same time would have caused lots of performance problems plus other issues I guess.
 
-For this project I'm using <a rel="noreferrer noopener" aria-label="MonoGame (opens in a new tab)" href="http://www.monogame.net/" target="_blank">MonoGame</a> to handle the grunt work for window creation and 2d rendering. I used XNA a lot during its glory days so the setup for me was a no-brainer.
+For this project I&#8217;m using <a rel="noreferrer noopener" aria-label="MonoGame (opens in a new tab)" href="http://www.monogame.net/" target="_blank">MonoGame</a> to handle the grunt work for window creation and 2d rendering. I used XNA a lot during its glory days so the setup for me was a no-brainer.
 
-<a rel="noreferrer noopener" aria-label="Code for now (opens in a new tab)" href="https://github.com/mizrael/8080-emulator-net/blob/c22813ebed94da7a73706976cc69cb516a243992/emu8080.Game/Game1.cs" target="_blank">Code for now</a> is very easy and doesn't fully handle all the cases. If the interrupts are enabled (via the 0xfb EI opcode), it is triggering the two interrupts every 16ms in the Update() method. 
+<a rel="noreferrer noopener" aria-label="Code for now (opens in a new tab)" href="https://github.com/mizrael/8080-emulator-net/blob/c22813ebed94da7a73706976cc69cb516a243992/emu8080.Game/Game1.cs" target="_blank">Code for now</a> is very easy and doesn&#8217;t fully handle all the cases. If the interrupts are enabled (via the 0xfb EI opcode), it is triggering the two interrupts every 16ms in the Update() method. 
 
-Once the CPU has completed its job, the framebuffer is copied to a texture and rendered on the screen. I'm not handling the half-screen update discussed before, and I'm not sure if I'm going to ever implement it.
+Once the CPU has completed its job, the framebuffer is copied to a texture and rendered on the screen. I&#8217;m not handling the half-screen update discussed before, and I&#8217;m not sure if I&#8217;m going to ever implement it.
 
-There's still a lot to do of course, but the results are encouraging 🙂
+There&#8217;s still a lot to do of course, but the results are encouraging 🙂
 
 <div class="post-details-footer-widgets">
 </div>

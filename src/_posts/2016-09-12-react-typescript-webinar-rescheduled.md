@@ -2,7 +2,7 @@
 description: >
   Due to the huge amount of registrations,me and the folks at Indiamentors have decided to postpone the Introduction to React & Typescript webinar to Sep 17th
 id: 6193
-title: 'Webinar: introduction to React &#038; Typescript - again!'
+title: 'Webinar: introduction to React &#038; Typescript &#8211; again!'
 date: 2016-09-12T11:23:14-04:00
 author: David Guida
 excerpt: Due to the huge amount of registrations,me and the folks at Indiamentors have decided to postpone the Introduction to React + Typescript webinar to Sep 17th.
@@ -22,9 +22,9 @@ categories:
 Due to the huge amount of registrations, me and the folks at <a href="http://www.indiamentor.com/" target="_blank">Indiamentors</a> have decided to postpone the Introduction to React & Typescript webinar to Saturday September 17th at 6:30 IST .
 
 As I <a href="http://www.davidguida.net/react-typescript-webinar/" target="_blank">told you before</a>, this webinar is going to be an introduction about React,  how to setup your dev environment and how to write your first piece of React code.  
-I'll show you a small demo and at the end we're going to have a nice Q&A session.
+I&#8217;ll show you a small demo and at the end we&#8217;re going to have a nice Q&A session.
 
-Here's the agenda:
+Here&#8217;s the agenda:
 
   * Why React?
   * Let’s get started!

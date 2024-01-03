@@ -24,7 +24,7 @@ What I came up with is a simple Service that looks like this:
 <div id="wrap_githubgist6059c148fd7f401146943746f59a45ec" style="width:100%">
 </div>
 
-(yes, I'm using Typescript)
+(yes, I&#8217;m using Typescript)
 
 The <a href="https://github.com/mizrael/angular-localization/blob/master/src/services/LanguageService.ts" target="_blank">implementation</a> takes care of reading a very simple JSON file containing all the available cultures and the respective labels. Something like this:
 
@@ -33,9 +33,9 @@ The <a href="https://github.com/mizrael/angular-localization/blob/master/src/ser
 
 The example app itself is very simple, there are just two controllers:
 
-<a href="https://github.com/mizrael/angular-localization/blob/master/src/controllers/LanguageController.ts" target="_blank">LanguageController</a> acts as a simple wrapper over the ILanguageService, exposing the list of available cultures and allowing get/set for the current one. On the UI there's just a dropdown with the cultures.
+<a href="https://github.com/mizrael/angular-localization/blob/master/src/controllers/LanguageController.ts" target="_blank">LanguageController</a> acts as a simple wrapper over the ILanguageService, exposing the list of available cultures and allowing get/set for the current one. On the UI there&#8217;s just a dropdown with the cultures.
 
-<a href="https://github.com/mizrael/angular-localization/blob/master/src/controllers/MainController.ts" target="_blank">MainController</a> instead takes care of requesting the labels from ILanguageService and $watch-ing it's currentCulture property. When an update is detected (eg. something changed on LanguageController), the new labels are fetched from the service.
+<a href="https://github.com/mizrael/angular-localization/blob/master/src/controllers/MainController.ts" target="_blank">MainController</a> instead takes care of requesting the labels from ILanguageService and $watch-ing it&#8217;s currentCulture property. When an update is detected (eg. something changed on LanguageController), the new labels are fetched from the service.
 
 Easy huh?
 

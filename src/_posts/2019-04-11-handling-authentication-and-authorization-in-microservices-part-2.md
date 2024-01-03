@@ -29,7 +29,7 @@ tags:
   - microservices
   - software architecture
 ---
-In the <a href="https://www.davidguida.net/handling-authentication-and-authorization-in-microservices-part-1/" target="_blank" rel="noreferrer noopener" aria-label="previous post (opens in a new tab)">previous post</a> we saw a way for handling authentication using an API Gateway and an Identity Provider. Just to refresh the concept, here's the basic diagram:<figure class="wp-block-image">
+In the <a href="https://www.davidguida.net/handling-authentication-and-authorization-in-microservices-part-1/" target="_blank" rel="noreferrer noopener" aria-label="previous post (opens in a new tab)">previous post</a> we saw a way for handling authentication using an API Gateway and an Identity Provider. Just to refresh the concept, here&#8217;s the basic diagram:<figure class="wp-block-image">
 
 <img loading="lazy" width="788" height="391" src="/assets/uploads/2019/04/image-1.png?resize=788%2C391&#038;ssl=1" alt="" class="wp-image-6634" srcset="/assets/uploads/2019/04/image-1.png?w=995&ssl=1 995w, /assets/uploads/2019/04/image-1.png?resize=300%2C149&ssl=1 300w, /assets/uploads/2019/04/image-1.png?resize=768%2C381&ssl=1 768w, /assets/uploads/2019/04/image-1.png?resize=788%2C391&ssl=1 788w" sizes="(max-width: 788px) 100vw, 788px" data-recalc-dims="1" /> </figure> 
 
@@ -41,7 +41,7 @@ An option could be using <a href="https://docs.microsoft.com/en-us/aspnet/core/s
 
 When a microservice receives a request, it will decode the token, verify it and then check if the user has the required permission claim for the requested action.
 
-It's a very easy mechanism to implement and works pretty well but also means that we're sending back and forth a "fat" token, **bloated with a lot of useless information** for most of the calls. The permission claims are an interesting information only for the microservice that cover that specific bounded context. All the other will still receive the data but it **won't add any value**.
+It&#8217;s a very easy mechanism to implement and works pretty well but also means that we&#8217;re sending back and forth a &#8220;fat&#8221; token, **bloated with a lot of useless information** for most of the calls. The permission claims are an interesting information only for the microservice that cover that specific bounded context. All the other will still receive the data but it **won&#8217;t add any value**.
 
 Another option is to add an Authorization microservice, something like this:<figure class="wp-block-image">
 

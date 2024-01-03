@@ -19,29 +19,29 @@ tags:
   - GitHub Pages
   - WordPress
 ---
-Yeah, I'm not getting crazy. It is 100% possible to replace your **WordPress** theme with a **Blazor Webassembly** application.
+Yeah, I&#8217;m not getting crazy. It is 100% possible to replace your **WordPress** theme with a **Blazor Webassembly** application.
 
-How? Well, it's not that hard actually. It's been a while now since WordPress has started exposing a quite nice <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer noopener">REST API</a>. The first draft was added with <a href="https://wordpress.org/support/wordpress-version/version-4-4/#for-developers" target="_blank" rel="noreferrer noopener">version 4.4</a>, but it's with <a href="https://wordpress.org/support/wordpress-version/version-4-7/#rest-api-content-endpoints" target="_blank" rel="noreferrer noopener">version 4.7</a> that it gained full momentum.
+How? Well, it&#8217;s not that hard actually. It&#8217;s been a while now since WordPress has started exposing a quite nice <a href="https://developer.wordpress.org/rest-api/" target="_blank" rel="noreferrer noopener">REST API</a>. The first draft was added with <a href="https://wordpress.org/support/wordpress-version/version-4-4/#for-developers" target="_blank" rel="noreferrer noopener">version 4.4</a>, but it&#8217;s with <a href="https://wordpress.org/support/wordpress-version/version-4-7/#rest-api-content-endpoints" target="_blank" rel="noreferrer noopener">version 4.7</a> that it gained full momentum.
 
-The API itself is definitely easy to use. The base endpoint looks something like "_**yoursite.com/wp-json/wp/v2**_".
+The API itself is definitely easy to use. The base endpoint looks something like &#8220;_**yoursite.com/wp-json/wp/v2**_&#8220;.
 
 #### From that you can start managing _<a href="https://wordpress.org/news/wp-json/wp/v2/posts/" target="_blank" rel="noreferrer noopener">posts</a>_, _<a href="https://wordpress.org/news/wp-json/wp/v2/users/" target="_blank" rel="noreferrer noopener">users</a>, <a href="https://wordpress.org/news/wp-json/wp/v2/users/" target="_blank" rel="noreferrer noopener">comments</a>_&#8230;well you got the idea.
 
 This opens the door to a wide range of scenarios, for example, we could use WordPress as a <a href="https://en.wikipedia.org/wiki/Headless_content_management_system" target="_blank" rel="noreferrer noopener">headless CMS</a> and write multiple frontends based on our needs. Mobile apps, SPAs, PWAs and so on.
 
-Just to showcase how easy it is, let's see how we can quickly write a frontend blogging app using **Blazor**.
+Just to showcase how easy it is, let&#8217;s see how we can quickly write a frontend blogging app using **Blazor**.
 
-Now, <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="noreferrer noopener">CORS </a>should be enabled by default. If it isn't, a quick search on google should give you <a href="https://www.google.com/search?q=wordpress+rest+api+enable+cors" target="_blank" rel="noreferrer noopener">the answer</a>. For the sake of the exercise, let's suppose it is, so we can safely use **Blazor** in **<a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0&WT.mc_id=DOP-MVP-5003878#blazor-webassembly" target="_blank" rel="noreferrer noopener">Webassembly </a>**mode.
+Now, <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="noreferrer noopener">CORS </a>should be enabled by default. If it isn&#8217;t, a quick search on google should give you <a href="https://www.google.com/search?q=wordpress+rest+api+enable+cors" target="_blank" rel="noreferrer noopener">the answer</a>. For the sake of the exercise, let&#8217;s suppose it is, so we can safely use **Blazor** in **<a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-5.0&WT.mc_id=DOP-MVP-5003878#blazor-webassembly" target="_blank" rel="noreferrer noopener">Webassembly </a>**mode.
 
-Once we've created our project, the next step is to add a reference to the <a href="https://github.com/wp-net/WordPressPCL" target="_blank" rel="noreferrer noopener">WordPressPCL </a>Nuget library. It's a handy project, that will spare us the time to write the API client ourselves.
+Once we&#8217;ve created our project, the next step is to add a reference to the <a href="https://github.com/wp-net/WordPressPCL" target="_blank" rel="noreferrer noopener">WordPressPCL </a>Nuget library. It&#8217;s a handy project, that will spare us the time to write the API client ourselves.
 
-Once it's installed, we can register the client on the Composition Root in the <a href="https://github.com/mizrael/BlazorWPBlog/blob/develop/src/BlazorWPBlog.UI/Program.cs" target="_blank" rel="noreferrer noopener">Program.cs</a> file:
+Once it&#8217;s installed, we can register the client on the Composition Root in the <a href="https://github.com/mizrael/BlazorWPBlog/blob/develop/src/BlazorWPBlog.UI/Program.cs" target="_blank" rel="noreferrer noopener">Program.cs</a> file:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">var wpApiEndpoint = builder.Configuration["WP_Endpoint"];
 var client = new WordPressClient(wpApiEndpoint);
 builder.Services.AddSingleton(client);</pre>
 
-Now, we're basically done! Every time we want to, for example, read posts or anything, all we have to do is inject the <a href="https://github.com/wp-net/WordPressPCL/blob/master/WordPressPCL/WordPressClient.cs" target="_blank" rel="noreferrer noopener">WordPressClient </a>instance and use it:
+Now, we&#8217;re basically done! Every time we want to, for example, read posts or anything, all we have to do is inject the <a href="https://github.com/wp-net/WordPressPCL/blob/master/WordPressPCL/WordPressClient.cs" target="_blank" rel="noreferrer noopener">WordPressClient </a>instance and use it:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">var postsQuery = new PostsQueryBuilder()
     {

@@ -13,7 +13,7 @@ categories:
   - .NET
   - Programming
 ---
-Using serial ports in .NET is very, very easy. You just have to know how to initialize it and you're good. Well actually you should know what to do with the incoming data, but this is another story 😀
+Using serial ports in .NET is very, very easy. You just have to know how to initialize it and you&#8217;re good. Well actually you should know what to do with the incoming data, but this is another story 😀
 
 <div>
   In C# all you have to do is to include the namespace System.IO.Ports and then do something like this:
@@ -21,7 +21,7 @@ Using serial ports in .NET is very, very easy. You just have to know how to init
 
 `SerialPort comPort = new SerialPort("COM1", 19200, Parity.None, 8, StopBits.One); comPort.Open();`
 
-Of course it's a good habit to check for exceptions (for example, if the port is already in use&#8230;well you get the point).
+Of course it&#8217;s a good habit to check for exceptions (for example, if the port is already in use&#8230;well you get the point).
 
 Then to write some data, you just have to do:
 
@@ -30,9 +30,9 @@ comPort.Write(myMessage);`
 
 The SerialPort class exposes two events to handle fail/win cases after a write, DataReceived and ErrorReceived.
 
-That's all!
+That&#8217;s all!
 
-Obviously, don't forget to close and dispose the port at the end of your program:
+Obviously, don&#8217;t forget to close and dispose the port at the end of your program:
 
 `if (comPort.IsOpen)<br />
 comPort.Close();<br />

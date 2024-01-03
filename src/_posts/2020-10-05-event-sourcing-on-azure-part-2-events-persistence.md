@@ -2,7 +2,7 @@
 description: >
   Welcome to the second part of the Event Sourcing on Azure series.We will see some code and talk about how we can deal with events persistence.
 id: 7758
-title: 'Event Sourcing on Azure - part 2: events persistence'
+title: 'Event Sourcing on Azure &#8211; part 2: events persistence'
 date: 2020-10-05T15:37:10-04:00
 author: David Guida
 layout: post
@@ -35,15 +35,15 @@ tags:
   - design patterns
   - event sourcing
 ---
-Hi All! Welcome back for the second part of the **Event Sourcing on Azure** series. Today we're going to digress a bit about the implementation details and some of the choices and tradeoff I've made. We will focus on how I've managed the events persistence and which tool I've chosen for it.
+Hi All! Welcome back for the second part of the **Event Sourcing on Azure** series. Today we&#8217;re going to digress a bit about the implementation details and some of the choices and tradeoff I&#8217;ve made. We will focus on how I&#8217;ve managed the events persistence and which tool I&#8217;ve chosen for it.
 
-<a href="https://www.davidguida.net/event-sourcing-on-azure-part-1-architecture-plan/" target="_blank" rel="noreferrer noopener">Last time</a> we saw how a _generic_ Event Sourcing architecture might look like. As I wrote already, there's no silver bullet. There might be times where you can't simply apply a design pattern as it is but you'll have to bend it to your needs. But it's good to know the basics, understand the ground rules and diverge if needed.
+<a href="https://www.davidguida.net/event-sourcing-on-azure-part-1-architecture-plan/" target="_blank" rel="noreferrer noopener">Last time</a> we saw how a _generic_ Event Sourcing architecture might look like. As I wrote already, there&#8217;s no silver bullet. There might be times where you can&#8217;t simply apply a design pattern as it is but you&#8217;ll have to bend it to your needs. But it&#8217;s good to know the basics, understand the ground rules and diverge if needed.
 
-Now, take some time and browse through the countless lines of code of <a rel="noreferrer noopener" href="https://github.com/mizrael/SuperSafeBank" target="_blank">SuperSafeBank</a>, I'll wait. I started this repository <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">to demonstrate</a> how it's possible to leverage **<a rel="noreferrer noopener" href="https://eventstore.com/" target="_blank">Eventstore </a>**and **<a rel="noreferrer noopener" href="https://kafka.apache.org/" target="_blank">Kafka </a>**to build an Event Sourcing system with DDD. A nice project to be fair, I learned quite a lot.
+Now, take some time and browse through the countless lines of code of <a rel="noreferrer noopener" href="https://github.com/mizrael/SuperSafeBank" target="_blank">SuperSafeBank</a>, I&#8217;ll wait. I started this repository <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">to demonstrate</a> how it&#8217;s possible to leverage **<a rel="noreferrer noopener" href="https://eventstore.com/" target="_blank">Eventstore </a>**and **<a rel="noreferrer noopener" href="https://kafka.apache.org/" target="_blank">Kafka </a>**to build an Event Sourcing system with DDD. A nice project to be fair, I learned quite a lot.
 
 #### But still, with everybody and their dog using _The Cloud&#x2122;_, it felt natural to evolve the codebase and move to Azure. I still have to migrate the entire solution, but the bulk of it is complete. 
 
-Let's pause for a second and review what are the requirements. Our system needs to be capable of
+Let&#8217;s pause for a second and review what are the requirements. Our system needs to be capable of
 
   1. create customers
   2. get customer details by id
@@ -83,7 +83,7 @@ foreach (var @event in aggregateRoot.Events)
 
 await transaction.ExecuteAsync();</pre>
 
-It will first query the latest version for a given Aggregate. As you can see, the Aggregate id is used as Partition Key. If the expected version doesn't match, then somebody has already updated the data so we can't proceed.
+It will first query the latest version for a given Aggregate. As you can see, the Aggregate id is used as Partition Key. If the expected version doesn&#8217;t match, then somebody has already updated the data so we can&#8217;t proceed.
 
 If everything is fine, it will open a transaction and write all the events available on the Aggregate.
 
@@ -114,7 +114,7 @@ Re-hydrating an Aggregate is quite easy :
 
 We basically query all the events for a given Aggregate, sort them by Version and replay then one after another. Piece of cake.
 
-The <a href="https://www.davidguida.net/event-sourcing-on-azure-part-3-command-validation/" target="_blank" rel="noreferrer noopener">next time </a>we'll see how to validate a Command before executing it. Ciao!
+The <a href="https://www.davidguida.net/event-sourcing-on-azure-part-3-command-validation/" target="_blank" rel="noreferrer noopener">next time </a>we&#8217;ll see how to validate a Command before executing it. Ciao!
 
 <div class="post-details-footer-widgets">
 </div>

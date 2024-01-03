@@ -15,7 +15,7 @@ categories:
 ---
 <div>
   <p>
-    Suppose you have to consume a Webservice that requires you to provide a custom header. If you generate automatically the proxy with Visual Studio, you'll soon discover that there's no way to add an header or to access the SOAP request.<br /> Ok, here's what you have to do:
+    Suppose you have to consume a Webservice that requires you to provide a custom header. If you generate automatically the proxy with Visual Studio, you&#8217;ll soon discover that there&#8217;s no way to add an header or to access the SOAP request.<br /> Ok, here&#8217;s what you have to do:
   </p>
   
   <p>
@@ -31,7 +31,7 @@ categories:
   </p>
   
   <p>
-    Just keep in mind that if you ask Visual Studio to generate again the proxy, you'll loose the changes&#8230;
+    Just keep in mind that if you ask Visual Studio to generate again the proxy, you&#8217;ll loose the changes&#8230;
   </p>
 </div>
 

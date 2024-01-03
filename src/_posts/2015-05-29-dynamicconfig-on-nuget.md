@@ -14,7 +14,7 @@ categories:
   - NuGet
   - Programming
 ---
-Just to say, I published [DynamicConfig](http://www.davidguida.net/behold-dynamicconfig-is-here/) on NuGet this morning, <a title="DynamicConfig" href="https://www.nuget.org/packages/DynamicConfig/" target="_blank">here's the link</a> 🙂
+Just to say, I published [DynamicConfig](http://www.davidguida.net/behold-dynamicconfig-is-here/) on NuGet this morning, <a title="DynamicConfig" href="https://www.nuget.org/packages/DynamicConfig/" target="_blank">here&#8217;s the link</a> 🙂
 
 &nbsp;
 

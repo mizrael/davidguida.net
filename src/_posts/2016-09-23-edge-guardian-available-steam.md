@@ -19,9 +19,9 @@ categories:
 ---
 This time I just want to spread the word about my two good friends Maurizio and Marco from <a href="http://www.hypothermicgames.com/" target="_blank">Hypotermic Games</a>, who have finally got the chance to publish their first game on Steam, <a href="http://store.steampowered.com/app/518000" target="_blank">Edge Guardian</a> !
 
-In a nutshell, it's an action beat-em-up for the <a href="https://www.vive.com/eu/" target="_blank">HTC Vive</a> where you'll find yourself in a cube-based world, forced to punch your way out through thousands of enemies.
+In a nutshell, it&#8217;s an action beat-em-up for the <a href="https://www.vive.com/eu/" target="_blank">HTC Vive</a> where you&#8217;ll find yourself in a cube-based world, forced to punch your way out through thousands of enemies.
 
-I don't own an HTC Vive, but even if I haven't had the possibility to try the game, I can easily say that it's gonna be really addictive. Take a look at the gameplay if you don't trust me.
+I don&#8217;t own an HTC Vive, but even if I haven&#8217;t had the possibility to try the game, I can easily say that it&#8217;s gonna be really addictive. Take a look at the gameplay if you don&#8217;t trust me.
 
 <span class="embed-youtube" style="text-align:center; display: block;"></span>
 

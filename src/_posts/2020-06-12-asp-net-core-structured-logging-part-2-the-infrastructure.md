@@ -2,7 +2,7 @@
 description: >
   Welcome back to episode 2 of the Structured Logging with ASP.NET Series! This time we'll see how to setup the infrastructure to host our log entries.
 id: 7308
-title: 'ASP.NET Core structured logging - part 2: the infrastructure'
+title: 'ASP.NET Core structured logging &#8211; part 2: the infrastructure'
 date: 2020-06-12T01:58:08-04:00
 author: David Guida
 layout: post
@@ -25,13 +25,13 @@ tags:
   - Grafana
   - Loki
 ---
-Hi and welcome back to the second episode of the Structured Logging with ASP.NET Series! <a rel="noreferrer noopener" href="https://www.davidguida.net/asp-net-core-structured-logging/" target="_blank">Last time</a> we saw what's the difference between **_standard_** and **_structured_** logging. This time instead we'll start moving away from the theory and see how to setup the **infrastructure** to host our log entries.
+Hi and welcome back to the second episode of the Structured Logging with ASP.NET Series! <a rel="noreferrer noopener" href="https://www.davidguida.net/asp-net-core-structured-logging/" target="_blank">Last time</a> we saw what&#8217;s the difference between **_standard_** and **_structured_** logging. This time instead we&#8217;ll start moving away from the theory and see how to setup the **infrastructure** to host our log entries.
 
-Let's be honest here, logging to the Console is the first thing we all do. Probably with a call to \`_Console.Writeline()_\`. Don't worry, I won't judge. And there's nothing wrong with it, let's be clear.
+Let&#8217;s be honest here, logging to the Console is the first thing we all do. Probably with a call to \`_Console.Writeline()_\`. Don&#8217;t worry, I won&#8217;t judge. And there&#8217;s nothing wrong with it, let&#8217;s be clear.
 
 Then the next level is leveraging the built-in logging library of .NET Core. And all of a sudden, we start getting instances of_ **ILogger<>**_ injected in our classes and everything looks much more nice and clean.
 
-#### But still, we're logging to the Console. Maybe with fancy colors, scopes, and log levels now, but still, _Console._
+#### But still, we&#8217;re logging to the Console. Maybe with fancy colors, scopes, and log levels now, but still, _Console._
 
 Later on, when the project grows and things start getting serious, we find ourselves in need of gathering log entries from multiple sources, trying to aggregate them, correlate them, search them.
 
@@ -41,13 +41,13 @@ This is basically what differentiates _standard_ from _structured_ logging: we c
 
 One of the most used tools for this job nowadays is <a rel="noreferrer noopener" href="https://grafana.com/oss/loki/" target="_blank">Loki </a>in combination with <a rel="noreferrer noopener" href="https://grafana.com/" target="_blank">Grafana</a>.
 
-**Loki** is a horizontally-scalable, highly-available, multi-tenant log aggregation system. We send our entries to it and we can go back to our job, it'll take care of the rest.
+**Loki** is a horizontally-scalable, highly-available, multi-tenant log aggregation system. We send our entries to it and we can go back to our job, it&#8217;ll take care of the rest.
 
 **Grafana** instead is a super powerful UI we can leverage to query and visualize logs and metrics.
 
-Of course, there's much more in both of them, but let's start from the basics.
+Of course, there&#8217;s much more in both of them, but let&#8217;s start from the basics.
 
-So, the first step is to get our infrastructure up and running. I took the liberty of bothering the <a rel="noreferrer noopener" href="https://github.com/mizrael/SuperSafeBank" target="_blank">SuperSafeBank</a> repository I'm using for the <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">Event Sourcing Series</a> . I have updated the Docker Compose config file and added two more services:
+So, the first step is to get our infrastructure up and running. I took the liberty of bothering the <a rel="noreferrer noopener" href="https://github.com/mizrael/SuperSafeBank" target="_blank">SuperSafeBank</a> repository I&#8217;m using for the <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">Event Sourcing Series</a> . I have updated the Docker Compose config file and added two more services:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="dockerfile" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">loki:
     image: grafana/loki:master
@@ -77,7 +77,7 @@ The next step is to go to _Configuration -> Data Sources_ and add our Loki insta
 
 As you might have noticed, the URL is <a rel="noreferrer noopener" href="http://loki:3100/" target="_blank"><em>http://loki:3100</em></a>&nbsp;, as both Grafana and Loki are running in the _loki_ network in Docker.
 
-That's all for now. <a href="https://www.davidguida.net/asp-net-core-structured-logging-part-3-the-code-finally/" target="_blank" rel="noreferrer noopener">Next time </a>we'll see how we can leverage <a rel="noreferrer noopener" href="https://serilog.net/" target="_blank">Serilog </a>in our .NET Core applications to send the log entries to Loki.
+That&#8217;s all for now. <a href="https://www.davidguida.net/asp-net-core-structured-logging-part-3-the-code-finally/" target="_blank" rel="noreferrer noopener">Next time </a>we&#8217;ll see how we can leverage <a rel="noreferrer noopener" href="https://serilog.net/" target="_blank">Serilog </a>in our .NET Core applications to send the log entries to Loki.
 
 <div class="post-details-footer-widgets">
 </div>

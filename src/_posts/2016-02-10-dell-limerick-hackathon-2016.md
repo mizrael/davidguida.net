@@ -25,11 +25,11 @@ categories:
 ---
 Hi everybody!
 
-Last January we had an Hackathon here @ Dell Limerick, the main theme was "office productivity", aka "how would you improve your and your coworker's productivity".
+Last January we had an Hackathon here @ Dell Limerick, the main theme was &#8220;office productivity&#8221;, aka &#8220;how would you improve your and your coworker&#8217;s productivity&#8221;.
 
-I was in a team with other 4 very smart guys, didn't won but all in all it was a terrific experience&#8230;two days straight of brainstorming and coding madness combined with pizza and energy drinks.
+I was in a team with other 4 very smart guys, didn&#8217;t won but all in all it was a terrific experience&#8230;two days straight of brainstorming and coding madness combined with pizza and energy drinks.
 
-The winners came up with an interesting prototype of a chat bot running as Lync addon that can answer every type of question, from "how's the weather" to "who broke the last build?", passing from "tell me about story 1234567". I can't go too deep in the details (also, lots of natural language analysis is involved) but it was definitely a very, very interesting project and really deserved to win.
+The winners came up with an interesting prototype of a chat bot running as Lync addon that can answer every type of question, from &#8220;how&#8217;s the weather&#8221; to &#8220;who broke the last build?&#8221;, passing from &#8220;tell me about story 1234567&#8221;. I can&#8217;t go too deep in the details (also, lots of natural language analysis is involved) but it was definitely a very, very interesting project and really deserved to win.
 
 My team instead&#8230;well we produced a voting platform for ideas. In a nutshell, every user registered to the community can post his ideas (which can be divided into macro-areas) and the others can vote it using points they have received when registering. If an idea is approved, the voters will get back the points and a small bonus. If an idea is cancelled instead, they will get the points back (but no bonus).
 

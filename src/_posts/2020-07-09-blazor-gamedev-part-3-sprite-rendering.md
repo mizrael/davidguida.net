@@ -2,7 +2,7 @@
 description: >
   Hi All! Welcome to part 3 of the Blazor 2d Gamedev series. Today we're going to see how to render a sprite and handle the window resize event.
 id: 7415
-title: 'Blazor GameDev - part 3: sprite rendering'
+title: 'Blazor GameDev &#8211; part 3: sprite rendering'
 date: 2020-07-09T15:39:14-04:00
 author: David Guida
 layout: post
@@ -20,11 +20,11 @@ tags:
   - ASP.NET Core
   - Blazor
 ---
-Hi All! Welcome to part 3 of the Blazor 2d Gamedev series. Today we're going to see how to render a sprite and handle the window resize event.
+Hi All! Welcome to part 3 of the Blazor 2d Gamedev series. Today we&#8217;re going to see how to render a sprite and handle the window resize event.
 
-<a href="https://www.davidguida.net/blazor-gamedev-part-2-canvas-initialization/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">Last time</a> we saw how easy it is to initialize the HTML Canvas and render some text. Now we're going to expand that code and add the new functionalities. 
+<a href="https://www.davidguida.net/blazor-gamedev-part-2-canvas-initialization/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">Last time</a> we saw how easy it is to initialize the HTML Canvas and render some text. Now we&#8217;re going to expand that code and add the new functionalities. 
 
-All the sources are available in the <a href="https://github.com/mizrael/BlazorCanvas/tree/develop/BlazorCanvas.Example2" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">Example 2 folder</a> on GitHub. There's a demo online as well, <a href="https://mizrael.github.io/BlazorCanvas/BlazorCanvas.Example2/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">available here</a>.
+All the sources are available in the <a href="https://github.com/mizrael/BlazorCanvas/tree/develop/BlazorCanvas.Example2" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">Example 2 folder</a> on GitHub. There&#8217;s a demo online as well, <a href="https://mizrael.github.io/BlazorCanvas/BlazorCanvas.Example2/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">available here</a>.
 
 The first thing to do is to update our <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example2/wwwroot/index.html" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">index.html</a> and add the code to handle window resizing:
 
@@ -58,9 +58,9 @@ window.initGame = (instance) => {
 
 Few things going on here:
 
-  1. we're attaching a handler to the window _resize_ event
+  1. we&#8217;re attaching a handler to the window _resize_ event
   2. in _onResize()_ we store the new window size
-  3. we've updated the call to _GameLoop()_ to receive the new size
+  3. we&#8217;ve updated the call to _GameLoop()_ to receive the new size
 
 The next step is to update the Razor page. First we have to add the image to render:#
 
@@ -91,7 +91,7 @@ Since we now know the exact window size (and our canvas is set to fill 100%), we
 
 Et voila! 
 
-The <a href="https://www.davidguida.net/blazor-gamedev-part-4-moving-a-sprite/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">next time</a> we'll see how to move this sprite on the screen. Bye!
+The <a href="https://www.davidguida.net/blazor-gamedev-part-4-moving-a-sprite/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">next time</a> we&#8217;ll see how to move this sprite on the screen. Bye!
 
 <div class="post-details-footer-widgets">
 </div>

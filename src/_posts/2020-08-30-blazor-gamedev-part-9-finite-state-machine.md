@@ -2,7 +2,7 @@
 description: >
   Welcome to part 8 of our Blazor 2d Gamedev series. Today we're going to refactor our last example, cleaning up the code using a Finite State Machine.
 id: 7615
-title: 'Blazor GameDev - part 9: introducing the Finite State Machine'
+title: 'Blazor GameDev &#8211; part 9: introducing the Finite State Machine'
 date: 2020-08-30T21:36:20-04:00
 author: David Guida
 layout: post
@@ -28,11 +28,11 @@ tags:
   - Blazor
   - Gamedev
 ---
-Hi everyone! Welcome back to part 8 of our **Blazor 2d Gamedev** series. Today we'll keep refactoring <a href="https://www.davidguida.net/blazor-gamedev-part-8-keyboard-control-animations/" target="_blank" rel="noreferrer noopener">our last example</a>, cleaning up the code using a **Finite State Machine**.
+Hi everyone! Welcome back to part 8 of our **Blazor 2d Gamedev** series. Today we&#8217;ll keep refactoring <a href="https://www.davidguida.net/blazor-gamedev-part-8-keyboard-control-animations/" target="_blank" rel="noreferrer noopener">our last example</a>, cleaning up the code using a **Finite State Machine**.
 
 As usual, you can check out the <a href="https://mizrael.github.io/BlazorCanvas/BlazorCanvas.Example8/" target="_blank" rel="noreferrer noopener">results in your browser</a> before moving on. Use left/right arrows to move the player and the space bar to attack.
 
-#### So, what's a **Finite State Machine**? It's a computational machine, built from a finite list of states and the list of transitions between them. 
+#### So, what&#8217;s a **Finite State Machine**? It&#8217;s a computational machine, built from a finite list of states and the list of transitions between them. 
 
 An **FSM** can be exactly in only one of the states and can (possibly) transition into another one after receiving some particular input. This input can be state-specific or global. For more details, check out <a rel="noreferrer noopener" target="_blank" href="https://en.wikipedia.org/wiki/Finite-state_machine">the excellent article</a> on Wikipedia, it will give for sure a lot of food for thoughts.
 
@@ -59,13 +59,13 @@ Now, how can an **FSM** help us with our game? In a lot of ways actually. The fi
 		_animationComponent.Animation = _animationsSet.GetAnimation("Idle");
 }</pre>
 
-If you remember from our last article, that's the code handling the animation switching. We're going to replace that entirely with an **FSM**.
+If you remember from our last article, that&#8217;s the code handling the animation switching. We&#8217;re going to replace that entirely with an **FSM**.
 
-The idea is to have a State for each possible animation of our character ("idle", "running", "attack" and so on). Then we'll define the possible transitions between them. A transition occurs when a specific condition is detected: for example, if we're _idle_ and our speed is > 0.1 then we transition to "running".
+The idea is to have a State for each possible animation of our character (&#8220;idle&#8221;, &#8220;running&#8221;, &#8220;attack&#8221; and so on). Then we&#8217;ll define the possible transitions between them. A transition occurs when a specific condition is detected: for example, if we&#8217;re _idle_ and our speed is > 0.1 then we transition to &#8220;running&#8221;.
 
-At every update cycle, the current State will loop the list of its transactions and check the conditions for each one. If one of the predicates is satisfied, the transition occurs. We might even decide to get fancy and assign a weight to the transitions: this way if multiple predicates are true, we'll pick the one with the highest weight.
+At every update cycle, the current State will loop the list of its transactions and check the conditions for each one. If one of the predicates is satisfied, the transition occurs. We might even decide to get fancy and assign a weight to the transitions: this way if multiple predicates are true, we&#8217;ll pick the one with the highest weight.
 
-Let's take a look at the code now. This is the <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example8/Core/Components/AnimationState.cs" target="_blank" rel="noreferrer noopener">AnimationState</a> <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example8/Core/Components/AnimationState.cs" target="_blank" rel="noreferrer noopener">class</a>:
+Let&#8217;s take a look at the code now. This is the <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example8/Core/Components/AnimationState.cs" target="_blank" rel="noreferrer noopener">AnimationState</a> <a href="https://github.com/mizrael/BlazorCanvas/blob/develop/BlazorCanvas.Example8/Core/Components/AnimationState.cs" target="_blank" rel="noreferrer noopener">class</a>:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">public class AnimationState
 {
@@ -189,7 +189,7 @@ run.AddTransition(idle, new Func&lt;AnimationController, bool>[]
 	ctrl => ctrl.GetFloat("speed") &lt; .1f
 });</pre>
 
-That's all for today. <a href="https://www.davidguida.net/blazor-gamedev-part-10-the-scene-graph/" target="_blank" rel="noreferrer noopener">Next time</a> we'll see what a Scene Graph is and how we can use it to handle our Game Objects.
+That&#8217;s all for today. <a href="https://www.davidguida.net/blazor-gamedev-part-10-the-scene-graph/" target="_blank" rel="noreferrer noopener">Next time</a> we&#8217;ll see what a Scene Graph is and how we can use it to handle our Game Objects.
 
 <div class="post-details-footer-widgets">
 </div>

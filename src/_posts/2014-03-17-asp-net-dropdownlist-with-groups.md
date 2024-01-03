@@ -13,7 +13,7 @@ categories:
   - Javascript
   - Programming
 ---
-looks like it's not possible to have optgroups in an ASP.NET Dropdownlist without subclassing. Today I found a <a href="http://stackoverflow.com/questions/16167862/how-can-i-add-option-groups-in-asp-dot-net-drop-down-list" target="_blank">very useful snippet</a> on stackoverflow that allows to group items on client side and I want to share it with the world:
+looks like it&#8217;s not possible to have optgroups in an ASP.NET Dropdownlist without subclassing. Today I found a <a href="http://stackoverflow.com/questions/16167862/how-can-i-add-option-groups-in-asp-dot-net-drop-down-list" target="_blank">very useful snippet</a> on stackoverflow that allows to group items on client side and I want to share it with the world:
 
 **server:**
 

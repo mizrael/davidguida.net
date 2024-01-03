@@ -2,7 +2,7 @@
 description: >
   Ever wondered who's the strongest Avenger? Would it be Thor or Hulk? Now you can find out by using Azure Durable Entities !
 id: 7552
-title: 'How to use Azure Durable Entities to see who's the strongest Avenger'
+title: 'How to use Azure Durable Entities to see who&#8217;s the strongest Avenger'
 date: 2020-08-17T18:12:55-04:00
 author: David Guida
 layout: post
@@ -29,9 +29,9 @@ tags:
   - Azure Functions
   - Blazor
 ---
-In the movies, Thor keeps saying that he "is the strongest Avenger". Some people say that it's actually Hulk, but I guess it's a matter of perspective. How can we find a solution to this riddle? By using **Azure Durable Entities** of course!
+In the movies, Thor keeps saying that he &#8220;is the strongest Avenger&#8221;. Some people say that it&#8217;s actually Hulk, but I guess it&#8217;s a matter of perspective. How can we find a solution to this riddle? By using **Azure Durable Entities** of course!
 
-Azure Durable Functions have been a very nice addition to the Azure ecosystem. They basically let you write stateful functions and run them serverless. There's as usual a whole plethora of patterns you can apply with them, like Function Chaining
+Azure Durable Functions have been a very nice addition to the Azure ecosystem. They basically let you write stateful functions and run them serverless. There&#8217;s as usual a whole plethora of patterns you can apply with them, like Function Chaining
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large"><a href="https://i0.wp.com/docs.microsoft.com/en-us/azure/azure-functions/durable/media/durable-functions-concepts/function-chaining.png?ssl=1" target="_blank" rel="noopener noreferrer"><img src="https://i0.wp.com/docs.microsoft.com/en-us/azure/azure-functions/durable/media/durable-functions-concepts/function-chaining.png?w=788&#038;ssl=1" alt="" data-recalc-dims="1" /></a></figure>
@@ -49,9 +49,9 @@ or Monitors
   <figure class="aligncenter size-large"><a href="https://i2.wp.com/docs.microsoft.com/en-us/azure/azure-functions/durable/media/durable-functions-concepts/monitor.png?ssl=1" target="_blank" rel="noopener noreferrer"><img src="https://i2.wp.com/docs.microsoft.com/en-us/azure/azure-functions/durable/media/durable-functions-concepts/monitor.png?w=788&#038;ssl=1" alt="" data-recalc-dims="1" /></a></figure>
 </div>
 
-There's a full list available in the <a href="https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?WT.mc_id=DOP-MVP-5003878&tabs=csharp" target="_blank" rel="noreferrer noopener">official docs</a>, make sure to take a look.
+There&#8217;s a full list available in the <a href="https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview?WT.mc_id=DOP-MVP-5003878&tabs=csharp" target="_blank" rel="noreferrer noopener">official docs</a>, make sure to take a look.
 
-Durable Functions currently come in four different types: Activity, Orchestrator, Entity, and Client. I've done a bit of work with all of them and today I'm going to talk a bit about **Entity** **Functions**.
+Durable Functions currently come in four different types: Activity, Orchestrator, Entity, and Client. I&#8217;ve done a bit of work with all of them and today I&#8217;m going to talk a bit about **Entity** **Functions**.
 
 **Entity Functions** define operations for reading and updating small pieces of state, known as&nbsp;_durable entities_. They act as small tiny services that talk between each other via messages. Each entity has a unique id and an internal state. When triggered, they can update their state and/or send a message to other entities. Or do other things like calling external services, triggering orchestrations, and so on.
 
@@ -59,9 +59,9 @@ Durable Functions currently come in four different types: Activity, Orchestrator
 
 **Entity Functions** are basically another form of the <a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Actor_model" target="_blank">Actor Model</a> and share a lot of similarities with <a rel="noreferrer noopener" href="http://dotnet.github.io/orleans/" target="_blank">Project Orleans</a>, although with some <a href="https://en.wikipedia.org/wiki/Actor_model?WT.mc_id=DOP-MVP-5003878" target="_blank" rel="noreferrer noopener">interesting differences</a>. 
 
-To showcase how they work, I prepared a super-duper example, <a href="https://whoisthestrongestapp.azurewebsites.net/" target="_blank" rel="noreferrer noopener">WhoIsTheStrongest</a> 😀 It's a distribute voting platform, aimed to decide who's the _strongest Avenger_! The code is <a href="https://github.com/mizrael/WhoIsTheStrongest" target="_blank" rel="noreferrer noopener">available on GitHub</a>, feel free to wander around.
+To showcase how they work, I prepared a super-duper example, <a href="https://whoisthestrongestapp.azurewebsites.net/" target="_blank" rel="noreferrer noopener">WhoIsTheStrongest</a> 😀 It&#8217;s a distribute voting platform, aimed to decide who&#8217;s the _strongest Avenger_! The code is <a href="https://github.com/mizrael/WhoIsTheStrongest" target="_blank" rel="noreferrer noopener">available on GitHub</a>, feel free to wander around.
 
-The UI is written in **Blazor** and to be fair, there's nothing much to say. You can pick your favorite Avenger, click on the button and vote. The system will record your choice and after few seconds you'll see the updated leaderboard. 
+The UI is written in **Blazor** and to be fair, there&#8217;s nothing much to say. You can pick your favorite Avenger, click on the button and vote. The system will record your choice and after few seconds you&#8217;ll see the updated leaderboard. 
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large"><a href="/assets/uploads/2020/08/image-2.png?ssl=1" target="_blank" rel="noopener noreferrer"><img loading="lazy" width="788" height="317" src="/assets/uploads/2020/08/image-2.png?resize=788%2C317&#038;ssl=1" alt="" class="wp-image-7559" srcset="/assets/uploads/2020/08/image-2.png?w=824&ssl=1 824w, /assets/uploads/2020/08/image-2.png?resize=300%2C121&ssl=1 300w, /assets/uploads/2020/08/image-2.png?resize=768%2C309&ssl=1 768w" sizes="(max-width: 788px) 100vw, 788px" data-recalc-dims="1" /></a></figure>

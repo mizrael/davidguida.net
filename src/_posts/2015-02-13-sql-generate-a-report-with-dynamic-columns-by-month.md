@@ -20,7 +20,7 @@ categories:
 <div class="wp-block-group">
   <div class="wp-block-group__inner-container">
     <p>
-      Hi all! This time I'll try to dig a little bit into the fabulous realm of SQL and see how we can generate a nice report with dynamic columns.
+      Hi all! This time I&#8217;ll try to dig a little bit into the fabulous realm of SQL and see how we can generate a nice report with dynamic columns.
     </p>
     
     <p>
@@ -38,7 +38,7 @@ categories:
     <p><script src="https://gist.github.com/mizrael/c44e575008f5ab98994f.js"></script></p>
     
     <p>
-      The next step is "quite" easy: all we have to do is to generate a string containing the main query that picks all the customers and has many sub-queries, &nbsp;one for each month, SELECT-ing the count of the orders.
+      The next step is &#8220;quite&#8221; easy: all we have to do is to generate a string containing the main query that picks all the customers and has many sub-queries, &nbsp;one for each month, SELECT-ing the count of the orders.
     </p>
     
     <p><script src="https://gist.github.com/mizrael/930250f0c792ff54fdc8.js"></script></p>
@@ -52,13 +52,13 @@ categories:
     </p>
     
     <p>
-      Here's a screenshot of the results:
+      Here&#8217;s a screenshot of the results:
     </p><figure class="wp-block-image alignwide">
     
     <a href="/assets/uploads/2015/02/orders.jpg"><img loading="lazy" width="788" height="359" src="/assets/uploads/2015/02/orders-1024x467.jpg?resize=788%2C359" alt="dynamic sql query variable column names" class="wp-image-618" srcset="/assets/uploads/2015/02/orders.jpg?resize=1024%2C467&ssl=1 1024w, /assets/uploads/2015/02/orders.jpg?resize=300%2C137&ssl=1 300w, /assets/uploads/2015/02/orders.jpg?resize=788%2C359&ssl=1 788w, /assets/uploads/2015/02/orders.jpg?w=1680&ssl=1 1680w, /assets/uploads/2015/02/orders.jpg?w=1576&ssl=1 1576w" sizes="(max-width: 788px) 100vw, 788px" data-recalc-dims="1" /></a><figcaption>dynamic SQL query variable column names</figcaption></figure> 
     
     <p>
-      Don't forget to DROP the #dates table! 😀
+      Don&#8217;t forget to DROP the #dates table! 😀
     </p>
   </div>
 </div>

@@ -60,7 +60,7 @@ Now, take a look at the&nbsp;<a href="https://github.com/mizrael/cross-cutting-c
 
 This decorator is not doing anything particular fancy, it’s just using Stopwatch to track how much time the inner handler is taking to complete.
 
-What we’re interested in is the constructor: there the system is checking if the inner instance has been marked with the [Instrumentation] attribute, flipping a boolean value based on the result. We'll then use that bool in the Handle() method to turn the instrumentation on or off. That’s it!
+What we’re interested in is the constructor: there the system is checking if the inner instance has been marked with the [Instrumentation] attribute, flipping a boolean value based on the result. We&#8217;ll then use that bool in the Handle() method to turn the instrumentation on or off. That’s it!
 
 I’m using&nbsp;<a href="http://structuremap.github.io/" rel="noreferrer noopener" target="_blank">StructureMap&nbsp;</a>as my IoC container and I’m taking care of the handler registration&nbsp;<a href="https://github.com/mizrael/cross-cutting-concern-attributes/blob/master/cross-cutting-concern-attributes/Registries/MediatrRegistry.cs" rel="noreferrer noopener" target="_blank">here&nbsp;</a>. In the same file I also decorate all the query handlers with the InstrumentationQueryHandlerDecorator&nbsp;.
 

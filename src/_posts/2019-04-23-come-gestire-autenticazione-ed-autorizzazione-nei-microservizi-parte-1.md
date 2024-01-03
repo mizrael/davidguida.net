@@ -2,7 +2,7 @@
 description: >
   Come si possono gestire Autenticazione ed Autorizzazione in un'applicazione a microservizi? Scopriamolo insieme.
 id: 6653
-title: 'Come gestire autenticazione ed autorizzazione nei microservizi - Parte 1'
+title: 'Come gestire autenticazione ed autorizzazione nei microservizi &#8211; Parte 1'
 date: 2019-04-23T10:32:27-04:00
 author: David Guida
 layout: post
@@ -19,35 +19,35 @@ tags:
   - software architecture
 language: ita
 ---
-Nelle ultime settimane in ufficio mi sto occupando di una parte abbastanza delicata del sistema: gestire autenticazione ed autorizzazione in alcuni dei microservizi che compongono l'applicazione.
+Nelle ultime settimane in ufficio mi sto occupando di una parte abbastanza delicata del sistema: gestire autenticazione ed autorizzazione in alcuni dei microservizi che compongono l&#8217;applicazione.
 
-Per quelli che non lo sanno, io lavoro per <a rel="noreferrer noopener" aria-label="un'azienda abbastanza nota  (opens in a new tab)" href="https://www.dell.com" target="_blank">un'azienda abbastanza nota </a>nel settore IT, mi occupo dello sviluppo del tool di vendite interno. Per dirla in soldoni si tratta di un enorme, mastodontico e-commerce basato su microservizi. Ma ovviamente c'è molto di piú.
+Per quelli che non lo sanno, io lavoro per <a rel="noreferrer noopener" aria-label="un'azienda abbastanza nota  (opens in a new tab)" href="https://www.dell.com" target="_blank">un&#8217;azienda abbastanza nota </a>nel settore IT, mi occupo dello sviluppo del tool di vendite interno. Per dirla in soldoni si tratta di un enorme, mastodontico e-commerce basato su microservizi. Ma ovviamente c&#8217;è molto di piú.
 
-Ma torniamo al punto. Come stavo dicendo prima, mi é stato assegnato il compito di aggiungere Autenticazione ed Autorizzazione ad alcuni microservizi. Ovviamente il sistema aveva giá un modo per identificare l'utente. E si, ovviamente a noi interessa molto che gli utenti abbiano i giusti profili/permessi. 
+Ma torniamo al punto. Come stavo dicendo prima, mi é stato assegnato il compito di aggiungere Autenticazione ed Autorizzazione ad alcuni microservizi. Ovviamente il sistema aveva giá un modo per identificare l&#8217;utente. E si, ovviamente a noi interessa molto che gli utenti abbiano i giusti profili/permessi. 
 
 Ma ancora piú ovviamente il nostro è un sistema in continua evoluzione e ci viene richiesto di aggiungere ogni giorno nuove funzionalitá. Un bel giorno abbiamo avuto dagli Architect anche questa nuova richiesta ed eccoci qui.
 
-#### In questo post non scenderó nel dettaglio dell'implementazione come potete immaginare. Cercheró peró di condividere con voi alcune delle strategie che possono essere applicate per risolvere questo genere di problematiche.
+#### In questo post non scenderó nel dettaglio dell&#8217;implementazione come potete immaginare. Cercheró peró di condividere con voi alcune delle strategie che possono essere applicate per risolvere questo genere di problematiche.
 
-Prima di tutto, per coloro che lo ignorano, l'**Autenticazione** è il processo di identificazione dell'utente corrente. Una volta inserite le credenziali, se corrette, il sistema genererá un qualche tipo di oggetto contenente alcuni dettagli rilevanti (ad es. nome, email e cosí via).<figure class="wp-block-image alignwide">
+Prima di tutto, per coloro che lo ignorano, l&#8217;**Autenticazione** è il processo di identificazione dell&#8217;utente corrente. Una volta inserite le credenziali, se corrette, il sistema genererá un qualche tipo di oggetto contenente alcuni dettagli rilevanti (ad es. nome, email e cosí via).<figure class="wp-block-image alignwide">
 
 <a href="https://www.geekyhobbies.com/" target="_blank" rel="noreferrer noopener"><img src="https://i2.wp.com/www.geekyhobbies.com/assets/uploads/2016/02/Guess-Who-5.jpg?w=788&#038;ssl=1" alt="Box for Guess Who, courtesy of geekyhobbies.com" data-recalc-dims="1" /></a></figure> 
 
-**Autorizzazione** invece significa capire **cosa l'utente puó fare** nel sistema. Puó leggere dati? Creare contenuti? Creare altri utenti?
+**Autorizzazione** invece significa capire **cosa l&#8217;utente puó fare** nel sistema. Puó leggere dati? Creare contenuti? Creare altri utenti?
 
-#### Nel mondo dei microservizi l'Autorizzazione puó essere gestita con molta granularitá se i <a href="https://www.martinfowler.com/bliki/BoundedContext.html" target="_blank" rel="noreferrer noopener" aria-label="Bounded Context (opens in a new tab)">Bounded Context</a> sono definiti correttamente.
+#### Nel mondo dei microservizi l&#8217;Autorizzazione puó essere gestita con molta granularitá se i <a href="https://www.martinfowler.com/bliki/BoundedContext.html" target="_blank" rel="noreferrer noopener" aria-label="Bounded Context (opens in a new tab)">Bounded Context</a> sono definiti correttamente.
 
-Ora che abbiamo definito i concetti di base, passiamo al succo della questione. Normalmente, quando si parla di microservizi, uno dei pattern piú comuni è l' <a rel="noreferrer noopener" aria-label="API Gateway (opens in a new tab)" href="https://docs.microsoft.com/en-us/azure/architecture/microservices/design/gateway" target="_blank">API Gateway</a> :<figure class="wp-block-image alignwide">
+Ora che abbiamo definito i concetti di base, passiamo al succo della questione. Normalmente, quando si parla di microservizi, uno dei pattern piú comuni è l&#8217; <a rel="noreferrer noopener" aria-label="API Gateway (opens in a new tab)" href="https://docs.microsoft.com/en-us/azure/architecture/microservices/design/gateway" target="_blank">API Gateway</a> :<figure class="wp-block-image alignwide">
 
 <img src="/assets/uploads/2019/04/image.png?w=788&#038;ssl=1" alt="API Gateway" data-recalc-dims="1" /> </figure> 
 
-L'idea di base consiste nell'avere un livello intermedio fra il client ed i vari microservizi. Questo Gateway si occuperá di assemblare e preparare i DTO, magari anche in base alla tipologia del client (un dispositivo mobile potrebbe vedere meno informazioni rispetto ad un desktop). Fará logging, gestirá la cache ed anche l' Autenticazione. Ci sono ovviamente molte altre cose che puó fare ma ce ne occuperemo in un altro post.
+L&#8217;idea di base consiste nell&#8217;avere un livello intermedio fra il client ed i vari microservizi. Questo Gateway si occuperá di assemblare e preparare i DTO, magari anche in base alla tipologia del client (un dispositivo mobile potrebbe vedere meno informazioni rispetto ad un desktop). Fará logging, gestirá la cache ed anche l&#8217; Autenticazione. Ci sono ovviamente molte altre cose che puó fare ma ce ne occuperemo in un altro post.
 
-Quindi, come ci puó aiutare questo Gateway? Per scoprirlo dobbiamo introdurre un altro blocco, l' **Identity Provider** :<figure class="wp-block-image alignwide">
+Quindi, come ci puó aiutare questo Gateway? Per scoprirlo dobbiamo introdurre un altro blocco, l&#8217; **Identity Provider** :<figure class="wp-block-image alignwide">
 
 <img src="/assets/uploads/2019/04/image-1.png?w=788&#038;ssl=1" alt="API Gateway and Identity Provider" data-recalc-dims="1" /> </figure> 
 
-Questo è il flusso: alla prima richiesta dal client, il Gateway contatterá l' Identity Provider, possibilmente rimandando l'utente ad una specie di "safe zone". Una volta inserite le credenziali, si ritorna all'applicazione, questa volta con un token contenente i dettagli dell'utente.
+Questo è il flusso: alla prima richiesta dal client, il Gateway contatterá l&#8217; Identity Provider, possibilmente rimandando l&#8217;utente ad una specie di &#8220;safe zone&#8221;. Una volta inserite le credenziali, si ritorna all&#8217;applicazione, questa volta con un token contenente i dettagli dell&#8217;utente.
 
 Ci sono diverse tipologie di token che possiamo sfruttare, ultimamente sono molto in voga i [JWT](https://jwt.io/introduction/) . Dai doc ufficiali:
 

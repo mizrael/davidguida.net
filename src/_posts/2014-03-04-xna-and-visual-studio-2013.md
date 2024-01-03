@@ -19,11 +19,11 @@ categories:
 ---
 <a href="https://msxna.codeplex.com/releases" target="_blank">Thank you. </a>Really, thank you.
 
-That's the link to the XNA page on <a href="https://www.codeplex.com/" target="_blank">Codeplex</a> , with a package that will allow Visual Studio 2013 users to write, build and deploy XNA 4 applications.
+That&#8217;s the link to the XNA page on <a href="https://www.codeplex.com/" target="_blank">Codeplex</a> , with a package that will allow Visual Studio 2013 users to write, build and deploy XNA 4 applications.
 
 Enjoy!
 
-PS: yes, I'm still working on <a href="https://github.com/mizrael/CastleLegends" target="_blank">Castle Legends</a>.
+PS: yes, I&#8217;m still working on <a href="https://github.com/mizrael/CastleLegends" target="_blank">Castle Legends</a>.
 
 <div class="post-details-footer-widgets">
 </div>

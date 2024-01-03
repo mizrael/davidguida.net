@@ -13,7 +13,7 @@ categories:
   - SDL Tridion
   - Senza categoria
 ---
-This is a quick tip for something that can create a lot of hassle sometimes. As you may be aware of, it's impossible to copy/paste items across Publications. One option would be to create them manually, but what if they're too many?  
+This is a quick tip for something that can create a lot of hassle sometimes. As you may be aware of, it&#8217;s impossible to copy/paste items across Publications. One option would be to create them manually, but what if they&#8217;re too many?  
 Another option is to use the Content Porter. Right, the Content Porter.  
 Few steps:  
 1) Rename the target Publication to whatever temp name you like  

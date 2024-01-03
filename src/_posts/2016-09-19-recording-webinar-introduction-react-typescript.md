@@ -26,9 +26,9 @@ Later the same day, the Indiamentor team has also uploaded on Youtube the comple
 
 <span class="embed-youtube" style="text-align:center; display: block;"></span>
 
-Unfortunately due to some obscure technical reasons, the streaming software decided to stop updating the screenshare after a couple of slides, so in the video you won't see the second part of the presentation. However, I used Google Presentations to create my deck, so <a href="https://docs.google.com/presentation/d/1UvXtCtzSVpvi65iSLbS8CH7jZfCu3k86V8HVjqayGM0/edit?usp=sharing" target="_blank">here's the link </a>🙂
+Unfortunately due to some obscure technical reasons, the streaming software decided to stop updating the screenshare after a couple of slides, so in the video you won&#8217;t see the second part of the presentation. However, I used Google Presentations to create my deck, so <a href="https://docs.google.com/presentation/d/1UvXtCtzSVpvi65iSLbS8CH7jZfCu3k86V8HVjqayGM0/edit?usp=sharing" target="_blank">here&#8217;s the link </a>🙂
 
-I had a very good time preparing the slides and talking to the audience, even if I wasn't actually seeing anyone. I am really starting to think that maybe I could prepare some coding or software architecture lessons and begin running some (online) courses.
+I had a very good time preparing the slides and talking to the audience, even if I wasn&#8217;t actually seeing anyone. I am really starting to think that maybe I could prepare some coding or software architecture lessons and begin running some (online) courses.
 
 <div class="post-details-footer-widgets">
 </div>

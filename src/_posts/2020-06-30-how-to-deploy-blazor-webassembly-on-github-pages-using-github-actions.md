@@ -30,9 +30,9 @@ tags:
   - Blazor
 ---
 I have been spending <a href="https://www.davidguida.net/how-to-consume-dd-rest-api-over-grpc-web-blazor-part-1-the-client/" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">quite some time</a> lately playing with **Blazor**. One of the nice things is that with **webassembly** you can generate a static website and have it hosted on **<a aria-label="undefined (opens in a new tab)" href="https://pages.github.com/" target="_blank" rel="noreferrer noopener">GitHub Pages</a>** for free.  
-Most importantly, the whole process can be automated with **GitHub Actions** so you don't have to worry about it.
+Most importantly, the whole process can be automated with **GitHub Actions** so you don&#8217;t have to worry about it.
 
-It's not a complicated process, all in all just a few steps. There is only one caveat: if your repository is a "standard" User or Organization repository, you can deploy to Pages only from the **master** branch.
+It&#8217;s not a complicated process, all in all just a few steps. There is only one caveat: if your repository is a &#8220;standard&#8221; User or Organization repository, you can deploy to Pages only from the **master** branch.
 
 From <a href="https://help.github.com/en/github/working-with-github-pages/about-github-pages#user--organization-pages" target="_blank" aria-label="undefined (opens in a new tab)" rel="noreferrer noopener">the docs</a>:
 
@@ -54,7 +54,7 @@ Otherwise, if your repository belongs to a <a aria-label="undefined (opens in a 
   </p>
 </blockquote>
 
-So what do we have to do in order to see our nice website? The core <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorOnGitHubPages/blob/development/.github/workflows/gh-pages.yml" target="_blank" rel="noreferrer noopener">it's all here</a>:
+So what do we have to do in order to see our nice website? The core <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorOnGitHubPages/blob/development/.github/workflows/gh-pages.yml" target="_blank" rel="noreferrer noopener">it&#8217;s all here</a>:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="yaml" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">name: gh-pages
 
@@ -124,13 +124,13 @@ There are also few things to add to the application code as well. First of all, 
 
 As you can see from the comment, this code helps to handle URLs and redirections.
 
-You'll also have to update the _<base>_ tag with the **repository name**:
+You&#8217;ll also have to update the _<base>_ tag with the **repository name**:
 
 <pre class="EnlighterJSRAW" data-enlighter-language="html" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">&lt;base href="/BlazorOnGitHubPages/" /></pre>
 
-So if the name is _**BlazorOnGitHubPages**_, the final URL will be something like  _<https://mizrael.github.io/BlazorOnGitHubPages/>_ (which happens to be the one I'm using, feel free to try it).
+So if the name is _**BlazorOnGitHubPages**_, the final URL will be something like  _<https://mizrael.github.io/BlazorOnGitHubPages/>_ (which happens to be the one I&#8217;m using, feel free to try it).
 
-The next step is to add a <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorOnGitHubPages/blob/development/BlazorOnGitHubPages/wwwroot/404.html" target="_blank" rel="noreferrer noopener">404.html</a> page and an empty <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorOnGitHubPages/blob/development/BlazorOnGitHubPages/wwwroot/.nojekyll" target="_blank" rel="noreferrer noopener">.nojekyll</a> file in the _/wwwroot_ folder. GitHub Pages are built using Jekyll and it does not build anything that starts with _ . Blazor, however, generates a __framework_ subfolder inside _/wwwroot_ and as you can imagine, it's <a aria-label="undefined (opens in a new tab)" href="https://docs.microsoft.com/en-us/dotnet/architecture/blazor-for-web-forms-developers/project-structure#bootstrap-blazor" target="_blank" rel="noreferrer noopener">quite important</a>.
+The next step is to add a <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorOnGitHubPages/blob/development/BlazorOnGitHubPages/wwwroot/404.html" target="_blank" rel="noreferrer noopener">404.html</a> page and an empty <a aria-label="undefined (opens in a new tab)" href="https://github.com/mizrael/BlazorOnGitHubPages/blob/development/BlazorOnGitHubPages/wwwroot/.nojekyll" target="_blank" rel="noreferrer noopener">.nojekyll</a> file in the _/wwwroot_ folder. GitHub Pages are built using Jekyll and it does not build anything that starts with _ . Blazor, however, generates a __framework_ subfolder inside _/wwwroot_ and as you can imagine, it&#8217;s <a aria-label="undefined (opens in a new tab)" href="https://docs.microsoft.com/en-us/dotnet/architecture/blazor-for-web-forms-developers/project-structure#bootstrap-blazor" target="_blank" rel="noreferrer noopener">quite important</a>.
 
 <div class="post-details-footer-widgets">
 </div>

@@ -17,7 +17,7 @@ categories:
 Imagine this scenario: an ApiController Action that acts as a proxy to an external CDN for downloading files (yes, even large ones).
 
 The basic idea here is to use <a title="HttpClient" href="http://msdn.microsoft.com/it-it/library/system.net.http.httpclient.aspx" target="_blank">HttpClient</a> to create an async request to the CDN passing also the optional range headers and then simply return the result to client. Easy huh?  
-Let's take a look at the code:
+Let&#8217;s take a look at the code:
 
 <div style="tab-size: 8" id="gist28840904" class="gist">
   <div class="gist-file">
@@ -397,9 +397,9 @@ Let's take a look at the code:
   </div>
 </div>
 
-it's just important to note that I'm not returning <a title="HttpResponseMessage" href="http://msdn.microsoft.com/it-it/library/system.net.http.httpresponsemessage.aspx" target="_blank">HttpResponseMessage </a> directly but I have it enclosed in a Task< > . The <a title="ContinueWith" href="http://msdn.microsoft.com/it-it/library/system.threading.tasks.task.continuewith(v=vs.110).aspx" target="_blank">ContinueWith </a>part is used to set the http status code to <a title="HTTP Status: 206 Partial Content and Range Requests" href="http://benramsey.com/blog/2008/05/206-partial-content-and-range-requests/" target="_blank">PartialContent </a>(if the range header is provided) and to return the result from the CDN.
+it&#8217;s just important to note that I&#8217;m not returning <a title="HttpResponseMessage" href="http://msdn.microsoft.com/it-it/library/system.net.http.httpresponsemessage.aspx" target="_blank">HttpResponseMessage </a> directly but I have it enclosed in a Task< > . The <a title="ContinueWith" href="http://msdn.microsoft.com/it-it/library/system.threading.tasks.task.continuewith(v=vs.110).aspx" target="_blank">ContinueWith </a>part is used to set the http status code to <a title="HTTP Status: 206 Partial Content and Range Requests" href="http://benramsey.com/blog/2008/05/206-partial-content-and-range-requests/" target="_blank">PartialContent </a>(if the range header is provided) and to return the result from the CDN.
 
-I'm targeting .NET 4.0, that's why there are no async/await 🙂
+I&#8217;m targeting .NET 4.0, that&#8217;s why there are no async/await 🙂
 
 &nbsp;
 

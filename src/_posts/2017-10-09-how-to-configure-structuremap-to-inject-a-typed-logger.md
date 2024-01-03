@@ -30,14 +30,14 @@ This can be easily accomplished by something like this:
 
 Using a static cTor to init the logger helps to&nbsp; get a better stack trace in case&nbsp;GetCurrentClassLogger() throws an exception for some reason.
 
-However, in case you're using a DI container (as <a href="https://martinfowler.com/articles/injection.html" target="_blank" rel="noopener">you should</a>), it may become complicate to inject a valid Logger instance into each class.
+However, in case you&#8217;re using a DI container (as <a href="https://martinfowler.com/articles/injection.html" target="_blank" rel="noopener">you should</a>), it may become complicate to inject a valid Logger instance into each class.
 
-Getting back to my project, for this I am using&nbsp;<a href="http://structuremap.github.io/" target="_blank" rel="noopener">StructureMap </a>as DI container. Usually I tend to stick with <a href="https://simpleinjector.org/index.html" target="_blank" rel="noopener">Simple Injector</a>, but I just joined the team and it's very important to follow <a href="https://team-coder.com/establish-coding-guidelines/" target="_blank" rel="noopener">the existing conventions</a>.
+Getting back to my project, for this I am using&nbsp;<a href="http://structuremap.github.io/" target="_blank" rel="noopener">StructureMap </a>as DI container. Usually I tend to stick with <a href="https://simpleinjector.org/index.html" target="_blank" rel="noopener">Simple Injector</a>, but I just joined the team and it&#8217;s very important to follow <a href="https://team-coder.com/establish-coding-guidelines/" target="_blank" rel="noopener">the existing conventions</a>.
 
-The idea here is to use a wrapper class around the logger instance that takes as cTor parameter the name of the calling class. I'm using a wrapper just to avoid coupling with a third party library: usually you wouldn't change from a logging library to another unless you've a very good reason for, but this principle applies basically to anything.
+The idea here is to use a wrapper class around the logger instance that takes as cTor parameter the name of the calling class. I&#8217;m using a wrapper just to avoid coupling with a third party library: usually you wouldn&#8217;t change from a logging library to another unless you&#8217;ve a very good reason for, but this principle applies basically to anything.
 
-Next step is to configure StructureMap to return each time a new instance of the LoggerWrapper with the proper calling class name. And that's actually the easy part!  
-Here's the full code:
+Next step is to configure StructureMap to return each time a new instance of the LoggerWrapper with the proper calling class name. And that&#8217;s actually the easy part!  
+Here&#8217;s the full code:
 
 
 
@@ -45,7 +45,7 @@ As you can see the magic happens during the StructureMap setup:&nbsp;**context.P
 
 &nbsp;
 
-Now let's take a step back. Logging falls into the category of <a href="https://en.wikipedia.org/wiki/Cross-cutting_concern" target="_blank" rel="noopener">"cross-cutting concerns"</a>&nbsp;, which basically means that logging can be considered part of the "infrastructure" and of course not of the business logic of the application. Caching can be another good example.
+Now let&#8217;s take a step back. Logging falls into the category of <a href="https://en.wikipedia.org/wiki/Cross-cutting_concern" target="_blank" rel="noopener">&#8220;cross-cutting concerns&#8221;</a>&nbsp;, which basically means that logging can be considered part of the &#8220;infrastructure&#8221; and of course not of the business logic of the application. Caching can be another good example.
 
 That said, unless you really need to&nbsp; write specific log messages in specific points of your application, another option could be using the <a href="https://en.wikipedia.org/wiki/Decorator_pattern" target="_blank" rel="noopener">Decorator pattern</a>&nbsp;. The idea is pretty straightforward:
 
@@ -54,12 +54,12 @@ That said, unless you really need to&nbsp; write specific log messages in specif
   3. wrap all the class methods
   4. add logging where needed
 
-Now it's up to you to decide which approach to take, they both have pros and cons. For example, injecting the logger in some case can imply a <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank" rel="noopener">SRP </a>violation. On the other hand, using a decorator requires wrapping all the inner class methods. Keep that in mind when you add stuff to your interfaces 🙂
+Now it&#8217;s up to you to decide which approach to take, they both have pros and cons. For example, injecting the logger in some case can imply a <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank" rel="noopener">SRP </a>violation. On the other hand, using a decorator requires wrapping all the inner class methods. Keep that in mind when you add stuff to your interfaces 🙂
 
 **[EDIT]**  
 As Jeremy wrote in his comment, the <a href="http://structuremap.github.io/the-container/working-with-the-icontext-at-build-time/" target="_blank" rel="noopener">StructureMap documentation</a> suggests to use a logger convention instead which would&nbsp;&nbsp;be (quoting):
 
-> "significantly more efficient at runtime because the decision about which&nbsp;`Logger`&nbsp;to use is only done once upfront"&nbsp;
+> &#8220;significantly more efficient at runtime because the decision about which&nbsp;`Logger`&nbsp;to use is only done once upfront&#8221;&nbsp;
 
 <div class="post-details-footer-widgets">
 </div>

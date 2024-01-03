@@ -79,7 +79,7 @@ and then just update a property, the library will do the rest 🙂
 
 Internally what is happening is that the configuration class ( <a href="http://www.codeproject.com/Articles/88278/Observer-in-NET-with-IObserver-T" target="_blank">ConfigObject</a> ) now implements the <a href="https://msdn.microsoft.com/en-us/library/vstudio/dd990377%28v=vs.100%29.aspx" target="_blank">IObservable<></a> interface,  so whenever a change occurs the registered observers will get a notification. The <a href="https://github.com/mizrael/DynamicConfig/blob/master/DynamicConfig/Providers/JsonConfigProvider.cs" target="_blank">JsonConfigProvider</a> instead implements <a href="https://msdn.microsoft.com/en-us/librAry/dd783449(v=vs.100).aspx" target="_blank">IObserver<></a> and subscribes to the events during file loading.
 
-A quick description to the Observer pattern can be found on CodeProject <a href="http://www.codeproject.com/Articles/88278/Observer-in-NET-with-IObserver-T" target="_blank">here</a> ( although the pattern is very well know and I am sure doesn't require introduction ). The idea is to maintain a list of objects that will be notified by the observer each time a specific event occurs on the observed class  itself.
+A quick description to the Observer pattern can be found on CodeProject <a href="http://www.codeproject.com/Articles/88278/Observer-in-NET-with-IObserver-T" target="_blank">here</a> ( although the pattern is very well know and I am sure doesn&#8217;t require introduction ). The idea is to maintain a list of objects that will be notified by the observer each time a specific event occurs on the observed class  itself.
 
 On the ConfigObject class I also added a Parent property so that each message will be sent also to its subscribers.
 

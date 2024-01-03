@@ -1,6 +1,6 @@
 ---
 id: 6931
-title: 'It's dangerous to go alone! Take this.'
+title: 'It&#8217;s dangerous to go alone! Take this.'
 date: 2019-12-01T18:30:37-05:00
 author: David Guida
 layout: post
@@ -15,9 +15,9 @@ tags:
 ---
 15 pieces of luggage. 10 small trolleys. 5 big boxes for a total of 126 kg. A wife, two kids, parents-in-law and a cat. 2 planes, 13 hours of total flight time. 
 
-That's what it took to change my life and the one of my loved ones.
+That&#8217;s what it took to change my life and the one of my loved ones.
 
-Obviously this doesn't take into account all the time spent for the preparatives, planning, talking, discussions. All the laughters and the hugs for the joy of change. All the sadness and sorrow for the upcoming day of goodbye.
+Obviously this doesn&#8217;t take into account all the time spent for the preparatives, planning, talking, discussions. All the laughters and the hugs for the joy of change. All the sadness and sorrow for the upcoming day of goodbye.
 
 We moved all together to Montreal, Canada
 

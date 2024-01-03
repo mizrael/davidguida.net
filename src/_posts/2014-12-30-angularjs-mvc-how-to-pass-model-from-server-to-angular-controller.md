@@ -19,14 +19,14 @@ categories:
   - MVC
   - Programming
 ---
-Here's a quick tip on how to pass a complex model from server side to an AngularJS controller.  
+Here&#8217;s a quick tip on how to pass a complex model from server side to an AngularJS controller.  
 The idea is to serialize the model to json (I am using the majestic <a title="Json.NET" href="https://www.nuget.org/packages/Newtonsoft.Json/" target="_blank">Newtonsoft </a>library for that), store it into a javascript variable and then <a title="AngularJS providers" href="https://docs.angularjs.org/guide/providers" target="_blank">create a provider</a> with it on the AngularJS application that will be injected in the controller.
 
-Here's the controller code:
+Here&#8217;s the controller code:
 
 [csharp]
 
-myApp.controller(&#8216;myController', [&#8216;$scope', &#8216;viewModel',  
+myApp.controller(&#8216;myController&#8217;, [&#8216;$scope&#8217;, &#8216;viewModel&#8217;,  
    function ($scope,  viewModel) {  
         $scope.viewModel = viewModel;  
    }]  
@@ -34,7 +34,7 @@ myApp.controller(&#8216;myController', [&#8216;$scope', &#8216;viewModel',
 
 [/csharp]
 
-and here's the MVC View
+and here&#8217;s the MVC View
 
 [csharp]  
 <div ng-controller="myController"> &#8230;. </div>  

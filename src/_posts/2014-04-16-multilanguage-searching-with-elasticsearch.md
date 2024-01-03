@@ -13,7 +13,7 @@ categories:
   - Elasticsearch
   - Programming
 ---
-This time I'll start directly with the code.  First an utility method to create the connection:
+This time I&#8217;ll start directly with the code.  First an utility method to create the connection:
 
 [csharp]  
 private ElasticClient Connect(IEnumerable contents)  
@@ -25,7 +25,7 @@ var client = new ElasticClient(settings);
 }  
 [/csharp]
 
-And here's the interesting part:
+And here&#8217;s the interesting part:
 
 [csharp]  
 public IEnumerable<SearchItem> Search(string text, int page, int pageSize, IEnumerable<string> languages)  

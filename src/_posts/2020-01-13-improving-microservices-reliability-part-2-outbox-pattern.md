@@ -34,7 +34,7 @@ So is there any other approach we could take? Personally I'm a great fan of pers
 
 And here it comes the **Outbox Pattern**! 
 
-Let's go back to our eCommerce example. We want to save an order and roughly at the same time send an email to the customer. I said "roughly" because we don't really need these operations to occur at the same time. Moreover, there might even be other actions but let's stick with one for now. 
+Let's go back to our eCommerce example. We want to save an order and roughly at the same time send an email to the customer. I said &#8220;roughly&#8221; because we don't really need these operations to occur at the same time. Moreover, there might even be other actions but let's stick with one for now. 
 
 #### The problem is that since <a rel="noreferrer noopener" aria-label="by definition (opens in a new tab)" href="https://martinfowler.com/articles/microservices.html" target="_blank">by definition</a> every microservice has its own persistence mechanism, it's quite impossible to have a distributed transaction spanning all the services.
 
@@ -49,7 +49,7 @@ With the **Outbox** instead the flow is much simpler:
   1. the Order service receives the command to store the new Order
   2. a **local** transaction is opened
       * the Order is persisted
-      * an "order saved" event is serialized and stored into a generic Outbox table (or collection or whatever you're using, doesn't matter)
+      * an &#8220;order saved&#8221; event is serialized and stored into a generic Outbox table (or collection or whatever you're using, doesn't matter)
   3. the local transaction gets committed
 
 At this point we've ensured that our **local** state is persisted so any potential subsequent query should be able to return fresh data (assuming caching is not an issue).

@@ -2,7 +2,7 @@
 description: >
   Welcome back to part 13 of our Blazor 2d Gamedev series. Today we're going to see how we can react when a collision occurs.
 id: 8002
-title: 'Blazor Gamedev  - part 13: collision handling'
+title: 'Blazor Gamedev  &#8211; part 13: collision handling'
 date: 2021-02-22T10:00:07-05:00
 author: David Guida
 layout: post

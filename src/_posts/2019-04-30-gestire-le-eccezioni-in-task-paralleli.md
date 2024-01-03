@@ -26,17 +26,17 @@ Supponiamo di dover effettuare delle chiamate ad alcuni microservizi. Magari la 
 
 Supponiamo che le chiamate siano indipendenti fra di loro e possano quindi essere eseguite in parallelo. Come lo sviluppiamo? Molto semplicemente possiamo usare **Task.WaitAll()** oppure, ancora meglio, **Task.WhenAll()**. Qualcosa del genere:
 
-#### **Task.WhenAll()** restituisce un Task quindi possiamo usare il costrutto async/await evitando cosi' di bloccare il thread corrente.
+#### **Task.WhenAll()** restituisce un Task quindi possiamo usare il costrutto async/await evitando cosi&#8217; di bloccare il thread corrente.
 
-Perfetto, ora supponiamo peró che qualcuna delle chiamate fallisca e lanci un'eccezione. Come possiamo gestire gli errori evitando di perdere informazioni preziose? Un blocco try/catch è sicuramente un buon inizio:
+Perfetto, ora supponiamo peró che qualcuna delle chiamate fallisca e lanci un&#8217;eccezione. Come possiamo gestire gli errori evitando di perdere informazioni preziose? Un blocco try/catch è sicuramente un buon inizio:
 
-Questo funziona bene finché abbiamo una sola eccezione. Se piú chiamate falliscono **Task.WhenAll()** ci rilancerá purtoppo soltanto la prima. Questa e' una delle differenze principali rispetto a **Task.WaitAll()** : quest'ultimo infatti raggruppa tutte le eccezioni e le rilancia all'interno di una **AggregateException** .
+Questo funziona bene finché abbiamo una sola eccezione. Se piú chiamate falliscono **Task.WhenAll()** ci rilancerá purtoppo soltanto la prima. Questa e&#8217; una delle differenze principali rispetto a **Task.WaitAll()** : quest&#8217;ultimo infatti raggruppa tutte le eccezioni e le rilancia all&#8217;interno di una **AggregateException** .
 
-Quindi cosa possiamo fare? Passare a Task.WaitAll()? No, c'e' una soluzione migliore.
+Quindi cosa possiamo fare? Passare a Task.WaitAll()? No, c&#8217;e&#8217; una soluzione migliore.
 
-Il trucco praticamente sta nel non usare await direttamente su Task.WhenAll(), bensí salvarne il risultato in una variabile. All'interno del blocco try/catch possiamo poi accedere alla property task.Exception, che sará di tipo AggregateException. A questo punto poi possiamo fare quello che vogliamo accedendo alla collezione InnerExceptions:
+Il trucco praticamente sta nel non usare await direttamente su Task.WhenAll(), bensí salvarne il risultato in una variabile. All&#8217;interno del blocco try/catch possiamo poi accedere alla property task.Exception, che sará di tipo AggregateException. A questo punto poi possiamo fare quello che vogliamo accedendo alla collezione InnerExceptions:
 
-Come al solito ho pubblicato su Github <a rel="noreferrer noopener" aria-label="un piccolo repository (opens in a new tab)" href="https://github.com/mizrael/parallel-tasks-exceptions" target="_blank">un piccolo repository</a>. All'interno troverete una console application in dotNet Core con vari esempi su come gestire le eccezioni dei in parallelo.
+Come al solito ho pubblicato su Github <a rel="noreferrer noopener" aria-label="un piccolo repository (opens in a new tab)" href="https://github.com/mizrael/parallel-tasks-exceptions" target="_blank">un piccolo repository</a>. All&#8217;interno troverete una console application in dotNet Core con vari esempi su come gestire le eccezioni dei in parallelo.
 
 <div class="post-details-footer-widgets">
 </div>

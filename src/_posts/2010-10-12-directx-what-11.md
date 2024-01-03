@@ -13,7 +13,7 @@ categories:
 ---
 <div>
   <p>
-    It's just a quick update, nothing special&#8230;<br /> A friend of mine asked if I had some spare time to write a "not-so-technical" article on DirectX 11. He's the admin of the Italian Civilization Blog, and they're preparing for the new version of the game, so he thought it would be nice to share some infos about the new tech. Ssssooooo&#8230;. <a href="http://www.civilization5.it/?p=250">here's the link,</a> I know, it's in italian, but&#8230;well&#8230; ermmm&#8230;.. look at that, a three-headed monkey!
+    It&#8217;s just a quick update, nothing special&#8230;<br /> A friend of mine asked if I had some spare time to write a &#8220;not-so-technical&#8221; article on DirectX 11. He&#8217;s the admin of the Italian Civilization Blog, and they&#8217;re preparing for the new version of the game, so he thought it would be nice to share some infos about the new tech. Ssssooooo&#8230;. <a href="http://www.civilization5.it/?p=250">here&#8217;s the link,</a> I know, it&#8217;s in italian, but&#8230;well&#8230; ermmm&#8230;.. look at that, a three-headed monkey!
   </p>
   
   <p>
@@ -25,7 +25,7 @@ categories:
   </p>
   
   <p>
-    Also, my friend has <a href="http://www.nvidia.it/object/gts450-civilization-contest-it.html">opened a contest</a> on his website (italian, yes), so if you own a copy of Sid Meier's Whatever, you could win a GeForce GT450 !
+    Also, my friend has <a href="http://www.nvidia.it/object/gts450-civilization-contest-it.html">opened a contest</a> on his website (italian, yes), so if you own a copy of Sid Meier&#8217;s Whatever, you could win a GeForce GT450 !
   </p>
 </div>
 

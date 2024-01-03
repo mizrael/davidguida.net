@@ -26,11 +26,11 @@ Few days ago Microsoft released **Entity Framework Core 3**, introducing a <a re
 
 #### Now we have full support for very cool stuff like C# 8, Async Enumerables, plus a brand new LINQ provider.
 
-I'm using a lot **Entity Framework** in my daily job but of course before upgrading a project &#8216;s dependency to a mayor version there's always some testing to do.
+I&#8217;m using a lot **Entity Framework** in my daily job but of course before upgrading a project &#8216;s dependency to a mayor version there&#8217;s always some testing to do.
 
 As I often do, I decided to write a small demo and try out some of these new functionalities. You can find the all sources <a rel="noreferrer noopener" aria-label="available on GitHub (opens in a new tab)" href="https://github.com/mizrael/EFCoreCommerceDemo" target="_blank">available on GitHub</a>.
 
-My goal for this project was to model a bunch of <a href="https://lostechies.com/jimmybogard/2008/05/21/entities-value-objects-aggregates-and-roots/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Aggregates and Value Objects</a> with proper <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://deviq.com/persistence-ignorance/" target="_blank">Persistence Ignorance</a>, eg: I don't want to pollute my business logic classes with code responsible of storing and retrieving data.
+My goal for this project was to model a bunch of <a href="https://lostechies.com/jimmybogard/2008/05/21/entities-value-objects-aggregates-and-roots/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Aggregates and Value Objects</a> with proper <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://deviq.com/persistence-ignorance/" target="_blank">Persistence Ignorance</a>, eg: I don&#8217;t want to pollute my business logic classes with code responsible of storing and retrieving data.
 
 Luckily **Entity Framework** **Core** offers the possibility to configure the Entity/Table mapping using a nice <a href="https://martinfowler.com/bliki/FluentInterface.html" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Fluent Interface</a> , avoiding attributes on our properties.
 
@@ -55,7 +55,7 @@ Then the code will:
 
 <a href="/assets/uploads/2019/10/image.png?ssl=1" target="_blank" rel="noreferrer noopener"><img loading="lazy" width="788" height="308" src="/assets/uploads/2019/10/image.png?resize=788%2C308&#038;ssl=1" alt="" class="wp-image-6797" srcset="/assets/uploads/2019/10/image.png?w=912&ssl=1 912w, /assets/uploads/2019/10/image.png?resize=300%2C117&ssl=1 300w, /assets/uploads/2019/10/image.png?resize=768%2C301&ssl=1 768w, /assets/uploads/2019/10/image.png?resize=788%2C308&ssl=1 788w" sizes="(max-width: 788px) 100vw, 788px" data-recalc-dims="1" /></a></figure> 
 
-<a href="https://www.davidguida.net/lets-do-some-ddd-with-entity-framework-core-3-part-2-lets-see-some-code/" target="_blank" rel="noreferrer noopener" aria-label="In the next post (opens in a new tab)">In the next post</a> we're going to take a look at the code and talk about each Entity configuration. Stay tuned!
+<a href="https://www.davidguida.net/lets-do-some-ddd-with-entity-framework-core-3-part-2-lets-see-some-code/" target="_blank" rel="noreferrer noopener" aria-label="In the next post (opens in a new tab)">In the next post</a> we&#8217;re going to take a look at the code and talk about each Entity configuration. Stay tuned!
 
 <div class="post-details-footer-widgets">
 </div>

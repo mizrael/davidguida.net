@@ -19,7 +19,7 @@ Now I probably have the opportunity to take a step back and start again from scr
 Thanks to <a href="http://mrdoob.github.com/three.js/" target="_blank">ThreeJs</a> I can keep improving my Javascript skills and at the same time do something fun!
 
 <p style="text-align: center;">
-  <a href="/webGl/Test1/index.htm" target="_blank">This is</a> what I've accomplished in just a couple of hours (including the startup, digging through the docs, examples and so on). Of course it works only on Chrome and Firefox, so here's a screenshot&#8230;.
+  <a href="/webGl/Test1/index.htm" target="_blank">This is</a> what I&#8217;ve accomplished in just a couple of hours (including the startup, digging through the docs, examples and so on). Of course it works only on Chrome and Firefox, so here&#8217;s a screenshot&#8230;.
 </p>
 
 <p style="text-align: center;">

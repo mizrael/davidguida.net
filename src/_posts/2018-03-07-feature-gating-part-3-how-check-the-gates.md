@@ -12,7 +12,7 @@ categories:
   - Software Architecture
   - Typescript
 ---
-In this article we'll explore few ways to check if the feature gates are **opened or not**. This is the third episode of our series about **Feature Gating**, <a href="https://www.davidguida.net/feature-gating-part-2-how-can-we-store-the-flags/" target="_blank" rel="noopener">last time</a> we discussed about the optimal persistence method for the flags.
+In this article we&#8217;ll explore few ways to check if the feature gates are **opened or not**. This is the third episode of our series about **Feature Gating**, <a href="https://www.davidguida.net/feature-gating-part-2-how-can-we-store-the-flags/" target="_blank" rel="noopener">last time</a> we discussed about the optimal persistence method for the flags.
 
 The first approach is a&nbsp;**static config object** injected as <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank" rel="noopener">dependency</a> in the class cTor:
 
@@ -202,9 +202,9 @@ The first approach is a&nbsp;**static config object** injected as <a href="https
   </div>
 </div>
 
-It's simple, easy to implement and does the job. The configuration object can be instantiated in the&nbsp;**composition root** reading data&nbsp;from whatever is your <a href="https://www.davidguida.net/feature-gating-part-2-how-can-we-store-the-flags/" target="_blank" rel="noopener">persistence layer</a>&nbsp;&nbsp;and you're done.
+It&#8217;s simple, easy to implement and does the job. The configuration object can be instantiated in the&nbsp;**composition root** reading data&nbsp;from whatever is your <a href="https://www.davidguida.net/feature-gating-part-2-how-can-we-store-the-flags/" target="_blank" rel="noopener">persistence layer</a>&nbsp;&nbsp;and you&#8217;re done.
 
-Drawbacks? It' **static**. That means you cannot vary your flags based on custom conditions (eg. logged user, time, geolocation).
+Drawbacks? It&#8217; **static**. That means you cannot vary your flags based on custom conditions (eg. logged user, time, geolocation).
 
 So what can we do? Something like this:
 
@@ -359,9 +359,9 @@ So what can we do? Something like this:
   </div>
 </div>
 
-Replacing the configuration object with a **specific service&nbsp;**will do the job. This is probably the most common situation and personally I'm quite a fan. The only drawback is the infamous&nbsp;**tech debt**: very soon the code will be filled with if/else statements. Should we leave them? Remove them? If yes, when? We will discuss in another article a simple strategy for that.
+Replacing the configuration object with a **specific service&nbsp;**will do the job. This is probably the most common situation and personally I&#8217;m quite a fan. The only drawback is the infamous&nbsp;**tech debt**: very soon the code will be filled with if/else statements. Should we leave them? Remove them? If yes, when? We will discuss in another article a simple strategy for that.
 
-Speaking about **strategy**, it's a <a href="https://en.wikipedia.org/wiki/Strategy_pattern" target="_blank" rel="noopener">very interesting pattern</a> that we can exploit:
+Speaking about **strategy**, it&#8217;s a <a href="https://en.wikipedia.org/wiki/Strategy_pattern" target="_blank" rel="noopener">very interesting pattern</a> that we can exploit:
 
 <div style="tab-size: 8" id="gist87846815" class="gist">
   <div class="gist-file">
@@ -505,7 +505,7 @@ Speaking about **strategy**, it's a <a href="https://en.wikipedia.org/wiki/Strat
   </div>
 </div>
 
-The idea is to encapsulate the new and the old logic in two classes (lines 10 and 11) and generate a third one which will use the previous featureService to pick the right instance. Finally all you have to do is to inject that class in the consumer and you're done.&nbsp;&nbsp;
+The idea is to encapsulate the new and the old logic in two classes (lines 10 and 11) and generate a third one which will use the previous featureService to pick the right instance. Finally all you have to do is to inject that class in the consumer and you&#8217;re done.&nbsp;&nbsp;
 
 Next time: this is nice, but is really useful? What do we&nbsp;**really** get using Feature Gating?
 

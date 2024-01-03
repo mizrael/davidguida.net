@@ -2,7 +2,7 @@
 description: >
   In this series we'll talk a bit about message queues with RabbitMQ and how to integrate it in a C# WebAPI application using Background Workers.
 id: 6711
-title: 'Consuming message queues using .net core background workers - part 1: message queues'
+title: 'Consuming message queues using .net core background workers &#8211; part 1: message queues'
 date: 2019-06-28T13:19:27-04:00
 author: David Guida
 layout: post
@@ -20,15 +20,15 @@ tags:
   - design patterns
   - software architecture
 ---
-In this series we'll talk a bit about message queues with <a rel="noreferrer noopener" aria-label="RabbitMQ  (opens in a new tab)" href="https://www.rabbitmq.com/" target="_blank">RabbitMQ </a>and how to integrate it in a C# WebAPI application using Background Workers. 
+In this series we&#8217;ll talk a bit about message queues with <a rel="noreferrer noopener" aria-label="RabbitMQ  (opens in a new tab)" href="https://www.rabbitmq.com/" target="_blank">RabbitMQ </a>and how to integrate it in a C# WebAPI application using Background Workers. 
 
-It's hard sometimes to come up with a decent title. In this case I had to sit back and take some time to decide. I had a semi-clear idea of what this article was about, but picking the title is a different beast. 
+It&#8217;s hard sometimes to come up with a decent title. In this case I had to sit back and take some time to decide. I had a semi-clear idea of what this article was about, but picking the title is a different beast. 
 
-So today we're going to talk about message queues and background workers. Why should I use a message queue? What's a background worker? Why should I mix them? Give me some time and I'll walk you through.
+So today we&#8217;re going to talk about message queues and background workers. Why should I use a message queue? What&#8217;s a background worker? Why should I mix them? Give me some time and I&#8217;ll walk you through.
 
-#### Let's start with message queues first. 
+#### Let&#8217;s start with message queues first. 
 
-Suppose you have an operation that doesn't require manual intervention, maybe needs some orchestration between multiple services and might also take some time. The classic example you'll find online is confirming an order on a e-commerce.
+Suppose you have an operation that doesn&#8217;t require manual intervention, maybe needs some orchestration between multiple services and might also take some time. The classic example you&#8217;ll find online is confirming an order on a e-commerce.
 
 The usual steps involved would be:
 
@@ -40,7 +40,7 @@ The usual steps involved would be:
   6. handle shipping
   7. update the Order status to fulfilled
 
-Of course this list might vary according to the business case. And I haven't included any kind of notification to customers or admins. But I think you got the point: **this stuff is complex** and needs to be planned very carefully.
+Of course this list might vary according to the business case. And I haven&#8217;t included any kind of notification to customers or admins. But I think you got the point: **this stuff is complex** and needs to be planned very carefully.
 
 Moreover: why should we keep the customer waiting on the UI for the entire operation? This workflow can be completed offline, asynchronously. No need to keep the user hanging in front of the monitor, waiting for a confirmation (and potentially an email).
 
@@ -50,7 +50,7 @@ Message queues allow different parts of a system to communicate and process oper
 
 Messages are stored on the queue until they are processed and deleted. Each message is processed only once, by a single consumer. Or we can configure the system to broadcast the message to multiple consumers. Think of a Chat service: someone sends a cat picture to a group and all its users will receive it.
 
-Using message queues we can handle traffic spikes by adding more consumers and process the messages in <a href="https://www.davidguida.net/serial-vs-parallel-task-execution/" target="_blank" rel="noreferrer noopener" aria-label="parallel (opens in a new tab)">parallel</a>, scaling horizontally. Things might be a little different if you care about the **order** of the messages, but that's a story for another article.
+Using message queues we can handle traffic spikes by adding more consumers and process the messages in <a href="https://www.davidguida.net/serial-vs-parallel-task-execution/" target="_blank" rel="noreferrer noopener" aria-label="parallel (opens in a new tab)">parallel</a>, scaling horizontally. Things might be a little different if you care about the **order** of the messages, but that&#8217;s a story for another article.
 
 See you <a href="https://www.davidguida.net/consuming-message-queues-using-net-core-background-workers-part-2-background-workers/" target="_blank" rel="noreferrer noopener" aria-label="next time (opens in a new tab)">next time</a>!
 

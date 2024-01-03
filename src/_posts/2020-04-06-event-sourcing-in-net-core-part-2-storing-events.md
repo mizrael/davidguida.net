@@ -2,7 +2,7 @@
 description: >
   Here we are for the second part of our Event Sourcing series. This time we'll see how we can start storing events in our system.
 id: 7119
-title: 'Event Sourcing in .NET Core - part 2: storing events'
+title: 'Event Sourcing in .NET Core &#8211; part 2: storing events'
 date: 2020-04-06T04:00:00-04:00
 author: David Guida
 layout: post
@@ -30,11 +30,11 @@ tags:
   - MongoDB
   - software architecture
 ---
-And here we are for the second part of the **Event Sourcing** series. <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">Last time</a> we introduced the main idea and some of its benefits. This time we'll see how we can start storing events in our system.
+And here we are for the second part of the **Event Sourcing** series. <a rel="noreferrer noopener" href="https://www.davidguida.net/event-sourcing-in-net-core-part-1-a-gentle-introduction/" target="_blank">Last time</a> we introduced the main idea and some of its benefits. This time we&#8217;ll see how we can start storing events in our system.
 
 As usual, I have prepared a small demo, modeled around the banking example I depicted in part 1. Sources are <a href="https://github.com/mizrael/SuperSafeBank" target="_blank" rel="noreferrer noopener">available here</a>.
 
-Let's do a quick recap: we're trying to write a system that appends events to a log-like persistent storage using a CQRS approach. Query models are stored in a separate storage and built at regular intervals or every time an event occurs.
+Let&#8217;s do a quick recap: we&#8217;re trying to write a system that appends events to a log-like persistent storage using a CQRS approach. Query models are stored in a separate storage and built at regular intervals or every time an event occurs.
 
 #### Events can be used for various reasons, like tracing the activity on the platform or rebuilding the state of the domain models at any specific point in time.
 
@@ -48,7 +48,7 @@ For this demo, I decided to go for the latter and give a chance to <a rel="noref
   </p>
 </blockquote>
 
-It has decent documentation, good community and was created by the legend <a rel="noreferrer noopener" target="_blank" href="https://github.com/gregoryyoung">Greg Young</a>. For those who don't know him, he coined the term "CQRS", I guess that's enough.
+It has decent documentation, good community and was created by the legend <a rel="noreferrer noopener" target="_blank" href="https://github.com/gregoryyoung">Greg Young</a>. For those who don&#8217;t know him, he coined the term &#8220;CQRS&#8221;, I guess that&#8217;s enough.
 
 Now, in our example we had these requirements:
 
@@ -73,7 +73,7 @@ public interface IEntity&lt;out TKey>
     TKey Id { get; }
 }</pre>
 
-We saw something similar in a previous post about the <a rel="noreferrer noopener" href="https://www.davidguida.net/improving-microservices-reliability-part-2-outbox-pattern/" target="_blank">Outbox Pattern</a>. The key difference here is that we're storing a Version along with the events. It will be handy on several occasions, especially when resolving conflicts during writes or when building the query models.
+We saw something similar in a previous post about the <a rel="noreferrer noopener" href="https://www.davidguida.net/improving-microservices-reliability-part-2-outbox-pattern/" target="_blank">Outbox Pattern</a>. The key difference here is that we&#8217;re storing a Version along with the events. It will be handy on several occasions, especially when resolving conflicts during writes or when building the query models.
 
 Creating a Customer is quite simple (code omitted for brevity):
 
@@ -88,7 +88,7 @@ Creating a Customer is quite simple (code omitted for brevity):
         }
 }</pre>
 
-As you can see we're directly creating the Customer model and persisting it. The Command handler is not validating the command, this concern <a href="https://www.davidguida.net/cqrs-on-commands-and-validation/" target="_blank" rel="noreferrer noopener">has been extracted</a> and executed by another class.
+As you can see we&#8217;re directly creating the Customer model and persisting it. The Command handler is not validating the command, this concern <a href="https://www.davidguida.net/cqrs-on-commands-and-validation/" target="_blank" rel="noreferrer noopener">has been extracted</a> and executed by another class.
 
 The next step is to create an Account for this Customer:
 
@@ -110,17 +110,17 @@ The next step is to create an Account for this Customer:
 
 Here we have to load (rehydrate) the Customer first. Of course we cannot (and **should not**) rely on the Queries persistence layer as it might be not in sync.
 
-The <a rel="noreferrer noopener" href="https://github.com/mizrael/SuperSafeBank/blob/master/SuperSafeBank.Core/EventsService.cs" target="_blank">IEventsService implementation</a> of PersistAsync() has a quite important role: it will request our persistence layer ( Event Store ) to append the events for the aggregate **and** will publish its integration events. We'll talk more about this in the next article of the series.
+The <a rel="noreferrer noopener" href="https://github.com/mizrael/SuperSafeBank/blob/master/SuperSafeBank.Core/EventsService.cs" target="_blank">IEventsService implementation</a> of PersistAsync() has a quite important role: it will request our persistence layer ( Event Store ) to append the events for the aggregate **and** will publish its integration events. We&#8217;ll talk more about this in the next article of the series.
 
 The <a rel="noreferrer noopener" href="https://github.com/mizrael/SuperSafeBank/blob/master/SuperSafeBank.Persistence.EventStore/EventsRepository.cs" target="_blank">Events Repository</a> instead is responsible for **appending** events for an Aggregate root and **rehydrating it**. 
 
 As you can see from the code, the append operation is opening a transaction, looping over the domain events and persisting them. 
 
-Event Store is structured over the concept of "streams". Every aggregate is represented by a single stream, identified by the Aggregate type and key, for example "_Customer_540d1d96-3655-43a4-9078-3da7e7c5a3d2_" .
+Event Store is structured over the concept of &#8220;streams&#8221;. Every aggregate is represented by a single stream, identified by the Aggregate type and key, for example &#8220;_Customer_540d1d96-3655-43a4-9078-3da7e7c5a3d2_&#8221; .
 
 When rehydrating an entity, all we have to do is build the stream name given the key and the type and then fetch batches of events starting from the first one ever. 
 
-Event Store also <a rel="noreferrer noopener" href="https://eventstore.com/docs/event-sourcing-basics/rolling-snapshots/index.html" target="_blank">supports snapshots</a>, basically&nbsp;"_a projection of the current state of an aggregate at a given point_". They can be used to improve the time taken to build the current state by preventing loading all the events from the beginning. I haven't implemented this technique in the demo yet, probably I'll add it in the next weeks.
+Event Store also <a rel="noreferrer noopener" href="https://eventstore.com/docs/event-sourcing-basics/rolling-snapshots/index.html" target="_blank">supports snapshots</a>, basically&nbsp;&#8220;_a projection of the current state of an aggregate at a given point_&#8220;. They can be used to improve the time taken to build the current state by preventing loading all the events from the beginning. I haven&#8217;t implemented this technique in the demo yet, probably I&#8217;ll add it in the next weeks.
 
 Enough food for thought for today. <a href="https://www.davidguida.net/event-sourcing-in-net-core-part-3-broadcasting-events/" target="_blank" rel="noreferrer noopener">Next time: Kafka</a>!
 

@@ -17,7 +17,7 @@ categories:
 ---
 Ok this is going to be very interesting: <a title="RazorfishHealthware" href="http://www.razorfishhealthware.com" target="_blank">RazorfishHealthware</a> is sending me to Amsterdam with a colleague to study the <a title="SDL Tridion" href="http://www.sdl.com/products/tridion/" target="_blank">SDL Tridion CMS</a> !
 
-This is the 5th time I visit Amsterdam and each time is special&#8230;.I'll make sure to post more news and pictures in the next few days 😀
+This is the 5th time I visit Amsterdam and each time is special&#8230;.I&#8217;ll make sure to post more news and pictures in the next few days 😀
 
 <div class="post-details-footer-widgets">
 </div>

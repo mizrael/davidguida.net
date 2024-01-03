@@ -10,9 +10,9 @@ categories:
   - Programming
 ---
 Today I finally got my brand new copy of <a href="http://www.amazon.com/Professional-ASP-NET-MVC-Jon-Galloway/dp/111834846X" target="_blank">Professional ASP.NET MVC 4</a> 😀  
-I've been following [Phil Haack](http://haacked.com/)&#8216;s blog for a long time and I really like the guy, so this time I decided to give his group a chance and take the book &#8230;
+I&#8217;ve been following [Phil Haack](http://haacked.com/)&#8216;s blog for a long time and I really like the guy, so this time I decided to give his group a chance and take the book &#8230;
 
-Now I guess I'm going to spend some sleepless nights&#8230;
+Now I guess I&#8217;m going to spend some sleepless nights&#8230;
 
 <div class="post-details-footer-widgets">
 </div>

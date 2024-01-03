@@ -12,8 +12,8 @@ categories:
 ---
 Suppose you have a nice Console Application. Suppose you want to host a WCF service. And suppose you want to create a fancy Silverlight app that consumes this WCF service.
 
-You'll soon discover that something isn't working as expected&#8230;long story short, the client app is looking for a ClientAccessPolicy.xml file. And why in the world shouldn't we provide it?  
-Here's what you have to do:
+You&#8217;ll soon discover that something isn&#8217;t working as expected&#8230;long story short, the client app is looking for a ClientAccessPolicy.xml file. And why in the world shouldn&#8217;t we provide it?  
+Here&#8217;s what you have to do:
 
 1) Create another WCF Service, call it **CrossDomainService**
 

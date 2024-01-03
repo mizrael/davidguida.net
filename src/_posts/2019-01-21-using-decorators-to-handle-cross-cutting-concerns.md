@@ -30,7 +30,7 @@ tags:
   - programming
   - software architecture
 ---
-Hi All! Today I'll be writing about a very simple but powerful technique to reduce boiler-plate caused by cross-cutting concerns. We’ll explore a simple way to encapsulate them in reusable components using the Decorator pattern.
+Hi All! Today I&#8217;ll be writing about a very simple but powerful technique to reduce boiler-plate caused by cross-cutting concerns. We’ll explore a simple way to encapsulate them in reusable components using the Decorator pattern.
 
 I was actually planning of posting this article here but I was migrating to another server the last week and it took one week for the domain to point to the new DNS. Turns out this gave me the chance to try Medium instead, so published [my first article](https://medium.com/@obiuan/using-decorators-to-handle-cross-cutting-concerns-763fdb616f52) there.
 
@@ -45,10 +45,10 @@ Let’s first talk a bit about “cross cutting concerns”. On Wikipedia we can
 In a nutshell, they represent almost everything not completely tied to the&nbsp;<a href="https://en.wikipedia.org/wiki/Domain-driven_design" rel="noreferrer noopener" target="_blank">domain</a>&nbsp;of the application but that can affect in some way the behaviour of its components.
 
 Examples can be:  
-- caching  
-- error handling  
-- logging  
-- instrumentation
+&#8211; caching  
+&#8211; error handling  
+&#8211; logging  
+&#8211; instrumentation
 
 Instrumentation for instance can lead to a lot of boilerplate code which eventually will create clutter and pollute your codebase. You’ll basically end up with a lot of code like this:
 

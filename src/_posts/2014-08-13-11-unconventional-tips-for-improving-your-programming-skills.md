@@ -10,7 +10,7 @@ image: /assets/uploads/2014/08/computerprogramming_8406403-655x280.jpg
 categories:
   - Programming
 ---
-This is just a repost of an interesting article <a title="11 Unconventional Tips for Improving your Programming Skills" href="http://superheroesinracecars.com/2014/07/01/11-unconventional-tips-for-improving-your-programming-skills/" target="_blank">I found today</a> and I think it's worth sharing.
+This is just a repost of an interesting article <a title="11 Unconventional Tips for Improving your Programming Skills" href="http://superheroesinracecars.com/2014/07/01/11-unconventional-tips-for-improving-your-programming-skills/" target="_blank">I found today</a> and I think it&#8217;s worth sharing.
 
 TL;DR (for all the lazy people out there, me included):
 

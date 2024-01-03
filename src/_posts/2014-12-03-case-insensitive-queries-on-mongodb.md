@@ -15,9 +15,9 @@ categories:
   - MongoDB
   - Programming
 ---
-Short version: you can't.
+Short version: you can&#8217;t.
 
-Long version: well&#8230;. you can't 😀 Or at least you can't NOW, based on what is stated here : <a title="case insensitive index" href="https://jira.mongodb.org/browse/SERVER-90" target="_blank">https://jira.mongodb.org/browse/SERVER-90</a> .
+Long version: well&#8230;. you can&#8217;t 😀 Or at least you can&#8217;t NOW, based on what is stated here : <a title="case insensitive index" href="https://jira.mongodb.org/browse/SERVER-90" target="_blank">https://jira.mongodb.org/browse/SERVER-90</a> .
 
 If you really need case-insensitive queries one option is to create another field with a lowercase representation of the text, put an index on it and run your queries on this field instead.
 

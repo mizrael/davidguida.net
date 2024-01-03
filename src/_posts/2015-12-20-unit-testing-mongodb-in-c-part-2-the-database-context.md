@@ -305,9 +305,9 @@ A couple of details worth noting here:
 1) the repositories are exposed as interfaces and not as specific implementation, making tests easier to write  
 2) again, all the repositories are generated via a factory, injected directly in the ctor.
 
-<a href="https://en.wikipedia.org/wiki/Abstract_factory_pattern" target="_blank">The Factory Pattern</a> allows us to add more repositories without much hassle and, moreover, to inject a "fake" factory during our tests.
+<a href="https://en.wikipedia.org/wiki/Abstract_factory_pattern" target="_blank">The Factory Pattern</a> allows us to add more repositories without much hassle and, moreover, to inject a &#8220;fake&#8221; factory during our tests.
 
-[Next time](http://www.davidguida.net/unit-testing-mongodb-in-c-part-3-the-database-factories/) we'll discuss about how to implement a factory for our repo-needs 🙂
+[Next time](http://www.davidguida.net/unit-testing-mongodb-in-c-part-3-the-database-factories/) we&#8217;ll discuss about how to implement a factory for our repo-needs 🙂
 
 <div class="post-details-footer-widgets">
 </div>

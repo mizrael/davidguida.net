@@ -16,17 +16,17 @@ categories:
   - Ramblings
   - Technology
 ---
-Now sit down my dear and listen carefully, I'll tell you a story about how I almost lost all my sources.  
+Now sit down my dear and listen carefully, I&#8217;ll tell you a story about how I almost lost all my sources.  
 A while ago, I decided to give my marvelous Macbook pro mid-2013 an upgrade. I searched online a little bit and at the end I bought an SSD drive, a <a href="http://www.corsair.com/it-it/force-series-le-240gb-sata-3-6gbs-ssd" target="_blank">Corsair Force LE 240GB</a>.&nbsp;
 
-"But 240 is not enough!" you might say. &nbsp;"You're right". It's not enough.&nbsp;
+&#8220;But 240 is not enough!&#8221; you might say. &nbsp;&#8220;You&#8217;re right&#8221;. It&#8217;s not enough.&nbsp;
 
 I was not using the DVD drive at all so after a brief research, I found the right adapter and replaced it with the old 500gb Apple&nbsp;disk , leaving space for my shiny new SSD.
 
 Everything was perfect,&nbsp;El Capitan was lightning fast, everybody was happy. But then came the day that I needed Windows. So Bootcamp joined us and new partitions started to appear.
 
 180GB OSX Extended and 60GB NTFS on the SSD.  
-450GB&nbsp;OSX Extended and 50GB exFAT on the ol' Apple&nbsp;disk.
+450GB&nbsp;OSX Extended and 50GB exFAT on the ol&#8217; Apple&nbsp;disk.
 
 Again, everything was perfect, El Capitan was still lightning fast, Windows 10 was running fine, everybody was happy.
 

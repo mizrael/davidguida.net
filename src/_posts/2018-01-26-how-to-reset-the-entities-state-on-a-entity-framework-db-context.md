@@ -27,7 +27,7 @@ So let’s say your code is making an INSERT with bad data and fails. Maybe you 
 
 Well that will fail too. Miserably.
 
-Maybe it's more correct to say that the second call will look for changes on the entities and will try to commit them. Which is basically the standard and expected behaviour.
+Maybe it&#8217;s more correct to say that the second call will look for changes on the entities and will try to commit them. Which is basically the standard and expected behaviour.
 
 Since _usually_ db context instances are created for every request this might not be a big issue.
 

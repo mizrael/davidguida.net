@@ -13,11 +13,11 @@ categories:
   - MVC
   - Programming
 ---
-> {"The Role Manager feature has not been enabled."}
+> {&#8220;The Role Manager feature has not been enabled.&#8221;}
 
-1/2 hour. Took me half an hour to track down this. It all began with the ASP.NET MVC 4 template, with its shiny AccountController. "Why do I have to write all that auth code? Why can't I use WebMatrix ? "
+1/2 hour. Took me half an hour to track down this. It all began with the ASP.NET MVC 4 template, with its shiny AccountController. &#8220;Why do I have to write all that auth code? Why can&#8217;t I use WebMatrix ? &#8221;
 
-> {"The Role Manager feature has not been enabled."}
+> {&#8220;The Role Manager feature has not been enabled.&#8221;}
 
 Turns out that SOMETIMES when you call
 
