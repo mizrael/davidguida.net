@@ -20,7 +20,7 @@ tags:
   - SignalR
 ---
 
-Hi All! Today we're going to see how we can write a UI notification system. We will use Blazor to render the UI, SignalR to handle the client/server communication, and <a href="https://www.opensleigh.net" target="_blank">OpenSleigh</a> to execute the background operations.
+Hi All! Today we're going to see how we can write a UI notification system. We will use Blazor to render the UI, SignalR to handle the client/server communication, and <a href="https://github.com/mizrael/OpenSleigh" target="_blank">OpenSleigh</a> to execute the background operations.
 
 Our goal is to allow the user to trigger the execution of a long-running operation. The gruntwork might be composed of multiple steps and has to be performed in the background, without blocking the UI.
 
@@ -96,7 +96,7 @@ As you can see, in the `OnInitializedAsync()` method we're initializing the conn
 
 Then, in our `StartSaga()` method we handle the button click by sending a `StartSaga` message to the server with the desired number of steps, and triggering the execution.
 
-That's all for today! All the source codes are already <a href="https://github.com/mizrael/OpenSleigh/tree/develop/samples/Sample8" target="_blank">available on GitHub</a>, feel free to take a look.
+That's all for today! All the source codes are already <a href="https://github.com/mizrael/OpenSleigh/tree/release/v2.0.7/samples/Sample8" target="_blank">available on GitHub</a>, feel free to take a look.
 
 In <a href="/ui-notifications-blazor-signalr-opensleigh-part-2/" target="_blank">the next post</a> we'll take a look at the server and see how **OpenSleigh** can reduce the overall complexity.
 See ya!
