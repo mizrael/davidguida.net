@@ -2,7 +2,8 @@
 description: > 
   In this article we'll talk about basic messaging concepts and discuss what Topics are and how they can be implemented using Azure Storage Queues.
 id: 8041
-title: 'What's a Topic and how can we implement it using Azure Storage Queues?'
+title: >
+  What's a Topic and how can we implement it using Azure Storage Queues?
 date: 2024-07-19T00:57:23-05:00
 author: David Guida
 layout: post
