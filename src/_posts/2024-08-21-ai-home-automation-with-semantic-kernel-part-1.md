@@ -33,7 +33,7 @@ To keep things simple, I started with just lights and door sensors. The operatio
 
 ### The point now is: how can I have the LLM interact with those devices? The answer is: Semantic Kernel!
 
-The first step is to setup a Chat Completion service with a model hosted on Azure. This way I can have simple conversations in plain english, but there's no actual *interaction*. Now I need to make the agent understand prompts like "how many lights do I have?" or "turn the bathroom light off".
+The first step is to setup a Chat Completion service with a model hosted on Azure. This way I can have simple conversations in plain english, but there's no actual *interaction*. Now I need to make the agent understand prompts like *"how many lights do I have?"* or *"turn the bathroom light off"*.
 
 For this, I can leverage the concept of [Function Calling](https://platform.openai.com/docs/guides/function-calling) that some models expose. 
 
@@ -62,14 +62,14 @@ public class MyFancyPlugin
 
 As you can see, a Plugin is a simple class that exposes our custom methods. Each method has to be decorated with the `KernelFunction` attribute and at least one `Description`, which provides some context to the model.
 
-Now all we have to do is to register it during startup`:
+Now all we have to do is to register it during startup:
 ```csharp
 var kernelBuilder = Kernel.CreateBuilder();
 kernelBuilder.Plugins.AddFromType<MyFancyPlugin>();
 var kernel = kernelBuilder.Build();
 ```
 
-This way we can ask the model something like "can you tell me what time it is?".
+This way we can ask the model something like *"can you tell me what time it is?"*.
 
 There is already a [nice list](https://learn.microsoft.com/en-us/dotnet/api/microsoft.semantickernel.plugins.core?view=semantic-kernel-dotnet) of Plugins available and the team is actively adding more and more.
 
