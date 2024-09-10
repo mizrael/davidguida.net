@@ -1,6 +1,6 @@
 ---
 description: > 
-  Learn how to build an AI-powered Home Automation assistant using Semantic Kernel and Azure OpenAI
+  Let's see how we can configure Semantic Kernel Plugins to call an Azure Function and build our AI-powered Home Automation Assistant!
 id: 8043
 title: >
   AI Home Automation with Semantic Kernel part 2: let's see some code!
