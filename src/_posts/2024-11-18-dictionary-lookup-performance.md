@@ -42,6 +42,8 @@ if (myDictionary.TryGetValue(key, out var value))
 
 ![](https://raw.githubusercontent.com/mizrael/DictionaryLookupBenchmark/36456254d1700c927fb85cb37356a7b4aae73ce1/dictionary.jpg)
 
+The calls to `TryGetValue` are almost 2x faster!
+
 As you can see, I have also included a comparison between .NET 8 and 9. The difference is not abyssal, but we can still see an improvement.
 
 As usual, the code for the benchmark is available on <a href='https://github.com/mizrael/DictionaryLookupBenchmark/blob/main/DictionaryLookupBenchmark/DictionaryLookupBenchmark.cs' target='_blank'>GitHub</a>.
