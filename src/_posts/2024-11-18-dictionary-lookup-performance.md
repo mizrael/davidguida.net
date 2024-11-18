@@ -42,7 +42,9 @@ if (myDictionary.TryGetValue(key, out var value))
 
 ![](https://raw.githubusercontent.com/mizrael/DictionaryLookupBenchmark/36456254d1700c927fb85cb37356a7b4aae73ce1/dictionary.jpg)
 
-The calls to `TryGetValue` are almost 2x faster!
+The calls to `TryGetValue` are almost 2x faster! **But why is that?**
+
+The reason is pretty simple actually: calling `ContainsKey` and then accessing the value by key is performing the lookup twice.
 
 As you can see, I have also included a comparison between .NET 8 and 9. The difference is not abyssal, but we can still see an improvement.
 
