@@ -3,7 +3,7 @@ description: >
   Ever wished for a simpler way to manage feature gates? Your wish is now a reality with Riverdam!
 id: 8046
 title: 'Riverdam - Feature Gates Finally Made Easy'
-date: 2025-02-2100:57:23-05:00
+date: 2025-02-21T00:57:23-05:00
 author: David Guida
 layout: post
 guid: https://www.davidguida.net/?p=8046
