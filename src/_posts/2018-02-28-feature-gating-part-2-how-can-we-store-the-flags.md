@@ -31,6 +31,3 @@ The last step is using a third party service. That means you&#8217;ll have to wr
 Of course you won&#8217;t have anymore control over your data and in the worst case you might have to &#8220;bend&#8221; a little the system to accommodate your application needs. It&#8217;s something that happens every time an external solution is used: might cover 90% of the functionalities you need&#8230;but that 10% could require a lot of refactoring on your side.
 
 In <a href="https://www.davidguida.net/feature-gating-part-3-how-check-the-gates/" target="_blank" rel="noopener">the next article</a> I&#8217;ll show some design patterns you can use in your code to check the feature gates. Stay tuned!
-
-<div class="post-details-footer-widgets">
-</div>

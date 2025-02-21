@@ -24,8 +24,3 @@ So as soon as I had the chance to plan ahead my trip back to Italy he managed to
 Unfortunately the slides are in Italian so I don&#8217;t think I&#8217;ll share them on this blog but I will be writing soon a more detailed post so stay tuned!
 
 In the meantime, if you&#8217;re near Salerno and fancy a little geekiness <a href="https://www.google.com/maps/search/?api=1&query=corso+Garibaldi+203%2C+Salerno%2C+sa%2C+meetup26%2C+it" target="_blank" rel="noopener">come and say hi</a>!
-
-&nbsp;
-
-<div class="post-details-footer-widgets">
-</div>
