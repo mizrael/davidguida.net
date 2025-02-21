@@ -83,6 +83,8 @@ const featureService:IFeatureService = new FeatureService(),
 
 ```
 
-The idea is to encapsulate the new and the old logic in two classes (lines 10 and 11) and generate a third one which will use the previous featureService to pick the right instance. Finally all you have to do is to inject that class in the consumer and you&#8217;re done.&nbsp;&nbsp;
+The idea is to encapsulate the new and the old logic in two classes (lines 10 and 11) and generate a third one which will use `featureService` to pick the right instance. 
+
+Finally all you have to do is to inject that class in the consumer and you&#8217;re done.&nbsp;&nbsp;
 
 Next time: this is nice, but is really useful? What do we&nbsp;**really** get using Feature Gating?
