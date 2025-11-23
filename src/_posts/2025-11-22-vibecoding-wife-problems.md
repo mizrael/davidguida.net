@@ -1,6 +1,6 @@
 ---
 description: >
-  My take on why vibecoding can be useful and how it can lead to pain and suffering instead.
+  Is vibecoding with AI a productivity boost or a shortcut that removes the joy of coding? My experience solving my wife's photo metadata problem and what it taught me about AI-assisted development.
 id: 8049
 title: Vibecoding and the art of solving my wife's problems
 date: 2025-11-22T00:57:23-05:00
